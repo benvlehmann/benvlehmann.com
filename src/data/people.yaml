@@ -1,52 +1,70 @@
+# Student lists mirror the "Students and mentoring" section of the CV
+# (~/Dropbox/Science/CV/update/src/lehmann_cv.tex). Update both together.
+
 intro: >-
   I’ve had the pleasure of working with some wonderful students. Several built
   undergraduate theses on our projects together, and they’ve each brought a
   great deal of effort and creativity. I’m very proud of what we’ve done.
 invite: Are you an MIT undergrad or grad student interested in a project like these?
 
-# TODO(Ben): fill in current students. Leave empty to hide the section.
-current: []
-#  - name: Jane Doe
-#    blurb: One or two sentences on the project.
-#    links: { inspire: https://inspirehep.net/authors/... }
+# Students whose research I supervise in part or in full.
+# Optional per student: blurb (one or two sentences on the project), links.
+current:
+  - { name: Joheen Charkraborty, program: PhD, institution: MIT }
+  - { name: Jackie Lodman, program: PhD, institution: Harvard University }
+  - { name: Guy Daniel Hadas, program: PhD, institution: Hebrew University }
+  - { name: Rotem Ovadia, program: PhD, institution: Hebrew University }
+  - { name: Omer Katz, program: PhD, institution: Tel Aviv University }
+  - { name: Christina Schwemmbauer, program: PhD, institution: DESY }
 
-former:
-  # TODO(Ben): confirm years and next steps for Sam and Nolan (listed as current on the old site).
-  - name: Sam English
+# Undergraduate theses I supervised at UC Santa Cruz (under my PhD advisor's oversight).
+theses:
+  - name: Samuel D. English
+    years: 2020–2022
+    thesis: "The Hidden Friend’s Wake: Dark Matter and a Binary at the Galactic Center"
+    honors: Honors in the major
+    next: PhD in Physics, University of New Mexico
     links: { inspire: https://inspirehep.net/authors/1863233 }
-    project: Connections between Galactic dark matter and the behavior of Sgr A*.
-  - name: Nolan Smyth
-    links: { website: https://nolan-smyth.com, inspire: https://inspirehep.net/authors/1785026 }
-    project: New thermal histories for dark matter and their late-universe observables.
-  - name: Ava Webber
-    year: 22
-    papers: ["2012.05875", "2205.09756"]
-    next: PhD in Astronomy, Clemson University
-  - name: Olivia Ross
-    year: 20
+  - name: Olivia G. Ross
+    years: 2018–2021
     thesis: Searching for primordial black holes
-    papers: ["2012.05875", "2205.09756"]
+    honors: Honors in the major; Steck Family Award for the best senior thesis at UC Santa Cruz, 2020–21
     next: PhD in Astronomy, Cornell University
+    papers: ["2012.05875", "2205.09756"]
   - name: Paul Andreini
-    year: 19
+    years: 2016–2019
     thesis: Time-evolution of the primordial black hole mass function
+    honors: Honors in the major
     next: PhD in Physics, University of Oregon
-  - name: Mason Hargrave
-    year: 19
-    next: PhD in Physical, Mathematical, and Computational Biology, The Rockefeller University
-  - name: Anikeya Aditya
-    year: 18
-    thesis: Inferring the mass function of primordial black holes from gravitational wave observations
-    next: PhD in Materials Science, USC
   - name: Thomas Schwemberger
-    year: 18
+    years: 2018
     thesis: Constraints on Planck mass relics from primordial black hole evaporation with a generic initial mass function
-    papers: ["1906.06348"]
+    honors: Honors in the major
     next: PhD in Physics, University of Oregon
-  - name: Jackson Yant
-    year: 18
-    papers: ["1801.00808", "2007.00021"]
-    next: PhD in Physics, Dartmouth College
+    papers: ["1906.06348"]
+  - name: Anikeya Aditya
+    years: 2016–2018
+    thesis: Inferring the mass function of primordial black holes from gravitational wave observations
+    honors: Honors in the major
+    next: PhD in Materials Science, University of Southern California
+
+# Other former student collaborators, most recent first.
+former:
+  - { name: Badal Bhalla, years: 2022–2026, was: "PhD, University of Oklahoma", next: "Postdoctoral Associate, University of Utah" }
+  - { name: Bethany Suter, years: 2023–2026, was: "PhD, UC Berkeley", next: "Postdoctoral Associate, Fermilab" }
+  - { name: Marcell Howard, years: 2024–2026, was: "PhD, University of Pittsburgh", next: "Postdoctoral Associate, Brown University" }
+  - { name: Cara Giovanetti, years: 2024–2025, was: "PhD, NYU", next: "Postdoctoral Fellow, UC Berkeley" }
+  - { name: Wenzer Qin, years: 2023–2024, was: "PhD, MIT", next: "Simons Junior Fellow, NYU" }
+  - { name: Sarah R. Geller, years: 2023–2024, was: "PhD, MIT", next: "NSF MPS Postdoctoral Fellow, UC Santa Cruz / UC Berkeley" }
+  - { name: Tung X. Tran, years: 2023–2024, was: "BS, MIT", next: "PhD in Physics, Stanford University" }
+  - name: Nolan Smyth
+    years: 2021–2024
+    was: PhD, UC Santa Cruz
+    next: Postdoctoral Fellow, Mila / Université de Montréal
+    links: { website: https://nolan-smyth.com, inspire: https://inspirehep.net/authors/1785026 }
+  - { name: Ava Webber, years: 2020–2022, was: "BS, UC Santa Cruz", next: "PhD in Astronomy, Clemson University", papers: ["2012.05875", "2205.09756"] }
+  - { name: Mason Hargrave, years: 2018–2019, was: "BS, UC Santa Cruz", next: "PhD in Computational Biology, Rockefeller University" }
+  - { name: Jackson Yant, years: 2016–2018, was: "BS, UC Santa Cruz", next: "PhD in Physics, Dartmouth College", papers: ["1801.00808", "2007.00021"] }
 
 collaborators: >-
   At MIT I work most closely with <a href="https://physics.mit.edu/faculty/tracy-slatyer/">Tracy Slatyer</a>’s group

@@ -15,15 +15,19 @@ import { people, site, url, arxiv } from '../lib/data';
   {people.current?.length > 0 && (
     <section class="band">
       <div class="wrap">
-        <h2 style="font-size: 40px; margin-bottom: 28px">Current students</h2>
-        <div class="cards">
-          {people.current.map((s: any) => (
-            <div class="box">
-              <p style="font-size: 20px; color: var(--text); margin-bottom: 8px">{s.name}</p>
-              <p>{s.blurb}</p>
-            </div>
-          ))}
+        <div class="section-head" style="margin-bottom: 28px">
+          <h2 style="font-size: 40px">Current students</h2>
+          <p>Students whose research I supervise in part or in full.</p>
         </div>
+        <ul class="alumni">
+          {people.current.map((s: any) => (
+            <li>
+              <p class="name">{s.name}</p>
+              <p class="thesis">{s.program} student, {s.institution}</p>
+              {s.blurb && <p class="thesis">{s.blurb}</p>}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )}
@@ -31,16 +35,41 @@ import { people, site, url, arxiv } from '../lib/data';
   <section class="band">
     <div class="wrap">
       <div class="section-head" style="margin-bottom: 28px">
-        <h2 style="font-size: 40px">Former students</h2>
-        <p>Undergraduate researchers at UC Santa Cruz, and where they went next.</p>
+        <h2 style="font-size: 40px">Undergraduate theses</h2>
+        <p>Senior theses I supervised at UC Santa Cruz, and where each student went next.</p>
+      </div>
+      <ul class="alumni">
+        {people.theses.map((a: any) => (
+          <li>
+            <p><span class="name">{a.name}</span> <span class="mono faint" style="font-size: 13px">{a.years}</span></p>
+            <p class="thesis"><em>{a.thesis}</em></p>
+            {a.honors && <p class="thesis faint" style="font-size: 13.5px">{a.honors}</p>}
+            <p class="next">→ {a.next}</p>
+            {(a.papers || a.links) && (
+              <p class="links">
+                {a.papers?.map((p: string) => <><a href={arxiv(p)}>{p}</a>{' '}</>)}
+                {a.links?.website && <><a href={a.links.website}>website</a>{' '}</>}
+                {a.links?.inspire && <a href={a.links.inspire}>INSPIRE</a>}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom: 28px">
+        <h2 style="font-size: 40px">Former student collaborators</h2>
+        <p>Graduate and undergraduate students I’ve worked with, and where they went next.</p>
       </div>
       <ul class="alumni">
         {people.former.map((a: any) => (
           <li>
-            <p><span class="name">{a.name}</span>{a.year && <span class="mono faint" style="font-size: 13px"> ’{a.year}</span>}</p>
-            {a.thesis && <p class="thesis"><em>{a.thesis}</em></p>}
-            {a.project && !a.thesis && <p class="thesis">{a.project}</p>}
-            {a.next && <p class="next">→ {a.next}</p>}
+            <p><span class="name">{a.name}</span> <span class="mono faint" style="font-size: 13px">{a.years}</span></p>
+            <p class="thesis">{a.was}</p>
+            <p class="next">→ {a.next}</p>
             {(a.papers || a.links) && (
               <p class="links">
                 {a.papers?.map((p: string) => <><a href={arxiv(p)}>{p}</a>{' '}</>)}

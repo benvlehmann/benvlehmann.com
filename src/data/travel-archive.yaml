@@ -76,10 +76,11 @@
   start: '2025-03-02'
   end: '2025-03-07'
   place: Aspen Center for Physics, Aspen, CO
-- title: SLAC
+- title: SLAC National Accelerator Laboratory
   slug: slac
   start: '2025-02-11'
   end: '2025-02-14'
+  place: Menlo Park, CA
 - title: Miami 2024 conference
   slug: miami-2024-conference
   start: '2024-12-12'
@@ -234,7 +235,7 @@
   slug: pappalardo-symposium
   start: '2023-03-16'
   end: '2023-03-17'
-  place: Samberg Center, MIT
+  place: Samberg Center, MIT, Cambridge, MA
 - title: '"Family Meeting" seminar'
   slug: harvard-family-meeting-talk
   start: '2023-03-06'

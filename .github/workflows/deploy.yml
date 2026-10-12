@@ -34,8 +34,8 @@ jobs:
           # Picks up the preview subpath now, and "/" automatically once the custom domain is set.
           SITE_URL: ${{ steps.pages.outputs.origin }}
           SITE_BASE: ${{ steps.pages.outputs.base_path || '/' }}
-          # Optional: set a repo variable TRAVEL_ICS_URL instead of editing site.yaml.
-          TRAVEL_ICS_URL: ${{ vars.TRAVEL_ICS_URL }}
+          # Secret iCal address of the travel calendar (Settings → Secrets → Actions).
+          TRAVEL_ICS_URL: ${{ secrets.TRAVEL_ICS_URL }}
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

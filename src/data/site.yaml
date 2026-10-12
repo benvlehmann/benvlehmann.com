@@ -19,8 +19,8 @@ links:
   inspire_author_id: 1737895
   inspire: https://inspirehep.net/authors/1737895
 
-# Optional: public iCal feed of a dedicated "Travel" Google Calendar.
-# Leave empty until the calendar exists; the TRAVEL_ICS_URL env var overrides this.
+# The travel calendar's feed comes from the TRAVEL_ICS_URL repository secret.
+# Only put a feed here if it is a public calendar you don't mind exposing.
 travel_ics_url: ""
 
 hero:

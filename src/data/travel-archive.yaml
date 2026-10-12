@@ -15,6 +15,7 @@
   slug: hebrew-university-1
   start: '2026-01-02'
   end: '2026-01-07'
+  place: Jerusalem, Israel
 - title: Technion
   slug: technion
   start: '2025-12-28'
@@ -27,6 +28,7 @@
   slug: university-of-michigan
   start: '2025-11-11'
   end: '2025-11-14'
+  place: Ann Arbor, MI
 - title: IFT Madrid
   slug: ift-madrid
   start: '2025-11-03'
@@ -35,14 +37,17 @@
   slug: ifae
   start: '2025-10-30'
   end: '2025-10-31'
+  place: Barcelona, Spain
 - title: Institut d'astrophysique de Paris (IAP)
   slug: institut-dastrophysique-de-paris-iap
   start: '2025-10-28'
   end: '2025-10-29'
+  place: Paris, France
 - title: ÉNS Paris
   slug: ns-paris
   start: '2025-10-27'
   end: '2025-10-27'
+  place: Paris, France
 - title: SEARCH25 Conference
   slug: search25-conference
   start: '2025-10-20'
@@ -62,6 +67,7 @@
   slug: rutgers
   start: '2025-03-11'
   end: '2025-03-13'
+  place: New Brunswick, NJ
 - title: 'Aspen conference: Empowering the New Vision in High Energy Physics'
   slug: aspen-conference-empowering-the-new-vision-in-high-energy-physics
   start: '2025-03-02'
@@ -75,7 +81,7 @@
   slug: miami-2024-conference
   start: '2024-12-12'
   end: '2024-12-19'
-  place: Fort Lauderdale
+  place: Fort Lauderdale, FL
 - title: Kavli Institute for Particle Astrophysics and Cosmology
   slug: kavli-institute-for-particle-astrophysics-and-cosmology
   start: '2024-11-18'
@@ -89,14 +95,17 @@
   slug: washington-university
   start: '2024-11-06'
   end: '2024-11-08'
+  place: St. Louis, MO
 - title: Oklahoma State University
   slug: oklahoma-state-university
   start: '2024-10-31'
   end: '2024-11-01'
+  place: Stillwater, OK
 - title: University of Oklahoma
   slug: university-of-oklahoma
   start: '2024-10-29'
   end: '2024-10-30'
+  place: Norman, OK
 - title: TeVPA / KICP
   slug: tevpa-kicp
   start: '2024-08-26'
@@ -106,6 +115,7 @@
   slug: kitp-workshop-dark-matter-theory-simulation-and-analysis-in-the-era-of-large-surveys
   start: '2024-06-18'
   end: '2024-07-06'
+  place: Santa Barbara, CA
 - title: APS DPF and Phenomenology 2024 Symposium
   slug: dpf-pheno
   start: '2024-05-13'
@@ -115,14 +125,17 @@
   slug: cu-boulder
   start: '2024-04-04'
   end: '2024-04-05'
+  place: Boulder, CO
 - title: UC Santa Cruz
   slug: uc-santa-cruz
   start: '2024-04-01'
   end: '2024-04-03'
+  place: Santa Cruz, CA
 - title: Texas A&M University
   slug: tamu
   start: '2024-03-27'
   end: '2024-03-29'
+  place: College Station, TX
 - title: Black Holes and Cosmology 2024
   slug: bhcos-2024
   start: '2024-03-12'
@@ -151,6 +164,7 @@
   slug: university-of-florida
   start: '2023-11-28'
   end: '2023-11-30'
+  place: Gainesville, FL
 - title: NSBP Conference
   slug: nsbp-conference
   start: '2023-11-10'
@@ -165,16 +179,17 @@
   slug: israel-1
   start: '2023-06-14'
   end: '2023-06-26'
+  place: Jerusalem, Israel
 - title: Dark Matter 2023
   slug: dark-matter-2023
   start: '2023-05-28'
   end: '2023-06-02'
-  place: Santander
+  place: Santander, Spain
 - title: Planck 2023
   slug: planck-2023
   start: '2023-05-22'
   end: '2023-05-27'
-  place: Warsaw
+  place: Warsaw, Poland
 - title: Phenomenology 2023 Symposium
   slug: phenomenology-2023-symposium
   start: '2023-05-07'
@@ -204,7 +219,7 @@
   slug: chicagoland
   start: '2023-03-26'
   end: '2023-04-05'
-  place: Chicago
+  place: Illinois
 - title: SCGP (Stony Brook)
   slug: scgp-stony-brook-1
   start: '2023-03-19'
@@ -214,7 +229,7 @@
   slug: pappalardo-symposium
   start: '2023-03-16'
   end: '2023-03-17'
-  place: Samberg Center
+  place: Samberg Center, MIT
 - title: '"Family Meeting" seminar'
   slug: harvard-family-meeting-talk
   start: '2023-03-06'
@@ -246,8 +261,9 @@
   slug: caltech
   start: '2022-10-10'
   end: '2022-10-11'
+  place: Pasadena, CA
 - title: COSMO 22
   slug: cosmo-22
   start: '2022-08-21'
   end: '2022-08-28'
-  place: Rio de Janeiro
+  place: Rio de Janeiro, Brazil

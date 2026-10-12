@@ -1,6 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import { people, site, url, arxiv } from '../lib/data';
+import { people, site, url } from '../lib/data';
+import { coauthored } from '../lib/inspire';
+
+// Attach papers coauthored with each person, found from INSPIRE at build time.
+const withPapers = (list: any[] = []) =>
+  Promise.all(list.map(async (p) => ({ ...p, papers: await coauthored(p.name, { inspireName: p.inspire_name, exclude: p.exclude }) })));
+const [current, theses, former] = await Promise.all([withPapers(people.current), withPapers(people.theses), withPapers(people.former)]);
+const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
 ---
 <Base title="People" current="people" description="Students and collaborators of Ben Lehmann.">
   <section>
@@ -12,7 +19,7 @@ import { people, site, url, arxiv } from '../lib/data';
     </div>
   </section>
 
-  {people.current?.length > 0 && (
+  {current.length > 0 && (
     <section class="band">
       <div class="wrap">
         <div class="section-head" style="margin-bottom: 28px">
@@ -20,11 +27,14 @@ import { people, site, url, arxiv } from '../lib/data';
           <p>Students whose research I supervise in part or in full.</p>
         </div>
         <ul class="alumni">
-          {people.current.map((s: any) => (
+          {current.map((s: any) => (
             <li>
               <p class="name">{s.name}</p>
               <p class="thesis">{s.program} student, {s.institution}</p>
               {s.blurb && <p class="thesis">{s.blurb}</p>}
+              {s.papers.length > 0 && (
+                <p class="links">{s.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}</p>
+              )}
             </li>
           ))}
         </ul>
@@ -39,15 +49,15 @@ import { people, site, url, arxiv } from '../lib/data';
         <p>Senior theses I supervised at UC Santa Cruz, and where each student went next.</p>
       </div>
       <ul class="alumni">
-        {people.theses.map((a: any) => (
+        {theses.map((a: any) => (
           <li>
             <p><span class="name">{a.name}</span> <span class="mono faint" style="font-size: 13px">{a.years}</span></p>
             <p class="thesis"><em>{a.thesis}</em></p>
             {a.honors && <p class="thesis faint" style="font-size: 13.5px">{a.honors}</p>}
             <p class="next">→ {a.next}</p>
-            {(a.papers || a.links) && (
+            {(a.papers.length > 0 || a.links) && (
               <p class="links">
-                {a.papers?.map((p: string) => <><a href={arxiv(p)}>{p}</a>{' '}</>)}
+                {a.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}
                 {a.links?.website && <><a href={a.links.website}>website</a>{' '}</>}
                 {a.links?.inspire && <a href={a.links.inspire}>INSPIRE</a>}
               </p>
@@ -65,14 +75,14 @@ import { people, site, url, arxiv } from '../lib/data';
         <p>Graduate and undergraduate students I’ve worked with, and where they went next.</p>
       </div>
       <ul class="alumni">
-        {people.former.map((a: any) => (
+        {former.map((a: any) => (
           <li>
             <p><span class="name">{a.name}</span> <span class="mono faint" style="font-size: 13px">{a.years}</span></p>
             <p class="thesis">{a.was}</p>
             <p class="next">→ {a.next}</p>
-            {(a.papers || a.links) && (
+            {(a.papers.length > 0 || a.links) && (
               <p class="links">
-                {a.papers?.map((p: string) => <><a href={arxiv(p)}>{p}</a>{' '}</>)}
+                {a.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}
                 {a.links?.website && <><a href={a.links.website}>website</a>{' '}</>}
                 {a.links?.inspire && <a href={a.links.inspire}>INSPIRE</a>}
               </p>

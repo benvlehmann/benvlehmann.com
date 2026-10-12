@@ -22,7 +22,9 @@ reference them as `{role}`, `{institution}`, etc.
 ## Automatic content
 
 - **Recent papers** are fetched from INSPIRE at build time (author id in `site.yaml`).
-  If INSPIRE is down, `src/data/papers-cache.json` is used instead.
+  If INSPIRE is down, `src/data/papers-cache.json` is used instead (`npm run refresh-papers`).
+- **Coauthored papers** on the People page are matched from the same INSPIRE data
+  (surname + first initial); `inspire_name` / `exclude` in `people.yaml` fix mismatches.
 - **Upcoming trips** come from the iCal feed of a dedicated travel calendar
   (the `TRAVEL_ICS_URL` repository secret — use the calendar's secret iCal address), merged
   with the archive. Trips move from Upcoming to Recent on their own.

@@ -43,7 +43,8 @@ export function parseIcs(text: string): Trip[] {
           title: unescapeIcs(ev.SUMMARY.value),
           start,
           end: end < start ? start : end,
-          place: ev.LOCATION ? unescapeIcs(ev.LOCATION.value).split(',')[0] : undefined,
+          // The event's location is shown verbatim (e.g. "Princeton, NJ").
+          place: ev.LOCATION ? unescapeIcs(ev.LOCATION.value) || undefined : undefined,
           url: ev.URL?.value,
         });
       }

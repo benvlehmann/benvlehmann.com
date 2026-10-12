@@ -8,5 +8,5 @@
   `src/pages/[legacy].astro` and `src/pages/travel/[slug].astro`.
 - Mechanical fixes (typos, dead links, papers cache refresh) can go straight to `main`.
   Anything that states a fact about Ben's life or career goes in a pull request for him to approve.
-- After a clean maintenance pass, set `last_verified` in `src/data/verified.json`.
+- The scheduled maintenance check follows `MAINTENANCE.md`. After a clean pass, set `last_verified` in `src/data/verified.json`.
 - Run `npm run build` before pushing; the build must succeed.

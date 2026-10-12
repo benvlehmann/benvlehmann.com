@@ -9,6 +9,11 @@ invite: Are you an MIT undergrad or grad student interested in a project like th
 
 # Students whose research I supervise in part or in full.
 # Optional per student: blurb (one or two sentences on the project), links.
+#
+# Papers we coauthored are found automatically from INSPIRE at build time
+# (surname + first initial). Optional per person, for any section:
+#   inspire_name: "Last, First"     # if INSPIRE spells the name differently
+#   exclude: ["2401.01234"]         # drop a false match (arXiv id or INSPIRE record number)
 current:
   - { name: Joheen Chakraborty, program: PhD, institution: MIT }
   - { name: Jackie Lodman, program: PhD, institution: Harvard University }
@@ -30,7 +35,6 @@ theses:
     thesis: Searching for primordial black holes
     honors: Honors in the major; Steck Family Award for the best senior thesis at UC Santa Cruz, 2020–21
     next: PhD in Astronomy, Cornell University
-    papers: ["2012.05875", "2205.09756"]
   - name: Paul Andreini
     years: 2016–2019
     thesis: Time-evolution of the primordial black hole mass function
@@ -41,7 +45,6 @@ theses:
     thesis: Constraints on Planck mass relics from primordial black hole evaporation with a generic initial mass function
     honors: Honors in the major
     next: PhD in Physics, University of Oregon
-    papers: ["1906.06348"]
   - name: Anikeya Aditya
     years: 2016–2018
     thesis: Inferring the mass function of primordial black holes from gravitational wave observations
@@ -62,9 +65,9 @@ former:
     was: PhD, UC Santa Cruz
     next: Postdoctoral Fellow, Mila / Université de Montréal
     links: { website: https://nolan-smyth.com, inspire: https://inspirehep.net/authors/1785026 }
-  - { name: Ava Webber, years: 2020–2022, was: "BS, UC Santa Cruz", next: "PhD in Astronomy, Clemson University", papers: ["2012.05875", "2205.09756"] }
+  - { name: Ava Webber, years: 2020–2022, was: "BS, UC Santa Cruz", next: "PhD in Astronomy, Clemson University" }
   - { name: Mason Hargrave, years: 2018–2019, was: "BS, UC Santa Cruz", next: "PhD in Computational Biology, Rockefeller University" }
-  - { name: Jackson Yant, years: 2016–2018, was: "BS, UC Santa Cruz", next: "PhD in Physics, Dartmouth College", papers: ["1801.00808", "2007.00021"] }
+  - { name: Jackson Yant, years: 2016–2018, was: "BS, UC Santa Cruz", next: "PhD in Physics, Dartmouth College" }
 
 collaborators: >-
   At MIT I work most closely with the groups of

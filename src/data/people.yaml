@@ -10,7 +10,7 @@ invite: Are you an MIT undergrad or grad student interested in a project like th
 # Students whose research I supervise in part or in full.
 # Optional per student: blurb (one or two sentences on the project), links.
 current:
-  - { name: Joheen Charkraborty, program: PhD, institution: MIT }
+  - { name: Joheen Chakraborty, program: PhD, institution: MIT }
   - { name: Jackie Lodman, program: PhD, institution: Harvard University }
   - { name: Guy Daniel Hadas, program: PhD, institution: Hebrew University }
   - { name: Rotem Ovadia, program: PhD, institution: Hebrew University }

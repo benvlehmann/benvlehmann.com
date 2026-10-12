@@ -1,0 +1,37 @@
+intro: >-
+  Dark matter phenomenology, reaching into early-universe cosmology, BSM
+  physics, gravitational waves, and multi-messenger probes of new physics.
+
+topics:
+  - title: Particle dark matter
+    image: img/bullet.jpg
+    image_alt: The Bullet Cluster, with dark matter mapped in blue
+    blurb: >-
+      Connecting dark matter to observables in astrophysics, cosmology, and the
+      laboratory — and building new ways to detect it.
+    selected:
+      - { title: Direct detection in dielectrics, arxiv: "2101.08263" }
+      - { title: Detection with material databases, arxiv: "2506.19905" }
+      - { title: Light DM in electronic experiments, arxiv: "2412.16283" }
+
+  - title: Primordial black holes
+    image: img/evap.jpg
+    image_alt: Illustration of an evaporating black hole
+    blurb: >-
+      Black holes as a dark matter candidate, a window onto the very early
+      universe, and a probe of particle dark matter.
+    selected:
+      - { title: Detecting PBHs in the Solar System, arxiv: "2312.17217" }
+      - { title: Finding PBHs in binary systems, arxiv: "2408.04697" }
+      - { title: Detecting Planck-scale relics, arxiv: "1906.06348" }
+
+  - title: New signatures
+    image: img/smbh.jpg
+    image_alt: Artist's impression of an accreting supermassive black hole
+    blurb: >-
+      Novel astrophysical probes of dark matter, especially black hole mergers,
+      gravitational waves, and ultralight halos.
+    selected:
+      - { title: Ultralight DM halos, semiclassically, arxiv: "2605.12589" }
+      - { title: A new thermal history for dark sectors, arxiv: "2310.20513" }
+      - { title: BSM forces from supermassive black holes, arxiv: "2105.04559" }

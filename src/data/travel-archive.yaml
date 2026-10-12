@@ -1,0 +1,266 @@
+# Trips migrated from the Squarespace calendar (Aug 2022 – Apr 2026).
+# New trips come from the travel calendar feed (see site.yaml); this file is the archive.
+# Slugs match the old /travel/<slug> URLs so they can redirect.
+- title: Michelson Postdoctoral Prize Lectureship residency
+  slug: michelson-postdoctoral-prize-lectureship-residency
+  start: '2026-04-13'
+  end: '2026-04-17'
+  place: Case Western Reserve University
+- title: APS Global Physics Summit
+  slug: aps-global-physics-summit
+  start: '2026-03-16'
+  end: '2026-03-20'
+  place: Denver
+- title: Hebrew University
+  slug: hebrew-university-1
+  start: '2026-01-02'
+  end: '2026-01-07'
+  place: Racah Institute of Physics
+- title: Technion
+  slug: technion
+  start: '2025-12-28'
+  end: '2026-01-01'
+- title: Hebrew University
+  slug: hebrew-university
+  start: '2025-12-24'
+  end: '2025-12-27'
+  place: Racah Institute of Physics
+- title: NSBP / NSHP Conference
+  slug: nsbp-nshp-conference
+  start: '2025-11-19'
+  end: '2025-11-24'
+  place: San Jose
+- title: University of Michigan
+  slug: university-of-michigan
+  start: '2025-11-11'
+  end: '2025-11-14'
+- title: IFT Madrid
+  slug: ift-madrid
+  start: '2025-11-03'
+  end: '2025-11-04'
+- title: IFAE Barcelona
+  slug: ifae
+  start: '2025-10-30'
+  end: '2025-10-31'
+- title: Institut d'astrophysique de Paris (IAP)
+  slug: institut-dastrophysique-de-paris-iap
+  start: '2025-10-28'
+  end: '2025-10-29'
+  place: Institut d'astrophysique de Paris
+- title: ÉNS Paris
+  slug: ns-paris
+  start: '2025-10-27'
+  end: '2025-10-27'
+  place: ENS Paris
+- title: SEARCH25 Conference
+  slug: search25-conference
+  start: '2025-10-20'
+  end: '2025-10-24'
+  place: CERN
+- title: Aspen Center for Physics workshop
+  slug: aspen-center-for-physics-workshop
+  start: '2025-08-04'
+  end: '2025-08-22'
+  place: Aspen Center for Physics
+- title: Dark Side of the Universe
+  slug: dark-side-of-the-universe
+  start: '2025-07-07'
+  end: '2025-07-11'
+  place: Université de Montréal
+- title: Rutgers
+  slug: rutgers
+  start: '2025-03-11'
+  end: '2025-03-13'
+  place: Rutgers University
+- title: 'Aspen conference: Empowering the New Vision in High Energy Physics'
+  slug: aspen-conference-empowering-the-new-vision-in-high-energy-physics
+  start: '2025-03-02'
+  end: '2025-03-07'
+  place: Aspen Center for Physics
+- title: SLAC
+  slug: slac
+  start: '2025-02-11'
+  end: '2025-02-14'
+- title: Miami 2024 conference
+  slug: miami-2024-conference
+  start: '2024-12-12'
+  end: '2024-12-19'
+- title: Kavli Institute for Particle Astrophysics and Cosmology
+  slug: kavli-institute-for-particle-astrophysics-and-cosmology
+  start: '2024-11-18'
+  end: '2024-11-20'
+  place: Stanford University
+- title: Brown University
+  slug: brown-university
+  start: '2024-11-14'
+  end: '2024-11-14'
+- title: Washington University
+  slug: washington-university
+  start: '2024-11-06'
+  end: '2024-11-08'
+- title: Oklahoma State University
+  slug: oklahoma-state-university
+  start: '2024-10-31'
+  end: '2024-11-01'
+- title: University of Oklahoma
+  slug: university-of-oklahoma
+  start: '2024-10-29'
+  end: '2024-10-30'
+- title: TeVPA / KICP
+  slug: tevpa-kicp
+  start: '2024-08-26'
+  end: '2024-09-06'
+  place: Kavli Institute for Cosmological Physics
+- title: 'KITP workshop: Dark Matter Theory, Simulation, and Analysis in the Era of Large Surveys'
+  slug: kitp-workshop-dark-matter-theory-simulation-and-analysis-in-the-era-of-large-surveys
+  start: '2024-06-18'
+  end: '2024-07-06'
+- title: DPF-Pheno
+  slug: dpf-pheno
+  start: '2024-05-13'
+  end: '2024-05-17'
+  place: University of Pittsburgh
+- title: CU Boulder
+  slug: cu-boulder
+  start: '2024-04-04'
+  end: '2024-04-05'
+- title: UC Santa Cruz
+  slug: uc-santa-cruz
+  start: '2024-04-01'
+  end: '2024-04-03'
+- title: TAMU
+  slug: tamu
+  start: '2024-03-27'
+  end: '2024-03-29'
+  place: Texas A&M University
+- title: BHCos 2024
+  slug: bhcos-2024
+  start: '2024-03-12'
+  end: '2024-03-16'
+  place: University of the Bahamas
+- title: McDonald Institute
+  slug: mcdonald-institute
+  start: '2024-02-29'
+  end: '2024-03-01'
+  place: Queen's University
+- title: 'PI workshop: Dark Matter, First Light'
+  slug: pi-workshop-dark-matter-first-light
+  start: '2024-02-26'
+  end: '2024-02-28'
+  place: Perimeter Institute for Theoretical Physics
+- title: Kavli IPMU
+  slug: kavli-ipmu
+  start: '2024-01-15'
+  end: '2024-01-18'
+- title: 'APCTP workshop: Dark Matter as a Portal to New Physics'
+  slug: apctp-workshop-dark-matter-as-a-portal-to-new-physics
+  start: '2024-01-08'
+  end: '2024-01-14'
+  place: Asia Pacific Center for Theoretical Physics
+- title: University of Florida
+  slug: university-of-florida
+  start: '2023-11-28'
+  end: '2023-11-30'
+  place: University of Florida, Gainesville
+- title: NSBP Conference
+  slug: nsbp-conference
+  start: '2023-11-10'
+  end: '2023-11-14'
+  place: University of Tennessee, Knoxville
+- title: GUINEAPIG 2023
+  slug: guineapig-2023
+  start: '2023-07-12'
+  end: '2023-07-14'
+  place: University of Montreal
+- title: Israel
+  slug: israel-1
+  start: '2023-06-14'
+  end: '2023-06-26'
+  place: Racah Institute
+- title: Dark Matter 2023
+  slug: dark-matter-2023
+  start: '2023-05-28'
+  end: '2023-06-02'
+  place: Santander
+- title: Planck 2023
+  slug: planck-2023
+  start: '2023-05-22'
+  end: '2023-05-27'
+  place: Warsaw
+- title: Phenomenology 2023 Symposium
+  slug: phenomenology-2023-symposium
+  start: '2023-05-07'
+  end: '2023-05-11'
+  place: University of Pittsburgh
+- title: Workshop on Theoretical Particle Cosmology in the Early and Late Universe
+  slug: workshop-on-theoretical-particle-cosmology-in-the-early-and-late-universe
+  start: '2023-04-30'
+  end: '2023-05-06'
+  place: Corfu Summer Institute
+- title: UIUC HEP seminar
+  slug: uiuc-hep-seminar
+  start: '2023-03-31'
+  end: '2023-03-31'
+  place: UIUC
+- title: KICP seminar
+  slug: kicp-seminar
+  start: '2023-03-30'
+  end: '2023-03-30'
+  place: Kavli Institute for Cosmological Physics
+- title: Fermilab CPC seminar
+  slug: fermilab-cpc-seminar
+  start: '2023-03-27'
+  end: '2023-03-27'
+  place: Fermilab
+- title: Chicagoland
+  slug: chicagoland
+  start: '2023-03-26'
+  end: '2023-04-05'
+  place: Chicago
+- title: SCGP (Stony Brook)
+  slug: scgp-stony-brook-1
+  start: '2023-03-19'
+  end: '2023-03-26'
+  place: Simons Center for Geometry and Physics
+- title: Pappalardo Symposium
+  slug: pappalardo-symposium
+  start: '2023-03-16'
+  end: '2023-03-17'
+  place: Samberg Center
+- title: Harvard "Family Meeting" talk
+  slug: harvard-family-meeting-talk
+  start: '2023-03-06'
+  end: '2023-03-06'
+  place: Harvard
+- title: SCGP (Stony Brook)
+  slug: scgp-stony-brook
+  start: '2023-02-27'
+  end: '2023-03-05'
+  place: Simons Center for Geometry and Physics
+- title: UT Austin
+  slug: austin-tx
+  start: '2023-02-13'
+  end: '2023-02-16'
+- title: Harvard HETG seminar
+  slug: harvard
+  start: '2023-01-25'
+  end: '2023-01-26'
+  place: Harvard
+- title: Cornell
+  slug: cornell
+  start: '2022-11-30'
+  end: '2022-12-03'
+  place: Cornell University
+- title: Israel
+  slug: israel
+  start: '2022-11-10'
+  end: '2022-11-23'
+- title: Caltech
+  slug: caltech
+  start: '2022-10-10'
+  end: '2022-10-11'
+- title: COSMO 22
+  slug: cosmo-22
+  start: '2022-08-21'
+  end: '2022-08-28'
+  place: Rio de Janeiro

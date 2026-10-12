@@ -1,0 +1,58 @@
+intro: >-
+  I’ve had the pleasure of working with some wonderful students. Several built
+  undergraduate theses on our projects together, and they’ve each brought a
+  great deal of effort and creativity. I’m very proud of what we’ve done.
+invite: Are you an MIT undergrad or grad student interested in a project like these?
+
+# TODO(Ben): fill in current students. Leave empty to hide the section.
+current: []
+#  - name: Jane Doe
+#    blurb: One or two sentences on the project.
+#    links: { inspire: https://inspirehep.net/authors/... }
+
+former:
+  # TODO(Ben): confirm years and next steps for Sam and Nolan (listed as current on the old site).
+  - name: Sam English
+    links: { inspire: https://inspirehep.net/authors/1863233 }
+    project: Connections between Galactic dark matter and the behavior of Sgr A*.
+  - name: Nolan Smyth
+    links: { website: https://nolan-smyth.com, inspire: https://inspirehep.net/authors/1785026 }
+    project: New thermal histories for dark matter and their late-universe observables.
+  - name: Ava Webber
+    year: 22
+    papers: ["2012.05875", "2205.09756"]
+    next: PhD in Astronomy, Clemson University
+  - name: Olivia Ross
+    year: 20
+    thesis: Searching for primordial black holes
+    papers: ["2012.05875", "2205.09756"]
+    next: PhD in Astronomy, Cornell University
+  - name: Paul Andreini
+    year: 19
+    thesis: Time-evolution of the primordial black hole mass function
+    next: PhD in Physics, University of Oregon
+  - name: Mason Hargrave
+    year: 19
+    next: PhD in Physical, Mathematical, and Computational Biology, The Rockefeller University
+  - name: Anikeya Aditya
+    year: 18
+    thesis: Inferring the mass function of primordial black holes from gravitational wave observations
+    next: PhD in Materials Science, USC
+  - name: Thomas Schwemberger
+    year: 18
+    thesis: Constraints on Planck mass relics from primordial black hole evaporation with a generic initial mass function
+    papers: ["1906.06348"]
+    next: PhD in Physics, University of Oregon
+  - name: Jackson Yant
+    year: 18
+    papers: ["1801.00808", "2007.00021"]
+    next: PhD in Physics, Dartmouth College
+
+collaborators: >-
+  At MIT I work most closely with <a href="https://physics.mit.edu/faculty/tracy-slatyer/">Tracy Slatyer</a>’s group
+  at the Center for Theoretical Physics. I also work with Yonit Hochberg and Eric Kuflik at
+  <a href="http://hujihep.com">Hebrew University</a>, <a href="https://yfkahn.web.illinois.edu">Yoni Kahn</a> at UIUC,
+  and <a href="https://kipac.stanford.edu/people/noah-kurinsky-0">Noah Kurinsky</a> at SLAC.
+group_photo: img/group.jpg
+group_photo_alt: The UC Santa Cruz theory group gathered in a seminar room
+group_photo_caption: "Where it started: the UCSC theory group and SCIPP (partially)"

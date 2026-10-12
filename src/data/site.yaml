@@ -1,0 +1,42 @@
+# Single source of truth for facts that change. Every page reads from here.
+name: Ben Lehmann
+full_name: Benjamin Lehmann
+role: Einstein Fellow
+institution: MIT Kavli Institute
+fellowship_program: NASA Hubble Fellowship Program
+role_since: 2026
+home_base: MIT Center for Theoretical Physics
+
+office:
+  lines:
+    - Center for Theoretical Physics, MIT
+    - 77 Massachusetts Ave, Room 6-319a
+    - Cambridge, MA 02139
+
+links:
+  email_page: https://www.space.mit.edu/people/benjamin-lehman/
+  cv: s/lehmann_cv.pdf
+  inspire_author_id: 1737895
+  inspire: https://inspirehep.net/authors/1737895
+
+# Optional: public iCal feed of a dedicated "Travel" Google Calendar.
+# Leave empty until the calendar exists; the TRAVEL_ICS_URL env var overrides this.
+travel_ics_url: ""
+
+hero:
+  eyebrow: Einstein Fellow · MIT Kavli Institute
+  heading: Matter is a mystery.
+  lede: >-
+    I study dark matter, the invisible material that makes up 85% of all matter
+    in the universe. My research combines techniques from particle physics,
+    cosmology, and black hole physics to extract new hints about what dark
+    matter is and how it behaves.
+  more: >-
+    What was the universe like just after the big bang? What particles and
+    symmetries have we yet to discover? Why is there matter at all? The search
+    for dark matter bears on all of these.
+  image: img/darksky.jpg
+  image_alt: Cosmic web of dark matter filaments from the Dark Sky simulations
+  caption: The cosmic web
+  caption_link_text: Dark Sky simulations
+  caption_link: https://darksky.slac.stanford.edu/

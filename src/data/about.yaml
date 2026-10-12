@@ -1,0 +1,19 @@
+image: img/ben.jpg
+image_alt: Ben Lehmann giving a talk
+opener: I’m a Bay Area native, a timid singer, and an avid baker (since <em>before</em> COVID-19).
+paragraphs:
+  - >-
+    I studied physics and math at Stanford, where I got my first introduction
+    to the dark universe working with <a href="https://www.risawechsler.com">Risa Wechsler</a>.
+    I held off on my PhD for a year to work on bibliometrics with
+    <a href="http://web.stanford.edu/group/pritchardlab/home.html">Jonathan Pritchard</a>
+    and take extra math classes, picking up an MS in math for my trouble.
+  - >-
+    Then came a PhD with <a href="http://scipp.ucsc.edu/~profumo/">Stefano Profumo</a>
+    at UC Santa Cruz — lovely years among the redwoods — followed by the
+    <a href="https://physics.mit.edu/research/pappalardo-fellowships-in-physics/benjamin-lehmann-pappalardo-fellow/">Pappalardo Fellowship</a>
+    at MIT. Since {role_since} I’ve been an {role} at the {institution}, through the {fellowship_program}.
+closing: >-
+  I’m based at the <a href="https://physics.mit.edu/research/labs-centers/center-for-theoretical-physics/">Center for Theoretical Physics</a>,
+  where I work most closely with <a href="https://physics.mit.edu/faculty/tracy-slatyer/">Tracy Slatyer</a>’s group,
+  and I collaborate with friends at Hebrew University, UIUC, and SLAC.

@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../lib/data';
+import { splitTrips, formatRange } from '../../lib/travel';
+
+const { upcoming, past } = await splitTrips();
+const years = new Map<string, typeof past>();
+for (const t of past) {
+  const y = t.start.slice(0, 4);
+  if (!years.has(y)) years.set(y, []);
+  years.get(y)!.push(t);
+}
+---
+<Base title="Talks & travel" current="travel" description="Talks, seminars, conferences and visits by Ben Lehmann.">
+  <section>
+    <div class="wrap" style="padding-block: 40px 64px">
+      <p class="eyebrow">Talks &amp; travel</p>
+      <h1 class="page-title">Where I’ll be, and where I’ve been</h1>
+      <div class="box" style="max-width: 640px">
+        <p class="label accent">Upcoming</p>
+        {upcoming.length ? (
+          <ul>
+            {upcoming.map((t) => (
+              <li><span class="when">{formatRange(t.start, t.end)}</span>{t.title}{t.place && <span class="faint"> · {t.place}</span>}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>Nothing on the calendar right now. Want me to visit? <a href={site.links.email_page}>Get in touch.</a></p>
+        )}
+      </div>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap">
+      {[...years].map(([y, trips]) => (
+        <>
+          <h2 class="year">{y}</h2>
+          <ol class="rows tight">
+            {trips.map((t) => (
+              <li id={t.slug}>
+                <span class="when">{formatRange(t.start, t.end)}</span>
+                <span class="what">{t.title}{t.place && <span class="faint"> · {t.place}</span>}</span>
+              </li>
+            ))}
+          </ol>
+        </>
+      ))}
+    </div>
+  </section>
+</Base>

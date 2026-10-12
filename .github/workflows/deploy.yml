@@ -1,0 +1,52 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Nightly at ~3:17am Eastern: refreshes INSPIRE papers and moves past trips out of "Upcoming".
+    - cron: '17 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - id: pages
+        uses: actions/configure-pages@v5
+      - run: npm ci
+      - name: Build
+        env:
+          # Picks up the preview subpath now, and "/" automatically once the custom domain is set.
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          SITE_BASE: ${{ steps.pages.outputs.base_path || '/' }}
+          # Optional: set a repo variable TRAVEL_ICS_URL instead of editing site.yaml.
+          TRAVEL_ICS_URL: ${{ vars.TRAVEL_ICS_URL }}
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

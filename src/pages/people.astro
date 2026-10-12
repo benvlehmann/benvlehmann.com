@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import { people, site, url, arxiv } from '../lib/data';
+---
+<Base title="People" current="people" description="Students and collaborators of Ben Lehmann.">
+  <section>
+    <div class="wrap" style="padding-block: 40px 64px">
+      <p class="eyebrow">People</p>
+      <h1 class="page-title">Students &amp; collaborators</h1>
+      <p class="lede" style="max-width: 40em; margin: 0 0 14px">{people.intro}</p>
+      <p class="muted" style="max-width: 40em; margin: 0">{people.invite} <a href={site.links.email_page}>Please get in touch.</a></p>
+    </div>
+  </section>
+
+  {people.current?.length > 0 && (
+    <section class="band">
+      <div class="wrap">
+        <h2 style="font-size: 40px; margin-bottom: 28px">Current students</h2>
+        <div class="cards">
+          {people.current.map((s: any) => (
+            <div class="box">
+              <p style="font-size: 20px; color: var(--text); margin-bottom: 8px">{s.name}</p>
+              <p>{s.blurb}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom: 28px">
+        <h2 style="font-size: 40px">Former students</h2>
+        <p>Undergraduate researchers at UC Santa Cruz, and where they went next.</p>
+      </div>
+      <ul class="alumni">
+        {people.former.map((a: any) => (
+          <li>
+            <p><span class="name">{a.name}</span>{a.year && <span class="mono faint" style="font-size: 13px"> ’{a.year}</span>}</p>
+            {a.thesis && <p class="thesis"><em>{a.thesis}</em></p>}
+            {a.project && !a.thesis && <p class="thesis">{a.project}</p>}
+            {a.next && <p class="next">→ {a.next}</p>}
+            {(a.papers || a.links) && (
+              <p class="links">
+                {a.papers?.map((p: string) => <><a href={arxiv(p)}>{p}</a>{' '}</>)}
+                {a.links?.website && <><a href={a.links.website}>website</a>{' '}</>}
+                {a.links?.inspire && <a href={a.links.inspire}>INSPIRE</a>}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 style="font-size: 40px; margin-bottom: 20px">Collaborators</h2>
+      <p style="margin: 0 0 32px; max-width: 44em; color: var(--text-3)" set:html={people.collaborators} />
+      <figure style="margin: 0; max-width: 760px">
+        <img src={url(people.group_photo)} alt={people.group_photo_alt} loading="lazy" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px">
+        <figcaption>{people.group_photo_caption}</figcaption>
+      </figure>
+    </div>
+  </section>
+</Base>

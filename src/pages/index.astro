@@ -1,0 +1,135 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, research, about, outreach, url, arxiv } from '../lib/data';
+import { recentPapers } from '../lib/inspire';
+import { splitTrips, formatRange, formatMonth } from '../lib/travel';
+
+const { papers } = await recentPapers(5);
+const { upcoming, past } = await splitTrips();
+const recent = past.slice(0, 6);
+const h = site.hero;
+---
+<Base current="home">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">{h.eyebrow}</p>
+        <h1>{h.heading}</h1>
+        <p class="lede">{h.lede}</p>
+        <p class="muted">{h.more}</p>
+      </div>
+      <figure>
+        <img src={url(h.image)} alt={h.image_alt} width="1200" height="900">
+        <figcaption>{h.caption} · <a href={h.caption_link}>{h.caption_link_text}</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band about" id="about">
+    <div class="wrap">
+      <img class="portrait" src={url(about.image)} alt={about.image_alt} width="800" height="495" loading="lazy">
+      <div class="text">
+        <h2>About me</h2>
+        <p class="opener" set:html={about.opener} />
+        {about.paragraphs.map((p: string) => <p set:html={p} />)}
+        <p class="closing" set:html={about.closing} />
+        <a class="pill" href={url('people/')}>Students &amp; collaborators →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="research">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Research</h2>
+        <p>{research.intro}</p>
+      </div>
+      <div class="cards">
+        {research.topics.map((t: any) => (
+          <article class="card">
+            <img src={url(t.image)} alt={t.image_alt} loading="lazy">
+            <div class="body">
+              <h3>{t.title}</h3>
+              <p>{t.blurb}</p>
+              <div class="selected">
+                <span class="label">Selected</span>
+                {t.selected.map((s: any) => <a href={arxiv(s.arxiv)}>{s.title}</a>)}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="papers">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Recent papers</h2>
+        <p>Pulled from INSPIRE automatically, so this list never goes stale.</p>
+        <a class="more" href={site.links.inspire}>All papers on INSPIRE →</a>
+      </div>
+      <ol class="rows main">
+        {papers.map((p) => (
+          <li>
+            <span class="when short">{formatMonth(p.date)}</span>
+            <span class="what">
+              <a href={p.url}>{p.title}</a>
+              {p.arxiv && <span class="sub">arXiv:{p.arxiv}</span>}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="travel">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Talks &amp; travel</h2>
+        <p>Where I’ll be, and where I’ve been.</p>
+        <div class="box">
+          <p class="label accent">Upcoming</p>
+          {upcoming.length ? (
+            <ul>
+              {upcoming.slice(0, 5).map((t) => (
+                <li><span class="when">{formatRange(t.start, t.end)}</span>{t.title}{t.place && <span class="faint"> · {t.place}</span>}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>Nothing on the calendar right now. Want me to visit? <a href={site.links.email_page}>Get in touch.</a></p>
+          )}
+        </div>
+      </div>
+      <div class="main">
+        <p class="label">Recent</p>
+        <ol class="rows tight">
+          {recent.map((t) => (
+            <li>
+              <span class="when">{formatRange(t.start, t.end)}</span>
+              <span class="what">{t.title}{t.place && <span class="faint"> · {t.place}</span>}</span>
+            </li>
+          ))}
+        </ol>
+        <a class="more" href={url('travel/')}>Full archive →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="outreach">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Outreach</h2>
+        <p>{outreach.intro}</p>
+      </div>
+      <div class="grid4">
+        {outreach.items.map((o: any) => (
+          <div>
+            <h3 set:html={o.title} />
+            <p set:html={o.body} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

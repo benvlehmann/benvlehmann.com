@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import { site, url } from '../lib/data';
+import verified from '../data/verified.json';
+
+interface Props { title?: string; description?: string; current?: string }
+const { title, description, current = '' } = Astro.props;
+const pageTitle = title ? `${title} — ${site.name}` : site.name;
+const desc = description ?? `${site.name} studies dark matter as an ${site.role} at the ${site.institution}.`;
+const home = url('');
+const onHome = current === 'home';
+const nav = [
+  { label: 'Research', href: onHome ? '#research' : url('#research') },
+  { label: 'Papers', href: onHome ? '#papers' : url('#papers') },
+  { label: 'Talks & travel', href: url('travel/'), key: 'travel' },
+  { label: 'Outreach', href: onHome ? '#outreach' : url('#outreach') },
+  { label: 'People', href: url('people/'), key: 'people' },
+];
+const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{pageTitle}</title>
+  <meta name="description" content={desc}>
+  <link rel="icon" href={url('favicon.png')}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta property="og:title" content={pageTitle}>
+  <meta property="og:description" content={desc}>
+  <meta property="og:image" content={new URL(url(site.hero.image), Astro.site).href}>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href={home}>{site.name}</a>
+      <nav class="site-nav" aria-label="Main">
+        {nav.map((n) => <a href={n.href} aria-current={n.key === current ? 'page' : undefined}>{n.label}</a>)}
+        <a class="cv" href={url(site.links.cv)}>CV ↓</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div>
+        <p class="label">Find me</p>
+        <p>{site.office.lines.map((l: string, i: number) => <>{l}{i < site.office.lines.length - 1 && <br />}</>)}</p>
+      </div>
+      <div>
+        <p class="label">Elsewhere</p>
+        <p class="stack">
+          <a href={site.links.email_page}>Email (via MIT directory)</a>
+          <a href={url(site.links.cv)}>CV (PDF)</a>
+          <a href={site.links.inspire}>INSPIRE</a>
+        </p>
+      </div>
+      {verified.last_verified && (
+        <div>
+          <p class="label">Site health</p>
+          <p><span class="dot" aria-hidden="true"></span>Content last verified {fmt(verified.last_verified)}</p>
+        </div>
+      )}
+    </div>
+  </footer>
+</body>
+</html>

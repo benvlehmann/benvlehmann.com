@@ -1,0 +1,11 @@
+---
+// Old Squarespace event pages (/travel/<slug>) redirect to their entry in the archive.
+import Redirect from '../../components/Redirect.astro';
+import { travelArchive, url } from '../../lib/data';
+
+export function getStaticPaths() {
+  return travelArchive.filter((t) => t.slug).map((t) => ({ params: { slug: t.slug! } }));
+}
+const to = url(`travel/#${Astro.params.slug}`);
+---
+<Redirect to={to} />

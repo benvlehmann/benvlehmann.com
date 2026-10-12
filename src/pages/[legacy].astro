@@ -1,0 +1,24 @@
+---
+// Redirects for old Squarespace URLs so existing links keep working.
+import Redirect from '../components/Redirect.astro';
+import { url } from '../lib/data';
+
+export function getStaticPaths() {
+  const map: Record<string, string> = {
+    home: '',
+    about: '#about',
+    work: '#research',
+    research: '#research',
+    outreach: '#outreach',
+    where: '#contact',
+    contact: '#contact',
+    ask: '#contact',
+    collaborators: 'people/',
+    'my-students': 'people/',
+    undergrads: 'people/',
+  };
+  return Object.entries(map).map(([legacy, to]) => ({ params: { legacy }, props: { to } }));
+}
+const to = url(Astro.props.to);
+---
+<Redirect to={to} />

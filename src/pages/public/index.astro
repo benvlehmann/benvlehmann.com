@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import { posts, formatDate } from '../../lib/posts';
+import { url } from '../../lib/data';
+---
+<Base title="Notes">
+  <section>
+    <div class="wrap post" style="padding-block: 40px 80px">
+      <p class="eyebrow">Notes</p>
+      <ol class="rows">
+        {posts.map((p) => (
+          <li>
+            <span class="when">{formatDate(p.date)}</span>
+            <span class="what"><a href={url(`public/${p.slug}/`)}>{p.title}</a></span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</Base>

@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import newTabLinks from './src/integrations/new-tab-links.mjs';
 
 // SITE_URL / SITE_BASE let the same code deploy to the GitHub Pages preview
 // address (https://benvlehmann.github.io/benvlehmann.com) or to the custom
@@ -8,4 +9,5 @@ export default defineConfig({
   base: process.env.SITE_BASE || '/',
   trailingSlash: 'ignore',
   build: { format: 'directory' },
+  integrations: [newTabLinks()],
 });

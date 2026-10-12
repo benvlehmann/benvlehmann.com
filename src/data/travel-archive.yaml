@@ -15,7 +15,6 @@
   slug: hebrew-university-1
   start: '2026-01-02'
   end: '2026-01-07'
-  place: Racah Institute of Physics
 - title: Technion
   slug: technion
   start: '2025-12-28'
@@ -24,12 +23,6 @@
   slug: hebrew-university
   start: '2025-12-24'
   end: '2025-12-27'
-  place: Racah Institute of Physics
-- title: NSBP / NSHP Conference
-  slug: nsbp-nshp-conference
-  start: '2025-11-19'
-  end: '2025-11-24'
-  place: San Jose
 - title: University of Michigan
   slug: university-of-michigan
   start: '2025-11-11'
@@ -46,18 +39,16 @@
   slug: institut-dastrophysique-de-paris-iap
   start: '2025-10-28'
   end: '2025-10-29'
-  place: Institut d'astrophysique de Paris
 - title: ÉNS Paris
   slug: ns-paris
   start: '2025-10-27'
   end: '2025-10-27'
-  place: ENS Paris
 - title: SEARCH25 Conference
   slug: search25-conference
   start: '2025-10-20'
   end: '2025-10-24'
   place: CERN
-- title: Aspen Center for Physics workshop
+- title: 'Aspen workshop: Physics in the Era of Nanohertz Gravitational Waves'
   slug: aspen-center-for-physics-workshop
   start: '2025-08-04'
   end: '2025-08-22'
@@ -67,11 +58,10 @@
   start: '2025-07-07'
   end: '2025-07-11'
   place: Université de Montréal
-- title: Rutgers
+- title: Rutgers University
   slug: rutgers
   start: '2025-03-11'
   end: '2025-03-13'
-  place: Rutgers University
 - title: 'Aspen conference: Empowering the New Vision in High Energy Physics'
   slug: aspen-conference-empowering-the-new-vision-in-high-energy-physics
   start: '2025-03-02'
@@ -85,6 +75,7 @@
   slug: miami-2024-conference
   start: '2024-12-12'
   end: '2024-12-19'
+  place: Fort Lauderdale
 - title: Kavli Institute for Particle Astrophysics and Cosmology
   slug: kavli-institute-for-particle-astrophysics-and-cosmology
   start: '2024-11-18'
@@ -115,7 +106,7 @@
   slug: kitp-workshop-dark-matter-theory-simulation-and-analysis-in-the-era-of-large-surveys
   start: '2024-06-18'
   end: '2024-07-06'
-- title: DPF-Pheno
+- title: APS DPF and Phenomenology 2024 Symposium
   slug: dpf-pheno
   start: '2024-05-13'
   end: '2024-05-17'
@@ -128,12 +119,11 @@
   slug: uc-santa-cruz
   start: '2024-04-01'
   end: '2024-04-03'
-- title: TAMU
+- title: Texas A&M University
   slug: tamu
   start: '2024-03-27'
   end: '2024-03-29'
-  place: Texas A&M University
-- title: BHCos 2024
+- title: Black Holes and Cosmology 2024
   slug: bhcos-2024
   start: '2024-03-12'
   end: '2024-03-16'
@@ -157,11 +147,10 @@
   start: '2024-01-08'
   end: '2024-01-14'
   place: Asia Pacific Center for Theoretical Physics
-- title: University of Florida
+- title: University of Florida, Gainesville
   slug: university-of-florida
   start: '2023-11-28'
   end: '2023-11-30'
-  place: University of Florida, Gainesville
 - title: NSBP Conference
   slug: nsbp-conference
   start: '2023-11-10'
@@ -172,11 +161,10 @@
   start: '2023-07-12'
   end: '2023-07-14'
   place: University of Montreal
-- title: Israel
+- title: Hebrew University
   slug: israel-1
   start: '2023-06-14'
   end: '2023-06-26'
-  place: Racah Institute
 - title: Dark Matter 2023
   slug: dark-matter-2023
   start: '2023-05-28'
@@ -227,11 +215,11 @@
   start: '2023-03-16'
   end: '2023-03-17'
   place: Samberg Center
-- title: Harvard "Family Meeting" talk
+- title: "Family Meeting" seminar
   slug: harvard-family-meeting-talk
   start: '2023-03-06'
   end: '2023-03-06'
-  place: Harvard
+  place: Harvard University
 - title: SCGP (Stony Brook)
   slug: scgp-stony-brook
   start: '2023-02-27'
@@ -241,16 +229,15 @@
   slug: austin-tx
   start: '2023-02-13'
   end: '2023-02-16'
-- title: Harvard HETG seminar
+- title: HETG seminar
   slug: harvard
   start: '2023-01-25'
   end: '2023-01-26'
-  place: Harvard
-- title: Cornell
+  place: Harvard University
+- title: Cornell University
   slug: cornell
   start: '2022-11-30'
   end: '2022-12-03'
-  place: Cornell University
 - title: Israel
   slug: israel
   start: '2022-11-10'

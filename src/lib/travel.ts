@@ -56,16 +56,20 @@ export function parseIcs(text: string): Trip[] {
   return trips;
 }
 
+let feedLogged = false;
+
 export async function allTrips(): Promise<{ trips: Trip[]; feedOk: boolean | null }> {
   const feed = process.env.TRAVEL_ICS_URL || site.travel_ics_url;
   let fromFeed: Trip[] = [];
   let feedOk: boolean | null = null;
+  if (!feed && !feedLogged) console.log('[travel] no calendar feed configured; using archive only');
   if (feed) {
     try {
       const res = await fetch(feed, { signal: AbortSignal.timeout(15000) });
       if (!res.ok) throw new Error(`feed ${res.status}`);
       fromFeed = parseIcs(await res.text());
       feedOk = true;
+      if (!feedLogged) console.log(`[travel] calendar feed OK: ${fromFeed.length} event(s)`);
     } catch (err) {
       console.warn(`[travel] calendar feed failed: ${err}`);
       feedOk = false;
@@ -76,6 +80,7 @@ export async function allTrips(): Promise<{ trips: Trip[]; feedOk: boolean | nul
   const seen = new Set(fromFeed.map(key));
   const trips = [...fromFeed, ...travelArchive.filter((t) => !seen.has(key(t)))];
   trips.sort((a, b) => b.start.localeCompare(a.start));
+  feedLogged = true;
   return { trips, feedOk };
 }
 

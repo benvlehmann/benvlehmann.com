@@ -5,12 +5,12 @@
   slug: michelson-postdoctoral-prize-lectureship-residency
   start: '2026-04-13'
   end: '2026-04-17'
-  place: Case Western Reserve University
+  place: Case Western Reserve University, Cleveland, OH
 - title: APS Global Physics Summit
   slug: aps-global-physics-summit
   start: '2026-03-16'
   end: '2026-03-20'
-  place: Denver
+  place: Denver, CO
 - title: Hebrew University
   slug: hebrew-university-1
   start: '2026-01-02'
@@ -20,10 +20,12 @@
   slug: technion
   start: '2025-12-28'
   end: '2026-01-01'
+  place: Haifa, Israel
 - title: Hebrew University
   slug: hebrew-university
   start: '2025-12-24'
   end: '2025-12-27'
+  place: Jerusalem, Israel
 - title: University of Michigan
   slug: university-of-michigan
   start: '2025-11-11'
@@ -33,6 +35,7 @@
   slug: ift-madrid
   start: '2025-11-03'
   end: '2025-11-04'
+  place: Madrid, Spain
 - title: IFAE Barcelona
   slug: ifae
   start: '2025-10-30'
@@ -52,17 +55,17 @@
   slug: search25-conference
   start: '2025-10-20'
   end: '2025-10-24'
-  place: CERN
+  place: CERN, Geneva, Switzerland
 - title: 'Aspen workshop: Physics in the Era of Nanohertz Gravitational Waves'
   slug: aspen-center-for-physics-workshop
   start: '2025-08-04'
   end: '2025-08-22'
-  place: Aspen Center for Physics
+  place: Aspen Center for Physics, Aspen, CO
 - title: Dark Side of the Universe
   slug: dark-side-of-the-universe
   start: '2025-07-07'
   end: '2025-07-11'
-  place: Université de Montréal
+  place: Université de Montréal, Montreal, Canada
 - title: Rutgers University
   slug: rutgers
   start: '2025-03-11'
@@ -72,7 +75,7 @@
   slug: aspen-conference-empowering-the-new-vision-in-high-energy-physics
   start: '2025-03-02'
   end: '2025-03-07'
-  place: Aspen Center for Physics
+  place: Aspen Center for Physics, Aspen, CO
 - title: SLAC
   slug: slac
   start: '2025-02-11'
@@ -86,11 +89,12 @@
   slug: kavli-institute-for-particle-astrophysics-and-cosmology
   start: '2024-11-18'
   end: '2024-11-20'
-  place: Stanford University
+  place: Stanford University, Stanford, CA
 - title: Brown University
   slug: brown-university
   start: '2024-11-14'
   end: '2024-11-14'
+  place: Providence, RI
 - title: Washington University
   slug: washington-university
   start: '2024-11-06'
@@ -110,17 +114,17 @@
   slug: tevpa-kicp
   start: '2024-08-26'
   end: '2024-09-06'
-  place: Kavli Institute for Cosmological Physics
+  place: Kavli Institute for Cosmological Physics, Chicago, IL
 - title: 'KITP workshop: Dark Matter Theory, Simulation, and Analysis in the Era of Large Surveys'
   slug: kitp-workshop-dark-matter-theory-simulation-and-analysis-in-the-era-of-large-surveys
   start: '2024-06-18'
   end: '2024-07-06'
-  place: Santa Barbara, CA
+  place: Kavli Institute for Theoretical Physics, Santa Barbara, CA
 - title: APS DPF and Phenomenology 2024 Symposium
   slug: dpf-pheno
   start: '2024-05-13'
   end: '2024-05-17'
-  place: University of Pittsburgh
+  place: University of Pittsburgh, Pittsburgh, PA
 - title: CU Boulder
   slug: cu-boulder
   start: '2024-04-04'
@@ -140,26 +144,27 @@
   slug: bhcos-2024
   start: '2024-03-12'
   end: '2024-03-16'
-  place: University of the Bahamas
+  place: University of the Bahamas, Nassau, The Bahamas
 - title: McDonald Institute
   slug: mcdonald-institute
   start: '2024-02-29'
   end: '2024-03-01'
-  place: Queen's University
+  place: Queen's University, Kingston, Canada
 - title: 'PI workshop: Dark Matter, First Light'
   slug: pi-workshop-dark-matter-first-light
   start: '2024-02-26'
   end: '2024-02-28'
-  place: Perimeter Institute for Theoretical Physics
+  place: Perimeter Institute for Theoretical Physics, Waterloo, Canada
 - title: Kavli IPMU
   slug: kavli-ipmu
   start: '2024-01-15'
   end: '2024-01-18'
+  place: Kavli Institute for the Physics and Mathematics of the Universe, Kashiwa, Japan
 - title: 'APCTP workshop: Dark Matter as a Portal to New Physics'
   slug: apctp-workshop-dark-matter-as-a-portal-to-new-physics
   start: '2024-01-08'
   end: '2024-01-14'
-  place: Asia Pacific Center for Theoretical Physics
+  place: Asia Pacific Center for Theoretical Physics, Pohang, South Korea
 - title: University of Florida, Gainesville
   slug: university-of-florida
   start: '2023-11-28'
@@ -169,12 +174,12 @@
   slug: nsbp-conference
   start: '2023-11-10'
   end: '2023-11-14'
-  place: University of Tennessee, Knoxville
+  place: University of Tennessee, Knoxville; Knoxville, TN
 - title: GUINEAPIG 2023
   slug: guineapig-2023
   start: '2023-07-12'
   end: '2023-07-14'
-  place: University of Montreal
+  place: University of Montreal; Montreal, Canada
 - title: Hebrew University
   slug: israel-1
   start: '2023-06-14'
@@ -199,22 +204,22 @@
   slug: workshop-on-theoretical-particle-cosmology-in-the-early-and-late-universe
   start: '2023-04-30'
   end: '2023-05-06'
-  place: Corfu Summer Institute
+  place: Corfu Summer Institute, Corfu, Greece
 - title: UIUC HEP seminar
   slug: uiuc-hep-seminar
   start: '2023-03-31'
   end: '2023-03-31'
-  place: UIUC
+  place: UIUC, Urbana-Champaign, IL
 - title: KICP seminar
   slug: kicp-seminar
   start: '2023-03-30'
   end: '2023-03-30'
-  place: Kavli Institute for Cosmological Physics
+  place: Kavli Institute for Cosmological Physics, Chicago, IL
 - title: Fermilab CPC seminar
   slug: fermilab-cpc-seminar
   start: '2023-03-27'
   end: '2023-03-27'
-  place: Fermilab
+  place: Fermilab, Batavia, IL
 - title: Chicagoland
   slug: chicagoland
   start: '2023-03-26'
@@ -224,7 +229,7 @@
   slug: scgp-stony-brook-1
   start: '2023-03-19'
   end: '2023-03-26'
-  place: Simons Center for Geometry and Physics
+  place: Simons Center for Geometry and Physics, Stony Brook, NY
 - title: Pappalardo Symposium
   slug: pappalardo-symposium
   start: '2023-03-16'
@@ -234,25 +239,27 @@
   slug: harvard-family-meeting-talk
   start: '2023-03-06'
   end: '2023-03-06'
-  place: Harvard University
+  place: Harvard University, Cambridge, MA
 - title: SCGP (Stony Brook)
   slug: scgp-stony-brook
   start: '2023-02-27'
   end: '2023-03-05'
-  place: Simons Center for Geometry and Physics
+  place: Simons Center for Geometry and Physics, Stony Brook, NY
 - title: UT Austin
   slug: austin-tx
   start: '2023-02-13'
   end: '2023-02-16'
+  place: Austin, TX
 - title: HETG seminar
   slug: harvard
   start: '2023-01-25'
   end: '2023-01-26'
-  place: Harvard University
+  place: Harvard University, Cambridge, MA
 - title: Cornell University
   slug: cornell
   start: '2022-11-30'
   end: '2022-12-03'
+  place: Ithaca, NY
 - title: Israel
   slug: israel
   start: '2022-11-10'

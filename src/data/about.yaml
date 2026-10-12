@@ -14,6 +14,6 @@ paragraphs:
     <a href="https://physics.mit.edu/research/pappalardo-fellowships-in-physics/benjamin-lehmann-pappalardo-fellow/">Pappalardo Fellowship</a>
     at MIT. Since {role_since} I’ve been an {role} at the {institution}, through the {fellowship_program}.
 closing: >-
-  I’m based at the <a href="https://physics.mit.edu/research/labs-centers/center-for-theoretical-physics/">Center for Theoretical Physics</a>,
-  where I work most closely with <a href="https://physics.mit.edu/faculty/tracy-slatyer/">Tracy Slatyer</a>’s group,
-  and I collaborate with friends at Hebrew University, UIUC, and SLAC.
+  I’m now affiliated with the {institution}, but I sit in the <a href="https://physics.mit.edu/research/labs-centers/center-for-theoretical-physics/">Center for Theoretical Physics</a>,
+  where I work most closely with the groups of <a href="https://physics.mit.edu/faculty/tracy-slatyer/">Tracy Slatyer</a> and <a href="https://physics.mit.edu/faculty/david-kaiser/">David Kaiser</a>.
+  I also collaborate with friends at many other institutions.

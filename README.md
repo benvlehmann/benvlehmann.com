@@ -23,7 +23,7 @@ reference them as `{role}`, `{institution}`, etc.
 
 - **Recent papers** are fetched from INSPIRE at build time (author id in `site.yaml`).
   If INSPIRE is down, `src/data/papers-cache.json` is used instead.
-- **Upcoming trips** come from the public iCal feed of a dedicated travel calendar
+- **Upcoming trips** come from the iCal feed of a dedicated travel calendar
   (the `TRAVEL_ICS_URL` repository secret — use the calendar's secret iCal address), merged
   with the archive. Trips move from Upcoming to Recent on their own.
 - The site rebuilds on every push to `main` and nightly, so both stay current.

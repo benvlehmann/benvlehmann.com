@@ -7,7 +7,7 @@ const site = parse(await readFile(new URL('../src/data/site.yaml', import.meta.u
 const id = site.links.inspire_author_id;
 const url =
   `https://inspirehep.net/api/literature?sort=mostrecent&size=250&q=${encodeURIComponent(`authors.recid:${id}`)}` +
-  `&fields=titles,arxiv_eprints,preprint_date,control_number,authors.full_name`;
+  `&fields=titles,arxiv_eprints,preprint_date,control_number,authors.full_name,abstracts`;
 
 const res = await fetch(url, { headers: { Accept: 'application/json' } });
 if (!res.ok) throw new Error(`INSPIRE ${res.status}`);
@@ -20,6 +20,7 @@ const papers = (await res.json()).hits.hits.map(({ metadata: m }) => {
     date: m.preprint_date ?? '',
     url: ax ? `https://arxiv.org/abs/${ax}` : `https://inspirehep.net/literature/${m.control_number}`,
     authors: (m.authors ?? []).map((a) => a.full_name),
+    abstract: ((m.abstracts ?? []).find((a) => a.source === 'arXiv') ?? (m.abstracts ?? [])[0])?.value ?? '',
   };
 });
 await writeFile(new URL('../src/data/papers-cache.json', import.meta.url), JSON.stringify(papers, null, 1) + '\n');

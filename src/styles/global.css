@@ -160,3 +160,14 @@ figcaption a { color: var(--faint); }
 .site-footer .two-col { display: grid; grid-auto-flow: column; grid-template-columns: repeat(2, max-content); gap: 4px 48px; }
 .site-footer .two-col a { width: fit-content; }
 @media (max-width: 360px) { .site-footer .two-col { grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: none !important; } }
+
+/* Paper preview card (shown on hover/focus of arXiv links; see src/integrations/paper-previews.mjs). */
+.paper-card { position: absolute; z-index: 50; width: min(380px, calc(100vw - 16px)); box-sizing: border-box; padding: 14px 16px 15px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 6px; box-shadow: 0 12px 32px rgba(0, 0, 0, .45); pointer-events: auto; animation: pc-in .12s ease-out; }
+.paper-card[hidden] { display: none; }
+.paper-card p { margin: 0; }
+.paper-card .pc-meta { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--faint); margin-bottom: 6px; }
+.paper-card .pc-title { font-family: var(--serif); font-size: 20px; line-height: 1.2; color: var(--text); }
+.paper-card .pc-desc { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: var(--text-3); }
+.paper-card math { font-size: 1.05em; }
+@keyframes pc-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .paper-card { animation: none; } }

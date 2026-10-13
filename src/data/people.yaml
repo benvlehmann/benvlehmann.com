@@ -35,6 +35,7 @@ theses:
     thesis: Searching for primordial black holes
     honors: Honors in the major; Steck Family Award for the best senior thesis at UC Santa Cruz, 2020–21
     next: PhD in Astronomy, Cornell University
+    links: { inspire: https://inspirehep.net/authors/2143205 }
   - name: Paul Andreini
     years: 2016–2019
     thesis: Time-evolution of the primordial black hole mass function
@@ -45,6 +46,7 @@ theses:
     thesis: Constraints on Planck mass relics from primordial black hole evaporation with a generic initial mass function
     honors: Honors in the major
     next: PhD in Physics, University of Oregon
+    links: { inspire: https://inspirehep.net/authors/2879177 }
   - name: Anikeya Aditya
     years: 2016–2018
     thesis: Inferring the mass function of primordial black holes from gravitational wave observations
@@ -53,13 +55,36 @@ theses:
 
 # Other former student collaborators, most recent first.
 former:
-  - { name: Badal Bhalla, years: 2022–2026, was: "PhD, University of Oklahoma", next: "Postdoctoral Associate, University of Utah" }
-  - { name: Bethany Suter, years: 2023–2026, was: "PhD, UC Berkeley", next: "Postdoctoral Associate, Fermilab" }
-  - { name: Marcell Howard, years: 2024–2026, was: "PhD, University of Pittsburgh", next: "Postdoctoral Associate, Brown University" }
-  - { name: Cara Giovanetti, years: 2024–2025, was: "PhD, NYU", next: "Postdoctoral Fellow, UC Berkeley" }
-  - { name: Wenzer Qin, years: 2023–2024, was: "PhD, MIT", next: "Simons Junior Fellow, NYU" }
-  - { name: Sarah R. Geller, years: 2023–2024, was: "PhD, MIT", next: "NSF MPS Postdoctoral Fellow, UC Santa Cruz / UC Berkeley" }
-  - { name: Tung X. Tran, years: 2023–2024, was: "BS, MIT", next: "PhD in Physics, Stanford University" }
+  - name: Badal Bhalla, years: 2022–2026,
+    was: "PhD, University of Oklahoma"
+    next: "Postdoctoral Associate, University of Utah"
+    links: { inspire: https://inspirehep.net/authors/2654026 }
+  - name: Bethany Suter, years: 2023–2026,
+    was: "PhD, UC Berkeley"
+    next: "Postdoctoral Associate, Fermilab"
+    links: { inspire: https://inspirehep.net/authors/2832947 }
+  - name: Marcell Howard, years: 2024–2026,
+    was: "PhD, University of Pittsburgh"
+    next: "Postdoctoral Associate, Brown University"
+    links: { website: https://marcellhoward.github.io, inspire: https://inspirehep.net/authors/2624602 }
+  - name: Cara Giovanetti, years: 2024–2025,
+    was: "PhD, NYU"
+    next: "Postdoctoral Fellow, UC Berkeley"
+    links: { website: https://caragiovanetti.com, inspire: https://inspirehep.net/authors/1918557 }
+  - name: Wenzer Qin
+    years: 2023–2024
+    was: "PhD, MIT"
+    next: "Simons Junior Fellow, NYU"
+    links: { website: https://wenzerq.github.io, inspire: https://inspirehep.net/authors/1638861 }
+  - name: Sarah R. Geller
+    years: 2023–2024
+    was: "PhD, MIT"
+    next: "NSF MPS Postdoctoral Fellow, UC Santa Cruz / UC Berkeley"
+    links: { website: https://www.sgellerphysics.com, inspire: https://inspirehep.net/authors/2052044 }
+  - name: Tung X. Tran, years: 2023–2024,
+    was: "BS, MIT"
+    next: "PhD in Physics, Stanford University"
+    links: { inspire: https://inspirehep.net/authors/2824687 }
   - name: Nolan Smyth
     years: 2021–2024
     was: PhD, UC Santa Cruz
@@ -67,7 +92,10 @@ former:
     links: { website: https://nolan-smyth.com, inspire: https://inspirehep.net/authors/1785026 }
   - { name: Ava Webber, years: 2020–2022, was: "BS, UC Santa Cruz", next: "PhD in Astronomy, Clemson University" }
   - { name: Mason Hargrave, years: 2018–2019, was: "BS, UC Santa Cruz", next: "PhD in Computational Biology, Rockefeller University" }
-  - { name: Jackson Yant, years: 2016–2018, was: "BS, UC Santa Cruz", next: "PhD in Physics, Dartmouth College" }
+  - name: Jackson Yant, years: 2016–2018,
+    was: "BS, UC Santa Cruz"
+    next: "PhD in Physics, Dartmouth College"
+    links: { inspire: https://inspirehep.net/authors/2464676 }
 
 collaborators: >-
   At MIT I work most closely with the groups of

@@ -28,7 +28,7 @@ travel_ics_url: ""
 # The token is public by design: it appears in every page's source.
 # The beacon loads only on the hosts listed here, so preview builds aren't counted.
 analytics:
-  cloudflare_token: ""
+  cloudflare_token: "b2783d4ba509420bb3ffc36e1fa4c630"
   hosts: [www.benvlehmann.com, benvlehmann.com]
 
 hero:

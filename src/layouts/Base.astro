@@ -36,7 +36,7 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={desc}>
   <meta property="og:image" content={new URL(url(site.hero.image), Astro.site).href}>
-  {cfBeacon && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={cfBeacon}></script>}
+  {cfBeacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={cfBeacon}></script>}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>

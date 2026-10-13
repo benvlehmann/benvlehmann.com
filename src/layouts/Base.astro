@@ -1,14 +1,43 @@
 ---
 import '../styles/global.css';
-import { site, url } from '../lib/data';
+import { site, url, fill } from '../lib/data';
 import verified from '../data/verified.json';
 
 interface Props { title?: string; description?: string; current?: string }
 const { title, description, current = '' } = Astro.props;
-const pageTitle = title ? `${title} — ${site.name}` : site.name;
-const desc = description ?? `${site.name} studies dark matter as an ${site.role} at the ${site.institution}.`;
-const home = url('');
 const onHome = current === 'home';
+const pageTitle = title ? `${title} — ${site.name}` : site.seo?.home_title ?? site.name;
+const desc = (description ?? fill(site.seo?.home_description ?? `{name} studies dark matter as an {role} at the {institution}.`)).replace(/\s+/g, ' ').trim();
+const home = url('');
+const abs = (p: string) => new URL(url(p), Astro.site).href;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = abs(site.seo?.og_image ?? site.hero.image);
+
+// Structured data (schema.org) on the home page: who Ben is, and his profiles elsewhere.
+const jsonLd = onHome ? JSON.stringify([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${abs('')}#person`,
+    name: site.name,
+    givenName: 'Benjamin',
+    familyName: 'Lehmann',
+    alternateName: (site.name_variants ?? []).filter((n: string) => n !== site.name),
+    url: abs(''),
+    image: abs('img/ben.jpg'),
+    jobTitle: site.role,
+    worksFor: {
+      '@type': 'Organization',
+      name: site.seo?.institution_full ?? site.institution,
+      parentOrganization: { '@type': 'CollegeOrUniversity', name: 'Massachusetts Institute of Technology' },
+    },
+    affiliation: { '@type': 'Organization', name: site.home_base },
+    alumniOf: (site.seo?.alumni_of ?? []).map((n: string) => ({ '@type': 'CollegeOrUniversity', name: n })),
+    knowsAbout: site.seo?.knows_about ?? [],
+    sameAs: (site.profiles ?? []).map((p: any) => p.url),
+  },
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(''), author: { '@id': `${abs('')}#person` } },
+]).replace(/</g, '\\u003c') : null;
 const isNotFound = /\/404\/?$/.test(Astro.url.pathname);
 const nav = [
   { label: 'Research', href: onHome ? '#research' : url('#research') },
@@ -34,10 +63,24 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  {isNotFound ? <meta name="robots" content="noindex"> : <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href}>}
+  {isNotFound ? <meta name="robots" content="noindex"> : <link rel="canonical" href={canonical}>}
+  <meta name="author" content="Benjamin V. Lehmann">
+  <meta property="og:type" content={onHome ? 'profile' : 'website'}>
+  <meta property="og:site_name" content={site.name}>
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={desc}>
-  <meta property="og:image" content={new URL(url(site.hero.image), Astro.site).href}>
+  {!isNotFound && <meta property="og:url" content={canonical}>}
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content={site.seo?.og_image_alt ?? site.name}>
+  {onHome && <meta property="profile:first_name" content="Benjamin">}
+  {onHome && <meta property="profile:last_name" content="Lehmann">}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={pageTitle}>
+  <meta name="twitter:description" content={desc}>
+  <meta name="twitter:image" content={ogImage}>
+  {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
   {cfBeacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={cfBeacon}></script>}
 </head>
 <body>
@@ -65,7 +108,7 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
         <p class="stack">
           <a href={site.links.email_page}>Email (via MIT directory)</a>
           <a href={url(site.links.cv)}>CV (PDF)</a>
-          <a href={site.links.inspire}>INSPIRE</a>
+          {(site.profiles ?? []).filter((p: any) => p.footer).map((p: any) => <a href={p.url} rel="me">{p.label}</a>)}
         </p>
       </div>
       {verified.last_verified && (
@@ -75,6 +118,7 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
         </div>
       )}
     </div>
+    <p class="wrap colophon">Benjamin V. Lehmann · {site.role}, {site.institution}</p>
   </footer>
 </body>
 </html>

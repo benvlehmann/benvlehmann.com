@@ -19,6 +19,33 @@ links:
   inspire_author_id: 1737895
   inspire: https://inspirehep.net/authors/1737895
 
+# Search engines: name variants, profiles and page metadata (used for structured
+# data on the home page, the footer profile links, and link previews).
+name_variants: [Ben Lehmann, Benjamin Lehmann, Benjamin V. Lehmann, Benjamin Victor Lehmann]
+seo:
+  home_title: "Ben Lehmann — Dark matter physicist, MIT"
+  home_description: >-
+    {name} (Benjamin V. Lehmann) is a theoretical physicist studying dark matter:
+    particle dark matter, primordial black holes, and new astrophysical signatures.
+    {role} at the {institution}.
+  institution_full: MIT Kavli Institute for Astrophysics and Space Research
+  knows_about: [Dark matter, Particle physics, Cosmology, Primordial black holes, Ultralight dark matter, Dark matter direct detection]
+  alumni_of: ["Stanford University", "University of California, Santa Cruz"]
+  og_image: img/og-card.jpg
+  og_image_alt: "Ben Lehmann, Einstein Fellow at the MIT Kavli Institute, over a simulation of the cosmic web"
+  # og-card.jpg is a static image that spells out the role and institution; regenerate it if they change.
+
+# Profiles elsewhere. All are listed as "sameAs" in structured data; footer: true
+# also shows them in the site footer. Update the MIT Kavli URL here when it's fixed.
+profiles:
+  - { label: Google Scholar, url: "https://scholar.google.com/citations?user=QLO1ZPMAAAAJ", footer: true }
+  - { label: ORCID, url: "https://orcid.org/0000-0001-7735-4673", footer: true }
+  - { label: arXiv, url: "https://arxiv.org/a/lehmann_b_1.html", footer: true }
+  - { label: INSPIRE, url: "https://inspirehep.net/authors/1737895", footer: true }
+  - { label: MIT Physics, url: "https://physics.mit.edu/faculty/benjamin-lehmann/" }
+  - { label: MIT Kavli Institute, url: "https://www.space.mit.edu/people/benjamin-lehman/" }
+  - { label: Pappalardo Fellowship, url: "https://physics.mit.edu/research/pappalardo-fellowships-in-physics/benjamin-lehmann-pappalardo-fellow/" }
+
 # The travel calendar's feed comes from the TRAVEL_ICS_URL repository secret.
 # Only put a feed here if it is a public calendar you don't mind exposing.
 travel_ics_url: ""

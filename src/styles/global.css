@@ -154,3 +154,5 @@ figcaption a { color: var(--faint); }
 .site-footer p { margin: 0; }
 .site-footer .stack { display: flex; flex-direction: column; gap: 4px; }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #6FCF97; margin-right: 8px; }
+
+.site-footer .colophon { margin: 0 auto; padding-block: 0 32px; font-family: var(--mono); font-size: 12px; color: var(--faint); }

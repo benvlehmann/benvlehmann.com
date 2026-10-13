@@ -9,6 +9,7 @@ const pageTitle = title ? `${title} — ${site.name}` : site.name;
 const desc = description ?? `${site.name} studies dark matter as an ${site.role} at the ${site.institution}.`;
 const home = url('');
 const onHome = current === 'home';
+const isNotFound = /\/404\/?$/.test(Astro.url.pathname);
 const nav = [
   { label: 'Research', href: onHome ? '#research' : url('#research') },
   { label: 'Papers', href: onHome ? '#papers' : url('#papers') },
@@ -33,7 +34,7 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href}>
+  {isNotFound ? <meta name="robots" content="noindex"> : <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href}>}
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={desc}>
   <meta property="og:image" content={new URL(url(site.hero.image), Astro.site).href}>

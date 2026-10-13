@@ -32,12 +32,27 @@ automatic match can't decide:
 
 ## 3. CV
 
-- Compare `public/s/lehmann_cv.pdf` with `~/Dropbox/Science/CV/update/build/web/lehmann_cv.pdf`
-  (needs Ben's computer). If the Dropbox build is newer and differs, copy it in (PR).
-- Compare the CV's "Students and mentoring" section with `src/data/people.yaml`;
-  propose updates for differences (PR).
-- Compare title, institution and fellowship dates in the CV header with
-  `src/data/site.yaml` (PR).
+Needs Ben's computer. Only Ben rebuilds the CV (never run `make` here), so this
+section reacts only to changes he has made since the site's copy. It keeps no state:
+the previous version is the PDF already in the repo.
+
+- **Repo copy:** `public/s/lehmann_cv.pdf`
+- **Ben's build:** `~/Dropbox/Science/CV/update/build/web/lehmann_cv.pdf`
+
+1. **Same file?** Compare md5 hashes of the two PDFs. If they match, skip the rest of
+   this section.
+2. **Same content?** Extract text from both (`pdftotext`), remove the
+   `(Updated <date>)` line near the top, and compare. If the texts match, Ben rebuilt
+   without changing anything: skip the rest of this section and do not copy the PDF.
+3. **Content changed.** Copy Ben's build over the repo copy (PR), and diff the two
+   texts (with the date line removed). Only the changed lines are in scope:
+   - Changes in "Students and mentoring": propose matching updates to
+     `src/data/people.yaml` (PR).
+   - Changes to name, title, institution or fellowship lines: propose matching updates
+     to `src/data/site.yaml` (PR). If the role or institution changed, also note that
+     `public/img/og-card.jpg` needs regenerating.
+   - Never raise differences between the CV and the site in lines that did **not**
+     change. Those are either already in sync or differences Ben has chosen to keep.
 
 ## 4. Travel
 

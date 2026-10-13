@@ -9,7 +9,8 @@
    "Lehmann, Benjamin V.",
    "Lodman, Jackie",
    "Steingasser, Thomas"
-  ]
+  ],
+  "abstract": "Tidal stripping is a key feature of the evolution of dark matter (DM) halos, and has major implications for the population of low-mass galaxies. In the case of ultralight DM, tidal stripping proceeds not only classically, at the tidal radius, but also via a process analogous to quantum tunneling by long-wavelength particles out of the potential of a subhalo. This modified tidal stripping behavior leads to tight constraints on the particle mass as a function of subhalo and host properties. As many models of ultralight DM predict several independent species, it is crucial to understand how these constraints can be generalized to multifield halos with different particle masses. However, numerical challenges make it difficult to directly study the tunneling process in all but the simplest multifield scenarios. We introduce a simplified approach based on semiclassical methods that entirely sidesteps the most difficult aspects of the numerical problem, and we apply this to the study of tunneling in multifield halos. Our results significantly clarify the physics of tidal stripping for ultralight DM halos even in the single-field case: we provide first-principles derivations of features of the tunneling rate previously suggested by empirical fits. We then evaluate stability bounds on two-field halos for the first time, for a wide range of density and particle mass ratios. We show that for particular parameter combinations, the stability bounds in the two-field case can be somewhat relaxed relative to the single-field case, but for much of the parameter space, the constraints become more stringent. We discuss the path towards probing realistic multifield ultralight DM halos."
  },
  {
   "title": "Stochastic binary perturbations from fast compact objects",
@@ -22,7 +23,8 @@
    "Lehmann, Benjamin V.",
    "Sinha, Kuver",
    "Xu, Tao"
-  ]
+  ],
+  "abstract": "Massive compact objects soften binaries. This process has been used for decades to constrain the population of such objects, particularly as a component of dark matter (DM). The effects of light compact objects, such as those in the unconstrained asteroid-mass range, have generally been neglected. In principle, low-energy perturbers can harden binaries instead of softening them, but the standard lore is that this effect vanishes when the perturber velocities are large compared to the binary's orbital velocity, as is typical for DM constituents. Here, we revisit the computation of the hardening rate induced by light perturbers. We show that although the perturbations average to zero over many encounters, many scenarios of interest for DM constraints are in the regime where the variance cannot be neglected. We show that a few fast-moving perturbers can leave stochastic perturbations in systems that are measured with great precision, and we use this framework to revisit the constraint potential of systems such as binary pulsars and the Solar System. This opens a new class of dynamical probes with potential applications to asteroid-mass DM candidates."
  },
  {
   "title": "First High-Throughput Evaluation of Dark Matter Detector Materials",
@@ -39,7 +41,8 @@
    "Suter, Bethany A.",
    "Yang, Ruo, XI",
    "Zhao, Wayne"
-  ]
+  ],
+  "abstract": "We perform the first high-throughput search and evaluation of materials that can serve as excellent low-mass dark matter detectors. Using properties of close to one thousand materials from the Materials Project database, we project the sensitivity in dark matter parameter space for experiments constructed from each material, including both absorption and scattering processes between dark matter and electrons. Using the anisotropic materials in the dataset, we further compute the level of daily modulation in interaction rates and the resulting directional sensitivities, highlighting materials with prospects to detect the dark matter wind. Our methods provide the basic tools for the data-driven design of dark matter detectors, and our findings lay the groundwork for the next generation of highly optimized direct searches for dark matter as light as the keV scale."
  },
  {
   "title": "First direct search for light dark matter interactions in a transition-edge sensor",
@@ -60,7 +63,8 @@
    "Othman, Gulden",
    "Rivasto, Elmeri",
    "Rubiera Gimeno, José Alejandro"
-  ]
+  ],
+  "abstract": "We propose the use of transition-edge sensor (TES) single-photon detectors as a simultaneous target and sensor for direct dark matter searches, and report results from the first search of this kind. We perform a 489 h science run with a TES device optimized for the detection of 1064 nm photons, with a mass of ~0.2 ng and an energy threshold of ~0.3 eV, and set new limits on dark matter interactions with both electrons and nucleons for dark matter with mass below the MeV scale. With their excellent energy resolution, TESs enable search strategies that are complementary to recent results from superconducting nanowire single-photon detectors and kinetic inductance detectors. We show that next-generation TES arrays hold promise to probe new regions of light dark matter parameter space."
  },
  {
   "title": "Higher multipoles of the cow",
@@ -70,7 +74,8 @@
   "url": "https://arxiv.org/abs/2504.00506",
   "authors": [
    "Lehmann, Benjamin V."
-  ]
+  ],
+  "abstract": "The spherical cow approximation is widely used in the literature, but is rarely justified. Here, I propose several schemes for extending the spherical cow approximation to a full multipole expansion, in which the spherical cow is simply the first term. This allows for the computation of bovine potentials and interactions beyond spherical symmetry, and also provides a scheme for defining the geometry of the cow itself at higher multipole moments. This is especially important for the treatment of physical processes that are suppressed by spherical symmetry, such as the spindown of a rotating cow due to the emission of gravitational waves. I demonstrate the computation of multipole coefficients for a benchmark cow, and illustrate the applicability of the multipolar cow to several important problems."
  },
  {
   "title": "First Sub-MeV Dark Matter Search with the QROCODILE Experiment Using Superconducting Nanowire Single-Photon Detectors",
@@ -97,7 +102,8 @@
    "Penning, Bjoern",
    "Ramírez García, Diego",
    "Schilling, Andreas"
-  ]
+  ],
+  "abstract": "We present the first results from the Quantum Resolution-Optimized Cryogenic Observatory for Dark matter Incident at Low Energy (QROCODILE). The QROCODILE experiment uses a microwire-based superconducting nanowire single-photon detector (SNSPD) as a target and sensor for dark matter scattering and absorption, and is sensitive to energy deposits as low as 0.11 eV. We introduce the experimental configuration and report new world-leading constraints on the interactions of sub-MeV dark matter particles with masses as low as 30 keV. The thin-layer geometry of the system provides anisotropy in the interaction rate, enabling directional sensitivity. In addition, we leverage the coupling between phonons and quasiparticles in the detector to simultaneously constrain interactions with both electrons and nucleons. We discuss the potential for improvements to both the energy threshold and effective volume of the experiment in the coming years."
  },
  {
   "title": "Dark-Matter–Electron Detectors for Dark-Matter–Nucleon Interactions",
@@ -111,7 +117,8 @@
    "Hochberg, Yonit",
    "Inzani, Katherine",
    "Lehmann, Benjamin V."
-  ]
+  ],
+  "abstract": "In a seminal paper now a decade old, it was shown that dark matter detectors geared at probing interactions with nucleons could also be used to probe dark matter interactions with electrons. In this work, we show that new detector concepts designed to probe dark matter-electron interactions at low masses can similarly be used to probe new parameter space for dark matter-nucleon interactions. We demonstrate the power of this approach by using existing data from superconducting detectors to place new limits on the interactions of nuclei with MeV-scale dark matter. Further, we show that advances in detector technology that have been anticipated for electronic interactions will automatically extend sensitivity deep into uncharted territory for nuclear interactions. This doubles the effective science output of future low-threshold experiments."
  },
  {
   "title": "Three-body exchanges with primordial black holes",
@@ -124,7 +131,8 @@
    "Lehmann, Benjamin V.",
    "Sinha, Kuver",
    "Xu, Tao"
-  ]
+  ],
+  "abstract": "The abundance of massive primordial black holes has historically been constrained by dynamical probes. Since these objects can participate in hard few-body scattering processes, they can readily transfer energy to stellar systems, and, in particular, can disrupt wide binaries. However, disruption is not the only possible outcome of such few-body processes. Primordial black holes could also participate in exchange processes, in which one component of a binary system is ejected and replaced by the black hole itself. In this case, the remaining object in the binary would dynamically appear to have an invisible companion. We study the rate of exchange processes for primordial black holes as a component of dark matter and evaluate possible mechanisms for detecting such binaries. We find that many such binaries plausibly exist in the Solar neighborhood, and show that this process can account for observed binary systems whose properties run counter to the predictions of isolated binary evolution."
  },
  {
   "title": "Simulations for direct dark matter searches using ALPS II's TES detection system",
@@ -142,7 +150,8 @@
    "Meyer, Manuel",
    "Othman, Gulden",
    "Rubiera Gimeno, José Alejandro"
-  ]
+  ],
+  "abstract": "Transition Edge Sensors (TES) are superconducting microcalorimeters that can be used for single-photon detection with extremely low backgrounds. When they are within their superconducting transition region, small temperature fluctuations - like the energy deposited by single photons - lead to large resistance variations. These variations can be measured using Superconducting Quantum Interference Devices (SQUIDs). This technology is planned to be used as a single-photon detector for later runs of the ALPS II experiment, a light-shining-through-walls experiment at DESY Hamburg, searching for Axion-Like Particles (ALPs), which are possible Dark Matter (DM) candidates. Due to the very low dark count rates in our setup, our TES system might be viable for direct DM searches at sub-MeV masses through electron-scattering of DM in the superconducting chip, as well. Simulations concerning background rejection and calibration methods demonstrate the needed sub-eV sensitivity already."
  },
  {
   "title": "Detecting Light Dark Matter with Kinetic Inductance Detectors",
@@ -158,7 +167,8 @@
    "Szypryt, Paul",
    "Vissers, Michael R.",
    "Xu, Tao"
-  ]
+  ],
+  "abstract": "Superconducting detectors are a promising technology for probing dark matter at extremely low masses, where dark matter interactions are currently unconstrained. Realizing the potential of such detectors requires new readout technologies to achieve the lowest possible thresholds for deposited energy. Here we perform a prototype search for dark matter--electron interactions with kinetic inductance detectors (KIDs), a class of superconducting detector originally designed for infrared astronomy applications. We demonstrate that existing KIDs can achieve effective thresholds as low as 0.2 eV, and we use existing data to set new dark matter constraints. The relative maturity of the technology underlying KIDs means that this platform can be scaled significantly with existing tools, enabling powerful new searches in the coming years."
  },
  {
   "title": "Direct dark matter searches using ALPS II's TES detection system",
@@ -177,7 +187,8 @@
    "Nam, Sae Woo",
    "Othman, Gulden",
    "Gimeno, José Alejandro Rubiera"
-  ]
+  ],
+  "abstract": "The elusive Dark Matter (DM), proposed due to its gravitational interaction with ordinary matter, supposedly makes up $25~$% of our universe's energy content. Various models aim to explain the origin and properties of DM, many of these proposing beyond standard model particles. It is foreseen that the ALPS II (Any Light Particle Search II) light-shining-through-walls experiment will use NIST Transition Edge Sensors (TESs) to detect low-energy single-photons originating from axion(ALP)-photon conversion with rates as low as $10^{-5}~\\mathrm{s}^{-1}$. Even beyond ALPS II, these superconducting microcalorimeters, operated at cryogenic temperatures, offer an approach to search for another class of particle-DM candidate. Much of the work to ensure the viability of the TES detector for use in ALPS II, such as calibrating the detector and mitigating external sources of backgrounds, also leads to the ability to utilize the TES for an independent direct-DM search. For this purpose, the superconducting sensor, sensitive to sub-eV energy depositions, can be used as a simultaneous target and sensor for DM-electron scattering for sub-MeV DM."
  },
  {
   "title": "Close encounters of the primordial kind: A new observable for primordial black holes as dark matter",
@@ -190,7 +201,8 @@
    "Geller, Sarah R.",
    "Lehmann, Benjamin V.",
    "Kaiser, David I."
-  ]
+  ],
+  "abstract": "Primordial black holes (PBHs) remain a viable dark matter candidate in the asteroid-mass range. We point out that in this scenario, the PBH abundance would be large enough for at least one object to cross through the inner Solar System per decade. Since Solar System ephemerides are modeled and measured to extremely high precision, such close encounters could produce detectable perturbations to orbital trajectories with characteristic features. We evaluate this possibility with a suite of simple Solar System simulations, and we argue that the abundance of asteroid-mass PBHs can plausibly be probed by existing and near-future data."
  },
  {
   "title": "Kinetic recoupling of dark matter",
@@ -203,7 +215,8 @@
    "Morrison, Logan",
    "Profumo, Stefano",
    "Smyth, Nolan"
-  ]
+  ],
+  "abstract": "We study the possibility that dark matter re-enters kinetic equilibrium with a radiation bath after kinetic decoupling, a scenario we dub kinetic recoupling. This naturally occurs, for instance, with certain types of resonantly-enhanced interactions, or as the result of a phase transition. While late kinetic decoupling damps structure on small scales below a cutoff, kinetic recoupling produces more complex changes in the power spectrum that depend on the nature and extent of the recoupling period. We explore the features that kinetic recoupling imprints upon the matter power spectrum, and discuss how such features can be traced to dark matter microphysics with future observations."
  },
  {
   "title": "UV physics from IR features: New prospects from top flavor violation",
@@ -216,7 +229,8 @@
    "Gori, Stefania",
    "Lehmann, Benjamin V.",
    "Zuo, Jianhong"
-  ]
+  ],
+  "abstract": "New physics in the rare top decays $t \\to q \\ell^+\\ell^-$ is currently very weakly constrained. We show that in a large class of Standard Model extensions, existing experimental constraints on new physics in flavor-conserving processes imply strong indirect bounds on new physics contributions to flavor-violating processes of the form $t \\to q \\ell^+\\ell^-$. These indirect bounds arise from basic principles of quantum field theory together with a few generic conditions on the UV structure of the theory, and are roughly an order of magnitude stronger than the present experimental bounds on the same processes. These constraints provide a theoretically motivated target for experimental searches for $t \\to q \\ell^+\\ell^-$: violation of these bounds would exclude a large class of new physics models, and would provide nontrivial insight into the UV behavior of the new physics."
  },
  {
   "title": "Directional detection of dark matter with anisotropic response functions",
@@ -232,7 +246,8 @@
    "Kurinsky, Noah",
    "Lehmann, Benjamin V.",
    "Yu, To Chin"
-  ]
+  ],
+  "abstract": "Direct detection for sub-GeV dark matter is developing rapidly, with many novel experimental ideas and theoretical methods emerging. In this work, we extend the dielectric formalism for dark matter scattering to incorporate anisotropic material responses, enabling directionally-sensitive experiments with a broad class of target materials. Using a simple model of an anisotropic electron gas, we demonstrate the importance of many-body effects such as the plasmon, and show that even when the dark matter kinetic energies are much smaller than the plasmon energy, the tail of an anisotropic plasmon can still produce a sizeable daily modulation. We highlight the relevant experimental techniques required to establish the target response, as well as the challenges in extracting a response function which is truly free of modeling uncertainties."
  },
  {
   "title": "Dark matter, black holes, and new physics",
@@ -241,7 +256,8 @@
   "url": "https://inspirehep.net/literature/2180729",
   "authors": [
    "Lehmann, Benjamin Victor"
-  ]
+  ],
+  "abstract": "The unknown nature of dark matter already represents one of the greatest gaps in our understanding of the universe. But the study of dark matter is now encountering a crisis: collider searches and direct detection experiments are quickly ruling out the strongly-motivated WIMP models that have guided theoretical progress for decades. Departing from the WIMP paradigm opens vast regions of parameter space across the scales, from ultralight bosons to objects at the Planck scale and beyond, and effectively probing this space of possibilities calls for new tools. Fortuitously, several such tools are available to us in the form of new quantum sensors, new astrophysical observables, and the new science of gravitational wave astronomy. In this thesis, I show how these methods can be combined to probe well-motivated dark matter candidates across an enormous range of masses."
  },
  {
   "title": "Report of the Topical Group on Particle Dark Matter for Snowmass 2021",
@@ -324,7 +340,8 @@
    "Williams, David A.",
    "Xiang, Xin",
    "Yang, Liang"
-  ]
+  ],
+  "abstract": "This report summarizes the findings of the CF1 Topical Subgroup to Snowmass 2021, which was focused on particle dark matter. One of the most important scientific goals of the next decade is to reveal the nature of dark matter (DM). To accomplish this goal, we must delve deep, to cover high priority targets including weakly-interacting massive particles (WIMPs), and search wide, to explore as much motivated DM parameter space as possible. A diverse, continuous portfolio of experiments at large, medium, and small scales that includes both direct and indirect detection techniques maximizes the probability of discovering particle DM. Detailed calibrations and modeling of signal and background processes are required to make a convincing discovery. In the event that a candidate particle is found through different means, for example at a particle collider, the program described in this report is also essential to show that it is consistent with the actual cosmological DM. The US has a leading role in both direct and indirect detection dark matter experiments -- to maintain this leading role, it is imperative to continue funding major experiments and support a robust R&D program."
  },
  {
   "title": "Capture of primordial black holes in extrasolar systems",
@@ -337,7 +354,8 @@
    "Webber, Ava",
    "Ross, Olivia G.",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "The vast datasets associated with extrasolar systems promise to offer sensitive probes of new physics in the near future. We consider the possibility that such systems may capture primordial black holes (PBHs) or other exotic compact objects, giving rise to unique observational signatures. We estimate the rate of captures by extrasolar systems, accounting for several distinct mechanisms. We find that the capture rate is negligible unless PBHs account for the entirety of dark matter in a narrow mass range just above the threshold of existing constraints from evaporation. In this scenario, luminous evaporating PBHs may be detectable by exoplanet searches."
  },
  {
   "title": "Snowmass2021 Cosmic Frontier White Paper: Primordial black hole dark matter",
@@ -362,7 +380,8 @@
    "Singh, Rajeev",
    "Takhistov, Volodymyr",
    "Tsai, Yu-Dai"
-  ]
+  ],
+  "abstract": "Primordial Black Holes (PBHs) are a viable candidate to comprise some or all of the dark matter and provide a unique window into the high-energy physics of the early universe. This white paper discusses the scientific motivation, current status, and future reach of observational searches for PBHs. Future observational facilities supported by DOE, NSF, and NASA will provide unprecedented sensitivity to PBHs. However, devoted analysis pipelines and theoretical modeling are required to fully leverage these novel data. The search for PBHs constitutes a low-cost, high-reward science case with significant impact on the high energy physics community."
  },
  {
   "title": "Dark Matter In Extreme Astrophysical Environments",
@@ -411,7 +430,8 @@
    "Vitale, Salvatore",
    "Yang, Huan",
    "Zhang, Jun"
-  ]
+  ],
+  "abstract": "Exploring dark matter via observations of extreme astrophysical environments -- defined here as heavy compact objects such as white dwarfs, neutron stars, and black holes, as well as supernovae and compact object merger events -- has been a major field of growth since the last Snowmass process. Theoretical work has highlighted the utility of current and near-future observatories to constrain novel dark matter parameter space across the full mass range. This includes gravitational wave instruments and observatories spanning the electromagnetic spectrum, from radio to gamma-rays. While recent searches already provide leading sensitivity to various dark matter models, this work also highlights the need for theoretical astrophysics research to better constrain the properties of these extreme astrophysical systems. The unique potential of these search signatures to probe dark matter adds motivation to proposed next-generation astronomical and gravitational wave instruments."
  },
  {
   "title": "Snowmass2021 Cosmic Frontier: The landscape of low-threshold dark matter direct detection in the next decade",
@@ -513,7 +533,8 @@
    "Wang, G.",
    "Westerdale, S.",
    "Zurek, K.M."
-  ]
+  ],
+  "abstract": "The search for particle-like dark matter with meV-to-GeV masses has developed rapidly in the past few years. We summarize the science case for these searches, the recent progress, and the exciting upcoming opportunities. Funding for Research and Development and a portfolio of small dark matter projects will allow the community to capitalize on the substantial recent advances in theory and experiment and probe vast regions of unexplored dark-matter parameter space in the coming decade."
  },
  {
   "title": "Snowmass2021 Cosmic Frontier White Paper: Cosmological Simulations for Dark Matter Physics",
@@ -540,7 +561,8 @@
    "Sales, Laura",
    "Vogelsberger, Mark",
    "Wright, Anna C."
-  ]
+  ],
+  "abstract": "Over the past several decades, unexpected astronomical discoveries have been fueling a new wave of particle model building and are inspiring the next generation of ever-more-sophisticated simulations to reveal the nature of Dark Matter (DM). This coincides with the advent of new observing facilities coming online, including JWST, the Rubin Observatory, the Nancy Grace Roman Space Telescope, and CMB-S4. The time is now to build a novel simulation program to interpret observations so that we can identify novel signatures of DM microphysics across a large dynamic range of length scales and cosmic time. This white paper identifies the key elements that are needed for such a simulation program. We identify areas of growth on both the particle theory side as well as the simulation algorithm and implementation side, so that we can robustly simulate the cosmic evolution of DM for well-motivated models. We recommend that simulations include a fully calibrated and well-tested treatment of baryonic physics, and that outputs should connect with observations in the space of observables. We identify the tools and methods currently available to make predictions and the path forward for building more of these tools. A strong cosmic DM simulation program is key to translating cosmological observations to robust constraints on DM fundamental physics, and provides a connection to lab-based probes of DM physics."
  },
  {
   "title": "Snowmass2021 cosmic frontier white paper: Ultraheavy particle dark matter",
@@ -577,7 +599,8 @@
    "Shakya, Bibhushan",
    "Walsworth, Ronald L.",
    "Westerdale, Shawn"
-  ]
+  ],
+  "abstract": "We outline the unique opportunities and challenges in the search for \"ultraheavy\" dark matter candidates with masses between roughly $10~{\\rm TeV}$ and the Planck scale $m_{\\rm pl} \\approx 10^{16}~{\\rm TeV}$. This mass range presents a wide and relatively unexplored dark matter parameter space, with a rich space of possible models and cosmic histories. We emphasize that both current detectors and new, targeted search techniques, via both direct and indirect detection, are poised to contribute to searches for ultraheavy particle dark matter in the coming decade. We highlight the need for new developments in this space, including new analyses of current and imminent direct and indirect experiments targeting ultraheavy dark matter and development of new, ultra-sensitive detector technologies like next-generation liquid noble detectors, neutrino experiments, and specialized quantum sensing techniques."
  },
  {
   "title": "Light Quarks at Large $N$",
@@ -589,7 +612,8 @@
    "Davies, Daniel",
    "Dine, Michael",
    "Lehmann, Benjamin V."
-  ]
+  ],
+  "abstract": "Lattice gauge theory simulations are our principal probe of the masses of the light quarks. Results from such computations are the primary evidence against the $m_u=0$ solution to the strong CP problem. The large-$N$ approximation offers an independent approach to light quarks. We extend existing literature, noting that one can determine the parameters of the non-linear sigma model through second order in quark mass, rule out the $m_u=0$ hypothesis, and make predictions for outputs of lattice calculations and phenomenological fits. A crucial feature of this analysis is a Wilsonian effective action at scales above the $\\eta^\\prime$ mass. One can self-consistently test the validity of aspects of this framework, and it may well be good to the part-in-three level. We also note consistency with some phenomenological fits and existing lattice results."
  },
  {
   "title": "New constraints on dark matter from superconducting nanowires",
@@ -605,7 +629,8 @@
    "Colangelo, Marco",
    "Nam, Sae Woo",
    "Berggren, Karl K."
-  ]
+  ],
+  "abstract": "Superconducting nanowires, a mature technology originally developed for quantum sensing, can be used as a target and sensor with which to search for dark matter interactions with electrons. Here we report on a 180-hour measurement of a tungsten silicide superconducting nanowire device with a mass of 4.3 nanograms. We use this to place new constraints on dark matter--electron interactions, including the strongest terrestrial constraints to date on sub-MeV (sub-eV) dark matter that interacts with electrons via scattering (absorption) processes."
  },
  {
   "title": "Directional detection of light dark matter in superconductors",
@@ -618,7 +643,8 @@
    "Kramer, Eric David",
    "Kurinsky, Noah",
    "Lehmann, Benjamin V."
-  ]
+  ],
+  "abstract": "Superconducting detectors have been proposed as outstanding targets for the direct detection of light dark matter scattering at masses as low as a keV. We study the prospects for directional detection of dark matter in isotropic superconducting targets from the angular distribution of excitations produced in the material. We find that dark matter scattering produces initial excitations with an anisotropic distribution, and further show that this directional information can be preserved as the initial excitations relax. Our results demonstrate that directional detection is possible for a wide range of dark matter masses, and pave the way for light dark matter discovery with bulk superconducting targets."
  },
  {
   "title": "Discovering new forces with gravitational waves from supermassive black holes",
@@ -631,7 +657,8 @@
    "Lehmann, Benjamin V.",
    "Patel, Hiren H.",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "Supermassive black hole binary mergers generate a stochastic gravitational wave background detectable by pulsar timing arrays. While the amplitude of this background is subject to significant uncertainties, the frequency dependence is a robust prediction of general relativity. We show that the effects of new forces beyond the Standard Model can modify this prediction and introduce unique features into the spectral shape. In particular, we consider the possibility that black holes in binaries are charged under a new long-range force, and we find that pulsar timing arrays are capable of robustly detecting such forces. Supermassive black holes and their environments can acquire charge due to high-energy particle production or dark sector interactions, making the measurement of the spectral shape a powerful test of fundamental physics."
  },
  {
   "title": "Black hole remnants are not too fast to be dark matter",
@@ -642,7 +669,8 @@
   "authors": [
    "Lehmann, Benjamin V.",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "We comment on recent claims that recoil in the final stages of Hawking evaporation gives black hole remnants large velocities, rendering them inviable as a dark matter candidate. We point out that due to cosmic expansion, such large velocities at the final stages of evaporation are not in tension with the cold dark matter paradigm so long as they are attained at sufficiently early times. In particular, the predicted recoil velocities are robustly compatible with observations if the remnants form before the epoch of big bang nucleosynthesis, a requirement which is already imposed by the physics of nucleosynthesis itself."
  },
  {
   "title": "Determining Dark-Matter–Electron Scattering Rates from the Dielectric Function",
@@ -657,7 +685,8 @@
    "Lehmann, Benjamin V.",
    "Yu, To Chin",
    "Berggren, Karl K."
-  ]
+  ],
+  "abstract": "We show that the rate for dark matter-electron scattering in an arbitrary material is determined by an experimentally measurable quantity, the complex dielectric function, for any dark matter interaction that couples to electron density. This formulation automatically includes many-body effects, eliminates all systematic theoretical uncertainties on the electronic wavefunctions, and allows a direct calibration of the spectrum by electromagnetic probes such as infrared spectroscopy, X-ray scattering, and electron energy-loss spectroscopy (EELS). Our formalism applies for several common benchmark models, including spin-independent interactions through scalar and vector mediators of arbitrary mass. We discuss the consequences for standard semiconductor and superconductor targets, and find that the true reach of superconductor detectors for light mediators exceeds previous estimates by several orders of magnitude, with further enhancements possible due to the low-energy tail of the plasmon. Using a heavy-fermion superconductor as an example, we show how our formulation allows a rapid and systematic investigation of novel electron scattering targets."
  },
  {
   "title": "Three-body capture, ejection, and the demographics of bound objects in binary systems",
@@ -670,7 +699,8 @@
    "Ross, Olivia G.",
    "Webber, Ava",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "We study the capture of light objects of arbitrary velocity by binary systems. Extending results for the capture of comets in the solar system, we develop a simple geometric characterization of the capture cross section, leading directly to the distribution of orbital parameters of captured objects. We use the same framework to study the lifetimes of these bound orbits prior to ejection, and find that a simplified version of the Öpik--Arnold approach readily yields a closed-form estimate for the ejection rate that agrees well with numerical experiments. Without any detailed-balance assumptions, our results make manifest the characteristics of close encounters leading to capture and ejection. As an application of our results, we demonstrate the estimation of the equilibrium population of captured dark matter particles in a binary system."
  },
  {
   "title": "Model-independent discovery prospects for primordial black holes at LIGO",
@@ -682,7 +712,8 @@
    "Lehmann, Benjamin V.",
    "Profumo, Stefano",
    "Yant, Jackson"
-  ]
+  ],
+  "abstract": "Primordial black holes may encode the conditions of the early universe, and may even constitute a significant fraction of cosmological dark matter. Their existence has yet to be established. However, black holes with masses below $\\sim1~\\mathrm{M}_\\odot$ cannot form as an endpoint of stellar evolution, so the detection of even one such object would be a smoking gun for new physics, and would constitute evidence that at least a fraction of the dark matter consists of primordial black holes. Gravitational wave detectors are capable of making a definitive discovery of this kind by detecting mergers of light black holes. But since the merger rate depends strongly on the shape of the black hole mass function, it is difficult to determine the potential for discovery or constraint as a function of the overall abundance of black holes. Here, we directly maximize and minimize the merger rate to connect observational results to the actual abundance of observable objects. We show that LIGO can discover mergers of light primordial black holes within the next decade even if such black holes constitute only a very small fraction of dark matter. A single merger event involving such an object would (i) provide conclusive evidence of new physics, (ii) establish the nature of some fraction of dark matter, and (iii) probe cosmological history at scales far beyond those observable today."
  },
  {
   "title": "Cosmological implications of the KOTO excess",
@@ -694,7 +725,8 @@
    "Altmannshofer, Wolfgang",
    "Lehmann, Benjamin V.",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "The KOTO experiment has reported an excess of $K_L\\to\\pi^0\\nu\\bar\\nu$ events above the Standard Model prediction, in tension with the Grossman-Nir (GN) bound. The GN bound heavily constrains new physics interpretations of an excess in this channel, but another possibility is that the observed events originate from a different process entirely: a decay of the form $K_L\\to\\pi^0X$, where $X$ denotes one or more new invisible species. We introduce a class of models to study this scenario with two light scalars playing the role of $X$, and we examine the possibility that the lighter of the two new states may also account for cosmological dark matter (DM). We show that this species can be produced thermally in the presence of additional interactions apart from those needed to account for the KOTO excess. Conversely, in the minimal version of the model, DM must be produced nonthermally. In this case, avoiding overproduction imposes constraints on the structure of the low-energy theory. Moreover, this requirement carries significant implications for the scale of reheating in the early Universe, generically preferring a low but observationally permitted reheating temperature of O(10 MeV). We discuss astrophysical and terrestrial signatures that will allow further tests of this paradigm in the coming years."
  },
  {
   "title": "Forward Physics Facility - Snowmass 2021 Letter of Interest",
@@ -930,7 +962,8 @@
    "Zhang, Yongchao",
    "Zhang, Yue",
    "Zhong, Yi-Ming"
-  ]
+  ],
+  "abstract": "A rich physics program remains unexplored in the far-forward region at the LHC. The\nForward Physics Facility (FPF) is a proposal to enlarge an existing cavern in the far-forward\nregion of ATLAS to house a suite of experiments with groundbreaking new capabilities for\nneutrinos, long-lived particle searches, milli-charged particle searches, QCD, dark matter,\ndark sectors, and cosmic rays. The FPF will be located 500 m from the ATLAS interaction\npoint. It is shielded from the ATLAS interaction point by 100 m of concrete and rock,\ncreating an extremely low-background environment, ideal for many standard model studies\nand new physics searches. In this Letter of Interest, we describe the FPF’s location and\ngeneral features, its physics potential in the HL-LHC era, and topics for further study."
  },
  {
   "title": "Cosmology and prospects for sub-MeV dark matter in electron recoil experiments",
@@ -941,7 +974,8 @@
   "authors": [
    "Lehmann, Benjamin V.",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "Dark matter is poorly constrained by direct detection experiments at masses below 1 MeV. This is an important target for the next generation of experiments, and several methods have been proposed to probe this mass range. One class of such experiments will search for dark matter--electron recoils. However, simplified models with new light degrees of freedom coupled to electrons face significant pressure from cosmology, and the extent of these restrictions more generally is poorly understood. Here, we perform a systematic study of cosmological constraints on models with a heavy mediator in the context of an effective field theory. We include constraints from (i) disruption of primordial nucleosynthesis, (ii) overproduction of dark matter, and (iii) the effective number of neutrino species at recombination. We demonstrate the implications of our results for proposed electron recoil experiments, and highlight scenarios which may be amenable to direct detection."
  },
  {
   "title": "Direct detection of primordial black hole relics as dark matter",
@@ -954,7 +988,8 @@
    "Johnson, Christian",
    "Profumo, Stefano",
    "Schwemberger, Thomas"
-  ]
+  ],
+  "abstract": "If dark matter is composed of primordial black holes, such black holes can span an enormous range of masses. A variety of observational constraints exist on massive black holes, and black holes with masses below $10^{15}\\,\\mathrm{g}$ are often assumed to have completely evaporated by the present day. But if the evaporation process halts at the Planck scale, it would leave behind a stable relic, and such objects could constitute the entirety of dark matter. Neutral Planck-scale relics are effectively invisible to both astrophysical and direct detection searches. However, we argue that such relics may typically carry electric charge, making them visible to terrestrial detectors. We evaluate constraints and detection prospects in detail, and show that if not already ruled out by monopole searches, this scenario can be largely explored within the next decade using existing or planned experimental equipment. A single detection would have enormous implications for cosmology, black hole physics, and quantum gravity."
  },
  {
   "title": "Connecting direct and indirect detection with a dark spike in the cosmic-ray electron spectrum",
@@ -966,7 +1001,8 @@
    "Coogan, Adam",
    "Lehmann, Benjamin V.",
    "Profumo, Stefano"
-  ]
+  ],
+  "abstract": "Multiple space-borne cosmic ray detectors have detected line-like features in the electron and positron spectra. Most recently, the DAMPE collaboration reported the existence of such a feature at 1.4 TeV, sparking interest in a potential dark matter origin. Such quasi-monochromatic features, virtually free of any astrophysical background, could be explained by the annihilation of dark matter particles in a nearby dark matter clump. Here, we explore the consistency of producing such spectral features with dark matter annihilation from the standpoint of dark matter substructure statistics, constraints from anisotropy, and constraints from gamma-ray emission. We demonstrate that if indeed a high-energy, line-like feature in the electron-positron spectrum originates from dark matter annihilation in a nearby clump, a significant or even dominant fraction of the dark matter in the Solar System likely stems from the clump, with dramatic consequences for direct dark matter searches."
  },
  {
   "title": "The Maximal-Density Mass Function for Primordial Black Hole Dark Matter",
@@ -978,7 +1014,8 @@
    "Lehmann, Benjamin V.",
    "Profumo, Stefano",
    "Yant, Jackson"
-  ]
+  ],
+  "abstract": "The advent of gravitational wave astronomy has rekindled interest in primordial black holes (PBH) as a dark matter candidate. As there are many different observational probes of the PBH density across different masses, constraints on PBH models are dependent on the functional form of the PBH mass function. This complicates general statements about the mass functions allowed by current data, and, in particular, about the maximum total density of PBH. Numerical studies suggest that some forms of extended mass functions face tighter constraints than monochromatic mass functions, but they do not preclude the existence of a functional form for which constraints are relaxed. We use analytical arguments to show that the mass function which maximizes the fraction of the matter density in PBH subject to all constraints is a finite linear combination of monochromatic mass functions. We explicitly compute the maximum fraction of dark matter in PBH for different combinations of current constraints, allowing for total freedom of the mass function. Our framework elucidates the dependence of the maximum PBH density on the form of observational constraints, and we discuss the implications of current and future constraints for the viability of the PBH dark matter paradigm."
  },
  {
   "title": "The Concentration Dependence of the Galaxy-Halo Connection: Modeling Assembly Bias with Abundance Matching",
@@ -992,6 +1029,7 @@
    "Becker, Matthew R.",
    "Skillman, Samuel W.",
    "Wechsler, Risa H."
-  ]
+  ],
+  "abstract": "Empirical methods for connecting galaxies to their dark matter halos have become essential for interpreting measurements of the spatial statistics of galaxies. In this work, we present a novel approach for parameterizing the degree of concentration dependence in the abundance matching method. This new parameterization provides a smooth interpolation between two commonly used matching proxies: the peak halo mass and the peak halo maximal circular velocity. This parameterization controls the amount of dependence of galaxy luminosity on halo concentration at a fixed halo mass. Effectively this interpolation scheme enables abundance matching models to have adjustable assembly bias in the resulting galaxy catalogs. With the new 400 Mpc/h DarkSky Simulation, whose larger volume provides lower sample variance, we further show that low-redshift two-point clustering and satellite fraction measurements from SDSS can already provide a joint constraint on this concentration dependence and the scatter within the abundance matching framework."
  }
 ]

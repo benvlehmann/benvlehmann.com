@@ -1,0 +1,9 @@
+# Optional hand-written descriptions for paper previews (the card shown when
+# hovering an arXiv link). Keyed by arXiv id. Anything not listed here uses the
+# first couple of sentences of the paper's abstract from INSPIRE.
+# Inline math works: $m_\chi \sim 10^{-22}$ eV.
+#
+# "2312.17217": >-
+#   Primordial black holes passing through the Solar System would leave a
+#   measurable imprint on planetary orbits.
+{}

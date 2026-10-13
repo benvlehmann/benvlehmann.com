@@ -25,6 +25,9 @@ reference them as `{role}`, `{institution}`, etc.
   If INSPIRE is down, `src/data/papers-cache.json` is used instead (`npm run refresh-papers`).
 - **Coauthored papers** on the People page are matched from the same INSPIRE data
   (surname + first initial); `inspire_name` / `exclude` in `people.yaml` fix mismatches.
+- **Paper previews**: hovering (or tabbing to) an arXiv link to one of Ben's papers shows a card
+  with the title and the first sentences of the abstract, built from the same INSPIRE data.
+  Hand-written descriptions go in `src/data/paper-summaries.yaml`. No previews on touch devices.
 - **Upcoming trips** come from the iCal feed of a dedicated travel calendar
   (the `TRAVEL_ICS_URL` repository secret — use the calendar's secret iCal address), merged
   with the archive. Trips move from Upcoming to Recent on their own.

@@ -12,11 +12,12 @@ export interface Paper {
   date: string; // YYYY-MM-DD (may be empty)
   url: string;
   authors: string[]; // INSPIRE "Last, First M." form
+  abstract?: string;
 }
 
 export const INSPIRE_QUERY = (authorId: number | string) =>
   `https://inspirehep.net/api/literature?sort=mostrecent&size=250&q=${encodeURIComponent(`authors.recid:${authorId}`)}` +
-  `&fields=titles,arxiv_eprints,preprint_date,control_number,authors.full_name`;
+  `&fields=titles,arxiv_eprints,preprint_date,control_number,authors.full_name,abstracts`;
 
 export function toPaper(m: any): Paper {
   const ax = m.arxiv_eprints?.[0]?.value;
@@ -27,6 +28,8 @@ export function toPaper(m: any): Paper {
     date: m.preprint_date ?? '',
     url: ax ? `https://arxiv.org/abs/${ax}` : `https://inspirehep.net/literature/${m.control_number}`,
     authors: (m.authors ?? []).map((a: any) => a.full_name),
+    // Prefer the authors' own (arXiv) abstract over publisher copies.
+    abstract: ((m.abstracts ?? []).find((a: any) => a.source === 'arXiv') ?? (m.abstracts ?? [])[0])?.value ?? '',
   };
 }
 

@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import { notes } from '../../lib/notes';
+import { formatDate } from '../../lib/posts';
+import { allPapers } from '../../lib/inspire';
+import { renderTex } from '../../lib/previews';
+import { url } from '../../lib/data';
+
+export function getStaticPaths() {
+  return notes.map((n) => ({ params: { slug: n.slug }, props: { note: n } }));
+}
+const { note } = Astro.props;
+const { Content } = note;
+const paper = note.arxiv ? (await allPapers()).papers.find((p) => p.arxiv === note.arxiv) : undefined;
+---
+<Base title={note.title} description={note.summary}>
+  <article>
+    <div class="wrap post" style="padding-block: 40px 96px">
+      <p class="date">{formatDate(note.date)}{note.arxiv && ' · Explainer'}</p>
+      <h1>{note.title}</h1>
+      {paper && (
+        <aside class="box" style="margin: 0 0 32px">
+          <p class="label accent">The paper</p>
+          <p style="margin: 0 0 4px; color: var(--text)" set:html={renderTex(paper.title)} />
+          <p class="mono faint" style="font-size: 12px; margin: 0"><a href={paper.url}>arXiv:{paper.arxiv}</a>{paper.date && ` · ${paper.date.slice(0, 4)}`}</p>
+        </aside>
+      )}
+      {note.figure && (
+        <figure style="margin: 0 0 32px">
+          <img src={url(note.figure)} alt={note.figure_alt ?? ''} style="display: block; width: 100%; border-radius: 4px; background: #fff">
+          {note.figure_caption && <figcaption>{note.figure_caption}</figcaption>}
+        </figure>
+      )}
+      <div class="content"><Content /></div>
+      <p style="margin-top: 40px"><a class="pill" href={url('notes/')}>← All notes</a></p>
+    </div>
+  </article>
+</Base>

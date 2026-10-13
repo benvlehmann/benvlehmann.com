@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { site, url, fill } from '../lib/data';
 import verified from '../data/verified.json';
+import { notes } from '../lib/notes';
 
 interface Props { title?: string; description?: string; current?: string }
 const { title, description, current = '' } = Astro.props;
@@ -105,9 +106,10 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
       </div>
       <div>
         <p class="label">Elsewhere</p>
-        <p class="stack two-col" style={`grid-template-rows: repeat(${Math.ceil((2 + (site.profiles ?? []).filter((p: any) => p.footer).length) / 2)}, auto)`}>
+        <p class="stack two-col" style={`grid-template-rows: repeat(${Math.ceil((2 + (notes.length > 0 ? 1 : 0) + (site.profiles ?? []).filter((p: any) => p.footer).length) / 2)}, auto)`}>
           <a href={site.links.email_page}>Email (via MIT directory)</a>
           <a href={url(site.links.cv)}>CV (PDF)</a>
+          {notes.length > 0 && <a href={url('notes/')}>Notes</a>}
           {(site.profiles ?? []).filter((p: any) => p.footer).map((p: any) => <a href={p.url} rel="me">{p.label}</a>)}
         </p>
       </div>

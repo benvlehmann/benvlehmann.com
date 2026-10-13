@@ -16,6 +16,10 @@ const nav = [
   { label: 'Outreach', href: onHome ? '#outreach' : url('#outreach') },
   { label: 'People', href: url('people/'), key: 'people' },
 ];
+// Cloudflare Web Analytics: only when a token is set and the build targets the real domain.
+const cfToken = site.analytics?.cloudflare_token;
+const onRealHost = Astro.site && (site.analytics?.hosts ?? []).includes(Astro.site.host);
+const cfBeacon = cfToken && onRealHost ? JSON.stringify({ token: cfToken }) : null;
 const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <!doctype html>
@@ -32,6 +36,7 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={desc}>
   <meta property="og:image" content={new URL(url(site.hero.image), Astro.site).href}>
+  {cfBeacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={cfBeacon}></script>}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>

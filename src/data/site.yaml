@@ -23,6 +23,14 @@ links:
 # Only put a feed here if it is a public calendar you don't mind exposing.
 travel_ics_url: ""
 
+# Cloudflare Web Analytics (cookieless). Paste the site token from the Cloudflare
+# dashboard (Analytics & Logs → Web Analytics → your site → "Manage site" snippet).
+# The token is public by design: it appears in every page's source.
+# The beacon loads only on the hosts listed here, so preview builds aren't counted.
+analytics:
+  cloudflare_token: ""
+  hosts: [www.benvlehmann.com, benvlehmann.com]
+
 hero:
   eyebrow: Einstein Fellow · MIT Kavli Institute
   heading: Matter is a mystery.

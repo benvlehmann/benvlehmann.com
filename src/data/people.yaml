@@ -47,7 +47,6 @@ theses:
     honors: Honors in the major
     next: PhD in Physics, University of Oregon
     links: { inspire: https://inspirehep.net/authors/2879177 }
-    links: { inspire: https://inspirehep.net/authors/2879177 }
   - name: Anikeya Aditya
     years: 2016–2018
     thesis: Inferring the mass function of primordial black holes from gravitational wave observations
@@ -96,9 +95,16 @@ former:
     was: PhD, UC Santa Cruz
     next: Postdoctoral Fellow, Mila / Université de Montréal
     links: { website: https://nolan-smyth.com, inspire: https://inspirehep.net/authors/1785026 }
-  - { name: Ava Webber, years: 2020–2022, was: "BS, UC Santa Cruz", next: "PhD in Astronomy, Clemson University" }
-  - { name: Mason Hargrave, years: 2018–2019, was: "BS, UC Santa Cruz", next: "PhD in Computational Biology, Rockefeller University" }
-  - name: Jackson Yant, years: 2016–2018,
+  - name: Ava Webber
+    years: 2020–2022
+    was: "BS, UC Santa Cruz"
+    next: "PhD in Astronomy, Clemson University"
+  - name: Mason Hargrave
+    years: 2018–2019
+    was: "BS, UC Santa Cruz"
+    next: "PhD in Computational Biology, Rockefeller University"
+  - name: Jackson Yant
+    years: 2016–2018,
     was: "BS, UC Santa Cruz"
     next: "PhD in Physics, Dartmouth College"
     links: { inspire: https://inspirehep.net/authors/2464676 }

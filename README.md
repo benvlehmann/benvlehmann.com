@@ -13,6 +13,8 @@ Personal academic site, built with [Astro](https://astro.build) and deployed to 
 | Students and collaborators | `src/data/people.yaml` |
 | Past trips (migrated from Squarespace) | `src/data/travel-archive.yaml` |
 | Unlisted posts (`/public/<slug>/`) | `src/content/posts/*.md` |
+| Notes and paper explainers (`/notes/<slug>/`) | `src/content/notes/*.md` |
+| Which papers get explainers | `src/data/explainers.yaml` |
 | PDFs (CV, post attachments) at `/s/<file>.pdf` | `public/s/` |
 | Images | `public/img/` |
 
@@ -34,6 +36,11 @@ reference them as `{role}`, `{institution}`, etc.
 - The site rebuilds on every push to `main` and nightly, so both stay current.
 - **CV**: `public/s/lehmann_cv.pdf` is the `make web` target of the CV build
   (`~/Dropbox/Science/CV/update/build/web/lehmann_cv.pdf`).
+
+## Drafted content
+
+Paper explainers and occasional notes are drafted by scheduled tasks and arrive as
+pull requests; merging publishes them. The rules are in `PUBLISHING.md`.
 
 ## Old URLs
 

@@ -1,0 +1,12 @@
+# Which papers get plain-language explainers (drafted by the weekly explainer task).
+# A paper qualifies if it has an arXiv id, has no note yet (src/content/notes/*.md with
+# a matching `arxiv:` field, draft or not), is not in `skip`, and either was posted on
+# or after `since` or is listed in `requested`.
+since: 2026-10-13
+# arXiv ids that should never get an explainer.
+skip: []
+# Older papers (before `since`) that should get one.
+requested: []
+# Papers with more authors than this are skipped unless listed in `requested`
+# (collaboration and community reports).
+max_authors: 15

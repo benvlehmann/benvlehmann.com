@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import newTabLinks from './src/integrations/new-tab-links.mjs';
 import paperPreviews from './src/integrations/paper-previews.mjs';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // SITE_URL / SITE_BASE let the same code deploy to the GitHub Pages preview
 // address (https://benvlehmann.github.io/benvlehmann.com) or to the custom
@@ -15,4 +17,6 @@ export default defineConfig({
   trailingSlash: 'ignore',
   build: { format: 'directory' },
   integrations: [newTabLinks(), paperPreviews()],
+  // $...$ math in notes and posts, rendered to MathML at build time (no client-side math library).
+  markdown: { remarkPlugins: [remarkMath], rehypePlugins: [[rehypeKatex, { output: 'mathml' }]] },
 });

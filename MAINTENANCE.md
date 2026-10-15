@@ -32,12 +32,16 @@ automatic match can't decide:
 
 ## 3. CV
 
-Needs Ben's computer. Only Ben rebuilds the CV (never run `make` here), so this
-section reacts only to changes he has made since the site's copy. It keeps no state:
-the previous version is the PDF already in the repo.
+Only Ben rebuilds the CV (never run `make` here), so this section reacts only to
+changes he has made since the site's copy. It keeps no state: the previous version is
+the PDF already in the repo.
 
 - **Repo copy:** `public/s/lehmann_cv.pdf`
-- **Ben's build:** `~/Dropbox/Science/CV/update/build/web/lehmann_cv.pdf`
+- **Ben's build:** `~/Dropbox/Science/CV/_cv/build/web/lehmann_cv.pdf` on his computer,
+  which is `/Science/CV/_cv/build/web/lehmann_cv.pdf` in Dropbox (file id
+  `id:_-pSVMw-2hsAAAAAAB9bwg`, which survives moves). Without his computer, get it
+  through the Dropbox connector: `download_link`, then download the single-use URL once.
+  Read only; never change anything in Dropbox.
 
 1. **Same file?** Compare md5 hashes of the two PDFs. If they match, skip the rest of
    this section.

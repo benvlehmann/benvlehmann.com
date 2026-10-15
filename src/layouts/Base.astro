@@ -58,6 +58,8 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <script is:inline>try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
   <title>{pageTitle}</title>
   <meta name="description" content={desc}>
   <link rel="icon" href={url('favicon.png')}>
@@ -92,6 +94,7 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
       <nav class="site-nav" aria-label="Main">
         {nav.map((n) => <a href={n.href} aria-current={n.key === current ? 'page' : undefined}>{n.label}</a>)}
         <a class="cv" href={url(site.links.cv)}>CV ↓</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" hidden>Light theme</button>
       </nav>
     </div>
   </header>
@@ -122,5 +125,28 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
     </div>
     <p class="wrap colophon">Benjamin V. Lehmann · {site.role}, {site.institution}</p>
   </footer>
+  <script is:inline>
+    // Light/dark toggle. The button names the theme it switches to; the choice is remembered.
+    (function () {
+      var b = document.getElementById('theme-toggle');
+      if (!b) return;
+      var root = document.documentElement, mq = matchMedia('(prefers-color-scheme: light)');
+      var current = function () { return root.dataset.theme || (mq.matches ? 'light' : 'dark'); };
+      var sync = function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        b.textContent = next === 'light' ? 'Light theme' : 'Dark theme';
+        b.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+      };
+      b.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        sync();
+      });
+      mq.addEventListener('change', sync);
+      sync();
+      b.hidden = false;
+    })();
+  </script>
 </body>
 </html>

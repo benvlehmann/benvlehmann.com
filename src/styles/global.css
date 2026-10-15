@@ -1,15 +1,21 @@
 :root {
+  /* Colours: dark sky by default. The light theme below applies when the visitor's
+     system prefers light (and they haven't picked dark), or when they pick light. */
+  color-scheme: dark;
   --bg: #0A0C11;
   --bg-deep: #07080C;
   --surface: #12151C;
   --line: #232836;
   --line-strong: #5E6678; /* 3:1 on --bg and --surface, the minimum for control borders */
   --text: #ECE9E2;
-  --text-2: #CFCCC5; /* prose and panel copy (merged the old --text-2 #D6D3CC and --text-3 #C4C1BA) */
+  --text-2: #CFCCC5; /* prose and panel copy */
   --muted: #A3A9B5;
   --faint: #8C93A0;
   --accent: #E2B862;
+  --accent-line: rgba(226, 184, 98, .5); /* link underlines */
+  --signal-ok: #6FCF97;
   --figure-ground: #FFFFFF; /* white plate behind transparent plots in notes */
+  --shadow-popover: 0 12px 32px rgba(0, 0, 0, .45);
   /* Text sizes. Sans: four steps. Mono (dates, ids, labels): three. */
   --fs-lede: 19px;
   --fs-body: 17px;
@@ -21,6 +27,45 @@
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'IBM Plex Sans', system-ui, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+
+/* Light theme ("daylight"): same roles, re-tuned so every text colour keeps 4.5:1 on
+   --bg, --bg-deep and --surface, and --line-strong keeps 3:1 on --bg and --surface.
+   The gold darkens to stay readable as text. Defined twice so the toggle wins either way. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #F6F5F1;
+    --bg-deep: #ECEAE4;
+    --surface: #FFFFFF;
+    --line: #DDDBD3;
+    --line-strong: #848B98;
+    --text: #15171D;
+    --text-2: #363941;
+    --muted: #565C67;
+    --faint: #616874;
+    --accent: #845F10;
+    --accent-line: rgba(132, 95, 16, .45);
+    --signal-ok: #1D7543;
+    --shadow-popover: 0 12px 32px rgba(21, 23, 29, .14);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #F6F5F1;
+  --bg-deep: #ECEAE4;
+  --surface: #FFFFFF;
+  --line: #DDDBD3;
+  --line-strong: #848B98;
+  --text: #15171D;
+  --text-2: #363941;
+  --muted: #565C67;
+  --faint: #616874;
+  --accent: #845F10;
+  --accent-line: rgba(132, 95, 16, .45);
+  --signal-ok: #1D7543;
+  --shadow-popover: 0 12px 32px rgba(21, 23, 29, .14);
 }
 
 * { box-sizing: border-box; }
@@ -35,7 +80,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; }
-a { color: var(--text); text-decoration-color: rgba(226, 184, 98, .5); text-underline-offset: 3px; }
+a { color: var(--text); text-decoration-color: var(--accent-line); text-underline-offset: 3px; }
 a:hover { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
@@ -57,6 +102,8 @@ a:hover { color: var(--accent); }
 .site-nav a[aria-current="page"] { color: var(--text); }
 .site-nav a.cv { color: var(--accent); }
 .site-nav a:hover { color: var(--accent); }
+.theme-toggle { padding: 0; border: 0; background: none; font: inherit; letter-spacing: inherit; color: var(--muted); cursor: pointer; }
+.theme-toggle:hover { color: var(--accent); }
 
 /* Type */
 .eyebrow { margin: 0 0 20px; font-family: var(--mono); font-size: var(--fs-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
@@ -189,7 +236,7 @@ figcaption a { color: var(--faint); }
 .site-footer .wrap { padding-block: 56px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; font-size: var(--fs-small); color: var(--muted); }
 .site-footer p { margin: 0; }
 .site-footer .stack { display: flex; flex-direction: column; gap: 4px; }
-.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #6FCF97; margin-right: 8px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--signal-ok); margin-right: 8px; }
 
 .site-footer .colophon { margin: 0 auto; padding-block: 0 32px; font-family: var(--mono); font-size: var(--fs-meta); color: var(--faint); }
 /* Footer link list in two balanced columns (one column on very narrow screens). */
@@ -198,7 +245,7 @@ figcaption a { color: var(--faint); }
 @media (max-width: 360px) { .site-footer .two-col { grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: none !important; } }
 
 /* Paper preview card (shown on hover/focus of arXiv links; see src/integrations/paper-previews.mjs). */
-.paper-card { position: absolute; z-index: 50; width: min(380px, calc(100vw - 16px)); box-sizing: border-box; padding: 14px 16px 15px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 6px; box-shadow: 0 12px 32px rgba(0, 0, 0, .45); pointer-events: auto; animation: pc-in .12s ease-out; }
+.paper-card { position: absolute; z-index: 50; width: min(380px, calc(100vw - 16px)); box-sizing: border-box; padding: 14px 16px 15px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 6px; box-shadow: var(--shadow-popover); pointer-events: auto; animation: pc-in .12s ease-out; }
 .paper-card[hidden] { display: none; }
 .paper-card p { margin: 0; }
 .paper-card .pc-meta { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: .04em; color: var(--faint); margin-bottom: 6px; }

@@ -11,19 +11,19 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
 ---
 <Base title="People" current="people" description="Students and collaborators of Ben Lehmann.">
   <section>
-    <div class="wrap" style="padding-block: 40px 64px">
+    <div class="wrap page intro">
       <p class="eyebrow">People</p>
       <h1 class="page-title">Students &amp; collaborators</h1>
-      <p class="lede" style="max-width: 40em; margin: 0 0 14px">{people.intro}</p>
-      <p class="muted" style="max-width: 40em; margin: 0">{people.invite} <a href={site.links.email_page}>Please get in touch.</a></p>
+      <p class="lede page-lede">{people.intro}</p>
+      <p class="muted page-note">{people.invite} <a href={site.links.email_page}>Please get in touch.</a></p>
     </div>
   </section>
 
   {current.length > 0 && (
     <section class="band">
       <div class="wrap">
-        <div class="section-head" style="margin-bottom: 28px">
-          <h2 style="font-size: 40px">Current students</h2>
+        <div class="section-head compact">
+          <h2 class="subhead">Current students</h2>
           <p>Students whose research I supervise in part or in full.</p>
         </div>
         <ul class="alumni">
@@ -44,16 +44,16 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
 
   <section class="band">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom: 28px">
-        <h2 style="font-size: 40px">Undergraduate theses</h2>
+      <div class="section-head compact">
+        <h2 class="subhead">Undergraduate theses</h2>
         <p>Senior theses I supervised at UC Santa Cruz, and where each student went next.</p>
       </div>
       <ul class="alumni">
         {theses.map((a: any) => (
           <li>
-            <p><span class="name">{a.name}</span> <span class="mono faint" style="font-size: var(--fs-mono)">{a.years}</span></p>
+            <p><span class="name">{a.name}</span> <span class="years">{a.years}</span></p>
             <p class="thesis"><em>{a.thesis}</em></p>
-            {a.honors && <p class="thesis faint" style="font-size: var(--fs-fine)">{a.honors}</p>}
+            {a.honors && <p class="honors">{a.honors}</p>}
             <p class="next">→ {a.next}</p>
             {(a.papers.length > 0 || a.links) && (
               <p class="links">
@@ -70,14 +70,14 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
 
   <section class="band">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom: 28px">
-        <h2 style="font-size: 40px">Former student collaborators</h2>
+      <div class="section-head compact">
+        <h2 class="subhead">Former student collaborators</h2>
         <p>Graduate and undergraduate students I’ve worked with, and where they went next.</p>
       </div>
       <ul class="alumni">
         {former.map((a: any) => (
           <li>
-            <p><span class="name">{a.name}</span> <span class="mono faint" style="font-size: var(--fs-mono)">{a.years}</span></p>
+            <p><span class="name">{a.name}</span> <span class="years">{a.years}</span></p>
             <p class="thesis">{a.was}</p>
             <p class="next">→ {a.next}</p>
             {(a.papers.length > 0 || a.links) && (
@@ -94,11 +94,11 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
   </section>
 
   <section class="band">
-    <div class="wrap">
-      <h2 style="font-size: 40px; margin-bottom: 20px">Other collaborators</h2>
-      <p style="margin: 0 0 32px; max-width: 44em; color: var(--text-2)" set:html={people.collaborators} />
-      <figure style="margin: 0; max-width: 760px">
-        <img src={url(people.group_photo)} alt={people.group_photo_alt} loading="lazy" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px">
+    <div class="wrap collaborators">
+      <h2 class="subhead">Other collaborators</h2>
+      <p set:html={people.collaborators} />
+      <figure>
+        <img src={url(people.group_photo)} alt={people.group_photo_alt} loading="lazy">
         <figcaption>{people.group_photo_caption}</figcaption>
       </figure>
     </div>

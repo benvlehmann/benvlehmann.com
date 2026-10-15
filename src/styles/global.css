@@ -9,6 +9,7 @@
   --muted: #A3A9B5;
   --faint: #8C93A0;
   --accent: #E2B862;
+  --figure-ground: #FFFFFF; /* white plate behind transparent plots in notes */
   /* Text sizes. Sans: four steps. Mono (dates, ids, labels): three. */
   --fs-lede: 19px;
   --fs-body: 17px;
@@ -74,6 +75,8 @@ h2 { margin: 0; font-size: 48px; line-height: 1.1; }
 
 .section-head { display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: baseline; justify-content: space-between; margin-bottom: 40px; }
 .section-head p { margin: 0; max-width: 38em; color: var(--muted); }
+.section-head.compact { margin-bottom: 28px; }
+h2.subhead { font-size: 40px; }
 
 .split { display: flex; flex-wrap: wrap; gap: 32px 64px; }
 .split > .side { flex: 1 1 260px; min-width: 0; }
@@ -122,12 +125,26 @@ figcaption a { color: var(--faint); }
 .rows .what { flex: 1 1 300px; min-width: 0; }
 .rows .what a { text-decoration: none; }
 .rows .sub { display: block; font-family: var(--mono); font-size: var(--fs-meta); color: var(--faint); margin-top: 2px; }
+/* Secondary pages: top-of-page padding and the intro under a page title. */
+.page { padding-block: 40px 96px; }
+.page.intro { padding-block: 40px 64px; }
+.page.spacious { padding-block: 64px 120px; }
+.page-lede { max-width: 40em; margin: 0 0 14px; }
+.page-lede.lead-in { margin-bottom: 32px; }
+.page-note { max-width: 40em; margin: 0; }
+.narrow { max-width: 760px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+.back { margin-top: 40px; }
+
+.rows .sub a.explainer { color: var(--accent); }
+.rows .summary { display: block; margin-top: 2px; font-size: var(--fs-small); color: var(--muted); }
 .more { display: inline-block; margin-top: 16px; font-size: var(--fs-small); color: var(--accent); }
 
 .box { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; }
 .box p:not(.label) { margin: 0; font-size: var(--fs-small); color: var(--text-2); }
 .box ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: var(--fs-small); }
 .box .when { display: block; font-family: var(--mono); font-size: var(--fs-meta); color: var(--faint); }
+.box.solo { max-width: 640px; }
 
 /* Outreach */
 .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 36px 32px; }
@@ -144,6 +161,13 @@ figcaption a { color: var(--faint); }
 .alumni .next { font-size: var(--fs-small); color: var(--accent); margin: 0; }
 .alumni .links { font-family: var(--mono); font-size: var(--fs-meta); color: var(--faint); }
 .alumni .links a { color: var(--faint); }
+.alumni .years { font-family: var(--mono); font-size: var(--fs-mono); color: var(--faint); }
+.alumni .honors { font-size: var(--fs-fine); color: var(--faint); }
+
+.collaborators h2 { margin-bottom: 20px; }
+.collaborators > p { margin: 0 0 32px; max-width: 44em; color: var(--text-2); }
+.collaborators figure { margin: 0; max-width: 760px; }
+.collaborators img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; }
 
 /* Archive */
 .year { font-family: var(--serif); font-size: 36px; margin: 48px 0 8px; }
@@ -154,6 +178,11 @@ figcaption a { color: var(--faint); }
 .post .date { font-family: var(--mono); font-size: var(--fs-mono); color: var(--faint); margin: 0 0 12px; }
 .post h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; }
 .post .content p { margin: 0 0 18px; color: var(--text-2); }
+.paper-ref { margin: 0 0 32px; }
+.paper-ref p.title { margin: 0 0 4px; color: var(--text); }
+.paper-ref p.ref { margin: 0; font-family: var(--mono); font-size: var(--fs-meta); color: var(--faint); }
+.note-figure { margin: 0 0 32px; }
+.note-figure img { display: block; width: 100%; border-radius: 4px; background: var(--figure-ground); }
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-deep); }

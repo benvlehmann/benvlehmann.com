@@ -15,24 +15,24 @@ const paper = note.arxiv ? (await allPapers()).papers.find((p) => p.arxiv === no
 ---
 <Base title={note.title} description={note.summary}>
   <article>
-    <div class="wrap post" style="padding-block: 40px 96px">
+    <div class="wrap post page">
       <p class="date">{formatDate(note.date)}{note.arxiv && ' · Explainer'}</p>
       <h1>{note.title}</h1>
       {paper && (
-        <aside class="box" style="margin: 0 0 32px">
+        <aside class="box paper-ref">
           <p class="label accent">The paper</p>
-          <p style="margin: 0 0 4px; color: var(--text)" set:html={renderTex(paper.title)} />
-          <p class="mono faint" style="font-size: var(--fs-meta); margin: 0"><a href={paper.url}>arXiv:{paper.arxiv}</a>{paper.date && ` · ${paper.date.slice(0, 4)}`}</p>
+          <p class="title" set:html={renderTex(paper.title)} />
+          <p class="ref"><a href={paper.url}>arXiv:{paper.arxiv}</a>{paper.date && ` · ${paper.date.slice(0, 4)}`}</p>
         </aside>
       )}
       {note.figure && (
-        <figure style="margin: 0 0 32px">
-          <img src={url(note.figure)} alt={note.figure_alt ?? ''} style="display: block; width: 100%; border-radius: 4px; background: #fff">
+        <figure class="note-figure">
+          <img src={url(note.figure)} alt={note.figure_alt ?? ''}>
           {note.figure_caption && <figcaption>{note.figure_caption}</figcaption>}
         </figure>
       )}
       <div class="content"><Content /></div>
-      <p style="margin-top: 40px"><a class="pill" href={url('notes/')}>← All notes</a></p>
+      <p class="back"><a class="pill" href={url('notes/')}>← All notes</a></p>
     </div>
   </article>
 </Base>

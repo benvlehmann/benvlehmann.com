@@ -6,10 +6,10 @@ import { url } from '../../lib/data';
 ---
 <Base title="Notes" description="Plain-language explainers for Ben Lehmann's papers, and occasional notes.">
   <section>
-    <div class="wrap" style="padding-block: 40px 96px">
+    <div class="wrap page">
       <p class="eyebrow">Notes</p>
       <h1 class="page-title">Notes</h1>
-      <p class="lede" style="max-width: 40em; margin: 0 0 40px">Plain-language explainers for my papers, and the occasional note on something I found interesting along the way.</p>
+      <p class="lede page-lede lead-in">Plain-language explainers for my papers, and the occasional note on something I found interesting along the way.</p>
       {notes.length ? (
         <ol class="rows">
           {notes.map((n) => (
@@ -17,7 +17,7 @@ import { url } from '../../lib/data';
               <span class="when">{formatDate(n.date)}</span>
               <span class="what">
                 <a href={url(`notes/${n.slug}/`)}>{n.title}</a>
-                {n.summary && <span class="sub" style="font-family: var(--sans); font-size: var(--fs-small); color: var(--muted)">{n.summary}</span>}
+                {n.summary && <span class="summary">{n.summary}</span>}
                 {n.arxiv && <span class="sub">Explainer · arXiv:{n.arxiv}</span>}
               </span>
             </li>

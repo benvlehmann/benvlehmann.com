@@ -76,7 +76,7 @@ const h = site.hero;
             <span class="when short">{formatMonth(p.date)}</span>
             <span class="what">
               <a href={p.url}>{p.title}</a>
-              {p.arxiv && <span class="sub">arXiv:{p.arxiv}{explainerFor(p.arxiv) && <> · <a href={url(`notes/${explainerFor(p.arxiv)!.slug}/`)} style="color: var(--accent)">Plain-language explainer →</a></>}</span>}
+              {p.arxiv && <span class="sub">arXiv:{p.arxiv}{explainerFor(p.arxiv) && <> · <a href={url(`notes/${explainerFor(p.arxiv)!.slug}/`)} class="explainer">Plain-language explainer →</a></>}</span>}
             </span>
           </li>
         ))}

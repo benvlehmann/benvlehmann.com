@@ -7,7 +7,7 @@ import { coauthored } from '../lib/inspire';
 const withPapers = (list: any[] = []) =>
   Promise.all(list.map(async (p) => ({ ...p, papers: await coauthored(p.name, { inspireName: p.inspire_name, exclude: p.exclude }) })));
 const [current, theses, former] = await Promise.all([withPapers(people.current), withPapers(people.theses), withPapers(people.former)]);
-const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
+const label = (p: any) => p.arxiv ?? 'INSPIRE';
 ---
 <Base title="People" current="people" description="Students and collaborators of Ben Lehmann.">
   <section>
@@ -32,8 +32,14 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
               <p class="name">{s.name}</p>
               <p class="thesis">{s.program} student, {s.institution}</p>
               {s.blurb && <p class="thesis">{s.blurb}</p>}
-              {s.papers.length > 0 && (
-                <p class="links">{s.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}</p>
+              {(s.papers.length > 0 || s.links) && (
+                <p class="links">
+                  {s.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}
+                  {s.links?.website && <><a href={s.links.website}>website</a>{' '}</>}
+                  {s.links?.inspire && <><a href={s.links.inspire}>INSPIRE</a>{' '}</>}
+                  {s.links?.orcid && <><a href={s.links.orcid}>ORCID</a>{' '}</>}
+                  {s.links?.ads && <a href={s.links.ads}>ADS</a>}
+                </p>
               )}
             </li>
           ))}
@@ -59,7 +65,9 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
               <p class="links">
                 {a.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}
                 {a.links?.website && <><a href={a.links.website}>website</a>{' '}</>}
-                {a.links?.inspire && <a href={a.links.inspire}>INSPIRE</a>}
+                {a.links?.inspire && <><a href={a.links.inspire}>INSPIRE</a>{' '}</>}
+                {a.links?.orcid && <><a href={a.links.orcid}>ORCID</a>{' '}</>}
+                {a.links?.ads && <a href={a.links.ads}>ADS</a>}
               </p>
             )}
           </li>
@@ -84,7 +92,9 @@ const label = (p: any) => p.arxiv ?? `INSPIRE ${p.inspire}`;
               <p class="links">
                 {a.papers.map((p: any) => <><a href={p.url} title={p.title}>{label(p)}</a>{' '}</>)}
                 {a.links?.website && <><a href={a.links.website}>website</a>{' '}</>}
-                {a.links?.inspire && <a href={a.links.inspire}>INSPIRE</a>}
+                {a.links?.inspire && <><a href={a.links.inspire}>INSPIRE</a>{' '}</>}
+                {a.links?.orcid && <><a href={a.links.orcid}>ORCID</a>{' '}</>}
+                {a.links?.ads && <a href={a.links.ads}>ADS</a>}
               </p>
             )}
           </li>

@@ -42,7 +42,7 @@ profiles:
   - { label: ORCID, url: "https://orcid.org/0000-0001-7735-4673", footer: true }
   - { label: arXiv, url: "https://arxiv.org/a/lehmann_b_1.html", footer: true }
   - { label: INSPIRE, url: "https://inspirehep.net/authors/1737895", footer: true }
-  - { label: MIT Physics, url: "https://physics.mit.edu/faculty/benjamin-lehmann/" }
+  - { label: MIT Physics, url: "https://physics.mit.edu/research/pappalardo-fellowships-in-physics/benjamin-lehmann-pappalardo-fellow/" }
   - { label: MIT Kavli Institute, url: "https://www.space.mit.edu/people/benjamin-lehman/" }
   - { label: Pappalardo Fellowship, url: "https://physics.mit.edu/research/pappalardo-fellowships-in-physics/benjamin-lehmann-pappalardo-fellow/" }
 

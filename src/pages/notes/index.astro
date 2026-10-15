@@ -17,7 +17,7 @@ import { url } from '../../lib/data';
               <span class="when">{formatDate(n.date)}</span>
               <span class="what">
                 <a href={url(`notes/${n.slug}/`)}>{n.title}</a>
-                {n.summary && <span class="sub" style="font-family: var(--sans); font-size: 14px; color: var(--muted)">{n.summary}</span>}
+                {n.summary && <span class="sub" style="font-family: var(--sans); font-size: var(--fs-small); color: var(--muted)">{n.summary}</span>}
                 {n.arxiv && <span class="sub">Explainer · arXiv:{n.arxiv}</span>}
               </span>
             </li>

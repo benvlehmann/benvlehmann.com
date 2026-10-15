@@ -22,7 +22,7 @@ const paper = note.arxiv ? (await allPapers()).papers.find((p) => p.arxiv === no
         <aside class="box" style="margin: 0 0 32px">
           <p class="label accent">The paper</p>
           <p style="margin: 0 0 4px; color: var(--text)" set:html={renderTex(paper.title)} />
-          <p class="mono faint" style="font-size: 12px; margin: 0"><a href={paper.url}>arXiv:{paper.arxiv}</a>{paper.date && ` · ${paper.date.slice(0, 4)}`}</p>
+          <p class="mono faint" style="font-size: var(--fs-meta); margin: 0"><a href={paper.url}>arXiv:{paper.arxiv}</a>{paper.date && ` · ${paper.date.slice(0, 4)}`}</p>
         </aside>
       )}
       {note.figure && (

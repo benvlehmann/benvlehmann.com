@@ -35,7 +35,7 @@ reference them as `{role}`, `{institution}`, etc.
   with the archive. Trips move from Upcoming to Recent on their own.
 - The site rebuilds on every push to `main` and nightly, so both stay current.
 - **CV**: `public/s/lehmann_cv.pdf` is the `make web` target of the CV build
-  (`~/Dropbox/Science/CV/update/build/web/lehmann_cv.pdf`).
+  (`~/Dropbox/Science/CV/_cv/build/web/lehmann_cv.pdf`).
 
 ## Drafted content
 

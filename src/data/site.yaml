@@ -14,7 +14,7 @@ office:
     - Cambridge, MA 02139
 
 links:
-  email_page: https://www.space.mit.edu/people/benjamin-lehman/
+  email_page: https://www.space.mit.edu/people/benjamin-lehmann/
   cv: s/lehmann_cv.pdf
   inspire_author_id: 1737895
   inspire: https://inspirehep.net/authors/1737895
@@ -36,14 +36,14 @@ seo:
   # og-card.jpg is a static image that spells out the role and institution; regenerate it if they change.
 
 # Profiles elsewhere. All are listed as "sameAs" in structured data; footer: true
-# also shows them in the site footer. Update the MIT Kavli URL here when it's fixed.
+# also shows them in the site footer.
 profiles:
   - { label: Google Scholar, url: "https://scholar.google.com/citations?user=QLO1ZPMAAAAJ", footer: true }
   - { label: ORCID, url: "https://orcid.org/0000-0001-7735-4673", footer: true }
   - { label: arXiv, url: "https://arxiv.org/a/lehmann_b_1.html", footer: true }
   - { label: INSPIRE, url: "https://inspirehep.net/authors/1737895", footer: true }
   - { label: MIT Physics, url: "https://physics.mit.edu/faculty/benjamin-lehmann/" }
-  - { label: MIT Kavli Institute, url: "https://www.space.mit.edu/people/benjamin-lehman/" }
+  - { label: MIT Kavli Institute, url: "https://www.space.mit.edu/people/benjamin-lehmann/" }
   - { label: Pappalardo Fellowship, url: "https://physics.mit.edu/research/pappalardo-fellowships-in-physics/benjamin-lehmann-pappalardo-fellow/" }
 
 # The travel calendar's feed comes from the TRAVEL_ICS_URL repository secret.

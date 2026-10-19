@@ -67,6 +67,8 @@ the PDF already in the repo.
 ## 5. Links and wording
 
 - Check every external link in the built site; fix or report dead ones (mechanical).
+  Known false alarms: `physics.mit.edu`, `www.space.mit.edu` and `www.mttamcollege.edu`
+  return 403 to non-browser clients. Ben has checked them by hand; skip them.
 - Search prose in `src/data/` and `src/content/` for time-relative wording
   ("recently", "now", "currently", "this year") and report or fix it.
 

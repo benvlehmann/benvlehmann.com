@@ -1,0 +1,24 @@
+name: Drift PR report
+
+# Drift-check PRs must report every section of MAINTENANCE.md, so a skipped
+# section shows up as a failing check instead of a quiet omission.
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  report:
+    if: startsWith(github.head_ref, 'drift-check-')
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          missing=0
+          for s in papers people cv travel links wording; do
+            if ! printf '%s' "$BODY" | grep -qiE "^\| *$s *\| *(clean|changes|needs-ben|blocked) *\|"; then
+              echo "::error::PR body has no outcome row for section '$s' (see 'npm run drift -- status')"
+              missing=1
+            fi
+          done
+          exit $missing

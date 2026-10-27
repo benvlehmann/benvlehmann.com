@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "refresh-papers": "node scripts/refresh-papers.mjs",
     "check-people": "node scripts/check-people.mjs",
-    "drift": "node scripts/drift.mjs"
+    "drift": "node scripts/drift.mjs",
+    "check-papers": "node scripts/check-papers.mjs"
   },
   "dependencies": {
     "astro": "5.18.2",

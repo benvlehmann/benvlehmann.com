@@ -1,7 +1,17 @@
 // Merges the static travel archive with an optional public iCal feed (a
 // dedicated "Travel" Google Calendar). Trips sort themselves into upcoming /
 // past by date at build time; the nightly build keeps that current.
+//
+// Past trips belong in the archive ("frozen"); upcoming ones come from the feed.
+// With TRAVEL_WRITE_ARCHIVE=1 (set by the drift check, never by the deploy), the
+// build appends feed trips that ended within the lookback window to
+// src/data/travel-archive.yaml. Once frozen, the archive entry wins over the feed.
+import { readFile, writeFile } from 'node:fs/promises';
+import { stringify } from 'yaml';
 import { site, travelArchive, type Trip } from './data';
+
+const ARCHIVE_PATH = 'src/data/travel-archive.yaml';
+const LOOKBACK_MONTHS = Number(process.env.TRAVEL_LOOKBACK_MONTHS) || 3;
 
 /** Today's date in Eastern time, as YYYY-MM-DD. */
 export function today(): string {
@@ -46,6 +56,7 @@ export function parseIcs(text: string): Trip[] {
           // The event's location is shown verbatim (e.g. "Princeton, NJ").
           place: ev.LOCATION ? unescapeIcs(ev.LOCATION.value) || undefined : undefined,
           url: ev.URL?.value,
+          uid: ev.UID?.value,
         });
       }
       ev = null;
@@ -57,32 +68,76 @@ export function parseIcs(text: string): Trip[] {
   return trips;
 }
 
-let feedLogged = false;
+function slugify(title: string, taken: Set<string>): string {
+  const base = title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'trip';
+  let slug = base;
+  for (let i = 1; taken.has(slug); i++) slug = `${base}-${i}`;
+  taken.add(slug);
+  return slug;
+}
 
-export async function allTrips(): Promise<{ trips: Trip[]; feedOk: boolean | null }> {
-  const feed = process.env.TRAVEL_ICS_URL || site.travel_ics_url;
-  let fromFeed: Trip[] = [];
-  let feedOk: boolean | null = null;
-  if (!feed && !feedLogged) console.log('[travel] no calendar feed configured; using archive only');
-  if (feed) {
-    try {
-      const res = await fetch(feed, { signal: AbortSignal.timeout(15000) });
-      if (!res.ok) throw new Error(`feed ${res.status}`);
-      fromFeed = parseIcs(await res.text());
-      feedOk = true;
-      if (!feedLogged) console.log(`[travel] calendar feed OK: ${fromFeed.length} event(s)`);
-    } catch (err) {
-      console.warn(`[travel] calendar feed failed: ${err}`);
-      feedOk = false;
+/** Append trips to the archive file, keeping its header comments; newest first, like the file. */
+async function freeze(trips: Trip[]) {
+  const text = await readFile(ARCHIVE_PATH, 'utf8');
+  const taken = new Set(travelArchive.map((t) => t.slug).filter(Boolean) as string[]);
+  const entries = trips
+    .sort((a, b) => b.start.localeCompare(a.start))
+    // Only fields the site shows, plus the UID; never descriptions or notes.
+    .map(({ title, start, end, place, url, uid }) => ({ title, slug: slugify(title, taken), start, end, place, url, uid }));
+  const header = text.match(/^(#.*\n)*/)![0];
+  const yaml = stringify(entries, { defaultStringType: 'PLAIN', defaultKeyType: 'PLAIN' }).replace(/^(\s+\w+: )(\d{4}-\d{2}-\d{2})$/gm, "$1'$2'");
+  await writeFile(ARCHIVE_PATH, header + yaml + text.slice(header.length));
+  for (const e of entries) console.log(`[travel] froze into archive: ${e.title} (${e.start}) as ${e.slug}`);
+}
+
+let memo: Promise<{ trips: Trip[]; feedOk: boolean | null }> | null = null;
+
+export function allTrips(): Promise<{ trips: Trip[]; feedOk: boolean | null }> {
+  memo ??= (async () => {
+    const feed = process.env.TRAVEL_ICS_URL || site.travel_ics_url;
+    let fromFeed: Trip[] = [];
+    let feedOk: boolean | null = null;
+    if (!feed) console.log('[travel] no calendar feed configured; using archive only');
+    else {
+      try {
+        const res = await fetch(feed, { signal: AbortSignal.timeout(15000) });
+        if (!res.ok) throw new Error(`feed ${res.status}`);
+        fromFeed = parseIcs(await res.text());
+        feedOk = true;
+        console.log(`[travel] calendar feed OK: ${fromFeed.length} event(s)`);
+      } catch (err) {
+        console.warn(`[travel] calendar feed failed: ${err}`);
+        feedOk = false;
+      }
     }
-  }
-  // Feed entries win over archive entries with the same title and start date.
-  const key = (t: Trip) => `${t.title.toLowerCase()}|${t.start}`;
-  const seen = new Set(fromFeed.map(key));
-  const trips = [...fromFeed, ...travelArchive.filter((t) => !seen.has(key(t)))];
-  trips.sort((a, b) => b.start.localeCompare(a.start));
-  feedLogged = true;
-  return { trips, feedOk };
+    // Archive entries win: drop feed events already frozen (by UID, or by title and
+    // start date for entries archived before UIDs were recorded).
+    const key = (t: Trip) => `${t.title.toLowerCase()}|${t.start}`;
+    const uids = new Set(travelArchive.map((t) => t.uid).filter(Boolean));
+    const keys = new Set(travelArchive.map(key));
+    const live = fromFeed.filter((t) => !(t.uid && uids.has(t.uid)) && !keys.has(key(t)));
+
+    // Past feed trips: freeze those inside the lookback; warn about older ones
+    // (still shown, but they need a decision rather than a silent import).
+    const t = today();
+    const cutoff = new Date(`${t}T12:00:00Z`);
+    cutoff.setUTCMonth(cutoff.getUTCMonth() - LOOKBACK_MONTHS);
+    const since = cutoff.toISOString().slice(0, 10);
+    const past = live.filter((x) => x.end < t);
+    const toFreeze = past.filter((x) => x.end >= since);
+    for (const x of past.filter((x) => x.end < since))
+      console.warn(`[travel] past trip older than ${LOOKBACK_MONTHS}-month lookback, not in archive: ${x.title} (${x.start})`);
+    if (toFreeze.length) {
+      if (process.env.TRAVEL_WRITE_ARCHIVE === '1') await freeze(toFreeze);
+      else console.log(`[travel] ${toFreeze.length} past trip(s) not yet in archive (set TRAVEL_WRITE_ARCHIVE=1 to freeze)`);
+    }
+
+    const trips = [...live, ...travelArchive];
+    trips.sort((a, b) => b.start.localeCompare(a.start));
+    return { trips, feedOk };
+  })();
+  return memo;
 }
 
 export async function splitTrips() {

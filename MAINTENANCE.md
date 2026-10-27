@@ -84,10 +84,22 @@ be fetched, record `blocked` with the error.
 
 ## 4. Travel
 
-- Past trips that exist only in the calendar feed: append them to
-  `src/data/travel-archive.yaml` with a slug generated from the title (mechanical).
-- If the build log says the calendar feed failed, or that no feed is configured,
-  record `blocked` with that line; do not record `clean`.
+The rule: trips that have ended (before today, Eastern time) are frozen into
+`src/data/travel-archive.yaml` and committed; upcoming trips stay out of the source
+and come from the calendar feed at build time. The build does the freezing; don't
+edit the archive by hand for this.
+
+- The check needs `TRAVEL_ICS_URL` set in the session environment. If it is missing,
+  or the build log says `calendar feed failed` or `no calendar feed configured`,
+  record `blocked` with that line; never `clean`.
+- Run `TRAVEL_WRITE_ARCHIVE=1 npm run build`. It appends past feed trips that ended
+  within the last 3 months to the archive (slug from the title, plus the calendar
+  `uid`) and logs each as `[travel] froze into archive: ...`. Commit the change
+  (mechanical). Frozen entries win over the feed from then on; slugs are never
+  regenerated.
+- A `[travel] past trip older than 3-month lookback` warning means a past trip was
+  never frozen. Record `needs-ben` with the trip; freeze it only on his say-so, with
+  `TRAVEL_LOOKBACK_MONTHS=<n>` for that one run.
 - Record `travel`.
 
 ## 5. Links and wording

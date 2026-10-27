@@ -30,6 +30,7 @@ export interface Trip {
   end: string;   // YYYY-MM-DD
   place?: string;
   url?: string;
+  uid?: string;  // calendar event UID, recorded when a feed trip is frozen into the archive
 }
 
 /** Prefix a site-relative path with the deploy base (handles the GitHub Pages preview subpath). */

@@ -1,6 +1,48 @@
 # Trips migrated from the Squarespace calendar (Aug 2022 – Apr 2026).
 # New trips come from the travel calendar feed (see site.yaml); this file is the archive.
 # Slugs match the old /travel/<slug> URLs so they can redirect.
+- title: University of Tennessee, Knoxville
+  slug: university-of-tennessee-knoxville
+  start: '2026-10-20'
+  end: '2026-10-22'
+  place: Knoxville, TN
+  uid: 99399294-87E6-4346-8799-A17BCFCAA313
+- title: Hubble Fellows Symposium
+  slug: hubble-fellows-symposium
+  start: '2026-10-05'
+  end: '2026-10-09'
+  place: Harvard & Smithsonian Center for Astrophysics, Cambridge, MA
+  uid: 843080CB-D1FC-4B86-8396-0134ACAF2387
+- title: Invisibles 2026
+  slug: invisibles-2026
+  start: '2026-08-10'
+  end: '2026-08-14'
+  place: A Coruña, Spain
+  uid: A8563B74-7BD5-42ED-B89C-308BEFD74FF9
+- title: "MITP program: Phenomenology of Primordial Black Holes"
+  slug: mitp-program-phenomenology-of-primordial-black-holes
+  start: '2026-07-26'
+  end: '2026-08-01'
+  place: Mainz Institute for Theoretical Physics, Mainz, Germany
+  uid: 24F2E5D2-8075-4566-9738-F663C8FAFF88
+- title: PASCOS 2026
+  slug: pascos-2026
+  start: '2026-06-22'
+  end: '2026-06-26'
+  place: Sheffield, England
+  uid: EB483AB7-F739-4CEE-8B2E-742C4077FC27
+- title: Black Holes & Cosmology 2026
+  slug: black-holes-cosmology-2026
+  start: '2026-06-15'
+  end: '2026-06-19'
+  place: Granada, Spain
+  uid: A4E5EE9F-80EE-4E0D-A74B-1DD95123C3C6
+- title: Phenomenology 2026 Symposium
+  slug: phenomenology-2026-symposium
+  start: '2026-05-11'
+  end: '2026-05-13'
+  place: University of Pittsburgh, Pittsburgh, PA
+  uid: 60836985-9C96-4048-8E19-828A3F540039
 - title: Michelson Postdoctoral Prize Lectureship residency
   slug: michelson-postdoctoral-prize-lectureship-residency
   start: '2026-04-13'

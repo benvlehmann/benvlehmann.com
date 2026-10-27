@@ -114,7 +114,10 @@ edit the archive by hand for this.
 
 - Check every external link in the built site; fix or report dead ones (mechanical).
   Known false alarms: `physics.mit.edu`, `www.space.mit.edu` and `www.mttamcollege.edu`
-  return 403 to non-browser clients. Ben has checked them by hand; skip them.
+  return 403 to non-browser clients. `darksky.slac.stanford.edu` fails TLS
+  verification in the agent environment (its chain ends at emSign Root CA - G1, which
+  that environment does not trust) but loads in a browser. Ben has checked them by
+  hand; skip them.
 - Search prose in `src/data/` and `src/content/` for time-relative wording
   ("recently", "now", "currently", "this year") and report or fix it. Cached paper
   abstracts in `papers-cache.json` are not prose and are exempt.

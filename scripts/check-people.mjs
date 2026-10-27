@@ -1,8 +1,9 @@
 // MAINTENANCE.md §2: checks what the build-time coauthor match can't decide.
 // Run `npm run refresh-papers` first; this reads src/data/papers-cache.json.
 //   npm run check-people [-- --cv /path/to/cv.txt]   (cv.txt = pdftotext output)
-// Reports only; it never edits people.yaml. Exit 0 = ran (read the report),
-// exit 2 = INSPIRE unreachable (record the section as "blocked").
+// Reports only; it never edits people.yaml. Works offline from the cache.
+// A lead or match Ben has reviewed and rejected goes in that person's `exclude`
+// list (arXiv id or INSPIRE record number), so it is not reported again.
 import { readFile } from 'node:fs/promises';
 import { parse } from 'yaml';
 
@@ -33,7 +34,6 @@ const matches = (p) => {
   });
 };
 
-let blocked = false;
 const out = [];
 
 // 1. People with no matched papers: look for other spellings in INSPIRE.
@@ -51,23 +51,37 @@ for (const p of listed) {
       suspicious.push(`${p.name}: "${author}" on ${paper.arxiv ?? paper.inspire} (${paper.title})`);
   }
 }
-out.push(`## People with no matched papers (${none.length})`);
-for (const p of none) {
+// Leads for them come from Ben's own papers: an author with the same surname, or
+// the same first name and a surname within two edits. Excluded papers are skipped.
+const dist = (x, y) => {
+  const d = Array.from({ length: x.length + 1 }, (_, i) => [i, ...Array(y.length).fill(0)]);
+  for (let j = 1; j <= y.length; j++) d[0][j] = j;
+  for (let i = 1; i <= x.length; i++)
+    for (let j = 1; j <= y.length; j++)
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1));
+  return d[x.length][y.length];
+};
+const leads = none.flatMap((p) => {
   const [last, first] = keyOf(p);
-  try {
-    const res = await fetch(
-      `https://inspirehep.net/api/authors?size=5&fields=name.value,control_number&q=${encodeURIComponent(`${first} ${last}`)}`,
-      { headers: { Accept: 'application/json' } },
-    );
-    if (!res.ok) throw new Error(`INSPIRE ${res.status}`);
-    const hits = (await res.json()).hits.hits.map((h) => `${h.metadata.name.value} (recid ${h.metadata.control_number})`);
-    out.push(`- ${p.name} [${p.section}]: INSPIRE candidates: ${hits.join('; ') || 'none'}`);
-  } catch (e) {
-    blocked = true;
-    out.push(`- ${p.name} [${p.section}]: lookup failed (${e.message})`);
-  }
-}
-out.push('(A candidate is only a lead: a joint paper must exist under that spelling before proposing `inspire_name`.)', '');
+  const ex = new Set((p.exclude ?? []).map(String));
+  return papers.flatMap((paper) => {
+    if (ex.has(String(paper.arxiv)) || ex.has(String(paper.inspire)) || paper.authors.length > 30) return [];
+    return paper.authors
+      .filter((a) => {
+        const [l, f = ''] = a.split(',').map(norm);
+        const tok = f.replace(/\./g, '').split(/\s+/)[0] ?? '';
+        return (l === last && !(l === 'lehmann' && tok[0] === 'b')) || (tok === first && dist(l, last) <= 2);
+      })
+      .map((a) => `- ${p.name}: "${a}" on ${paper.arxiv ?? paper.inspire} (${paper.title})`);
+  });
+});
+out.push(
+  `## People with no matched papers (${none.length})`,
+  none.map((p) => p.name).join(', ') || '(none)',
+  `Leads under other spellings (${leads.length}); reviewed and rejected ones belong in \`exclude\`:`,
+  ...leads,
+  '',
+);
 
 out.push(`## Possible false matches (${suspicious.length})`, ...suspicious.map((s) => `- ${s}`), '');
 
@@ -108,4 +122,3 @@ if (students) {
   out.push('', `## CV students not on the People page (${missing.length})`, ...missing.map((n) => `- ${n}`));
 }
 console.log(out.join('\n'));
-process.exit(blocked ? 2 : 0);

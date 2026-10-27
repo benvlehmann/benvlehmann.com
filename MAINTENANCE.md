@@ -27,7 +27,9 @@ that every section has a row on `drift-check-*` PRs).
 
 - Run `npm run refresh-papers`. If `src/data/papers-cache.json` changed, commit it
   (mechanical).
-- Selected papers in `src/data/research.yaml`: confirm each arXiv id still resolves.
+- Run `npm run check-papers`: every selected paper in `src/data/research.yaml` must be
+  among Ben's INSPIRE papers (this catches a mistyped id; arXiv ids are persistent, so
+  there is no need to check that they resolve). Report any id it lists (PR).
 - Record `papers`.
 
 ## 2. Coauthored papers on the People page
@@ -36,15 +38,21 @@ Joint papers are matched automatically at build time (`coauthored()` in
 `src/lib/inspire.ts`, surname + first initial). Run
 `npm run check-people -- --cv <pdftotext output of the CV>` after the papers refresh
 (§3's text extraction can supply the CV; if the CV is unavailable, run without
-`--cv` and say so). It prints the three reports below; judge them as follows. Exit
-code 2 means INSPIRE was unreachable: record `blocked` with that error.
+`--cv` and say so). It works offline from the papers cache and prints the reports
+below; judge them as follows.
 
-- **People with no matched papers.** For each, search INSPIRE for the name. If a
-  joint paper exists under a different spelling, propose an `inspire_name` override
-  in `src/data/people.yaml` (PR).
-- **Possible false matches.** Flag any match where the INSPIRE full name differs
-  from the listed name beyond initials/accents (e.g. a different first name with the
-  same initial). Propose an `exclude` entry if it is wrong (PR).
+Reviewed decisions live in `src/data/people.yaml`, so they are not raised again: a
+paper Ben has said is not a person's goes in their `exclude` list, and a confirmed
+different spelling goes in `inspire_name`.
+
+- **People with no matched papers.** Many students have no joint paper; that is
+  expected and not a finding. Only the listed leads (an author on Ben's papers with
+  the same surname, or the same first name and a near-identical surname) need a
+  decision: if it is the same person, propose an `inspire_name` override; if not,
+  ask Ben and, on his say-so, add the paper to that person's `exclude` (PR).
+- **Possible false matches.** A match whose INSPIRE first name differs from the
+  listed one beyond initials/accents. Ask Ben: the same person gets `inspire_name`,
+  a different person gets an `exclude` entry (PR).
 - **Students missing from the page.** List coauthors on papers from the last two
   years who are not on the People page and who appear in the CV's "Students and
   mentoring" section. Report them; do not add people on your own.

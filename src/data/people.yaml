@@ -20,7 +20,6 @@ current:
   - { name: Guy Daniel Hadas, program: PhD, institution: Hebrew University, links: { orcid: https://orcid.org/0009-0008-9341-6561 } }
   - { name: Rotem Ovadia, program: PhD, institution: Hebrew University, links: { inspire: https://inspirehep.net/authors/2666520, orcid: https://orcid.org/0009-0002-8569-0938 } }
   - { name: Omer Tzvi Katz, program: PhD, institution: Tel Aviv University, links: { inspire: https://inspirehep.net/authors/2750167, orcid: https://orcid.org/0009-0005-7988-3989 } }
-  - { name: Christina Schwemmbauer, program: PhD, institution: DESY, links: { orcid: https://orcid.org/0000-0002-2029-1162 } }
 
 # Undergraduate theses I supervised at UC Santa Cruz (under my PhD advisor's oversight).
 theses:
@@ -38,7 +37,7 @@ theses:
     next: PhD in Astronomy, Cornell University
     links: { inspire: https://inspirehep.net/authors/2143205, orcid: https://orcid.org/0000-0001-6778-6659 }
   - name: Paul Andreini
-    years: 2016–2019
+    years: 2017–2019
     thesis: Time-evolution of the primordial black hole mass function
     honors: Honors in the major
     next: PhD in Physics, University of Oregon
@@ -72,6 +71,11 @@ former:
     was: "PhD, University of Pittsburgh"
     next: "Postdoctoral Associate, Brown University"
     links: { website: https://marcellhoward.github.io, inspire: https://inspirehep.net/authors/2624602, orcid: https://orcid.org/0000-0001-5384-132X }
+  - name: Christina Schwemmbauer
+    years: 2022–2025
+    was: "PhD, DESY"
+    next: "Photonic Team Lead, Munich Quantum Instruments"
+    links: { orcid: https://orcid.org/0000-0002-2029-1162 }
   - name: Cara Giovanetti
     years: 2024–2025
     was: "PhD, NYU"
@@ -108,7 +112,7 @@ former:
     next: "PhD in Computational Biology, Rockefeller University"
     links: { orcid: https://orcid.org/0000-0003-2004-2761 }
   - name: Jackson Yant
-    years: 2016–2018,
+    years: 2017–2018
     was: "BS, UC Santa Cruz"
     next: "PhD in Physics, Dartmouth College"
     links: { inspire: https://inspirehep.net/authors/2464676, orcid: https://orcid.org/0000-0002-5301-0611 }

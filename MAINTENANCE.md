@@ -130,4 +130,5 @@ edit the archive by hand for this.
   `last_verified` in `src/data/verified.json` to today's date is still your call: hold
   it back if anything gives you a reason (for example a question for Ben that you
   recorded as `clean`), and say why in the PR.
+- The `last_verified` update may be part of the same pull request as the run's other changes; it does not need a PR of its own. Merge order doesn't matter as long as the stamp is only set once the run's fixes are in that PR.
 - Summarize what changed, what is waiting in PRs, and anything that needs Ben.

@@ -1,6 +1,12 @@
 # Trips migrated from the Squarespace calendar (Aug 2022 – Apr 2026).
 # New trips come from the travel calendar feed (see site.yaml); this file is the archive.
 # Slugs match the old /travel/<slug> URLs so they can redirect.
+- title: Tufts University
+  slug: tufts-university
+  start: '2026-11-03'
+  end: '2026-11-03'
+  place: Medford, MA
+  uid: E24D3902-EAE5-4B42-8E46-CEFFA4DCEE28
 - title: University of Tennessee, Knoxville
   slug: university-of-tennessee-knoxville
   start: '2026-10-20'

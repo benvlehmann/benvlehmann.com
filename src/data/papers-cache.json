@@ -1,5 +1,21 @@
 [
  {
+  "title": "Gaia's dark partners: A new signature of dissipative dark matter",
+  "arxiv": "2611.03793",
+  "inspire": 3222490,
+  "date": "2026-11-02",
+  "url": "https://arxiv.org/abs/2611.03793",
+  "authors": [
+   "Bhalla, Badal",
+   "Dunsky, David",
+   "Ghalsasi, Akshay",
+   "Lehmann, Benjamin V.",
+   "Lodman, Jackie",
+   "Sinha, Kuver"
+  ],
+  "abstract": "The Gaia mission has greatly improved our understanding of the stellar binary population. Beyond providing an extensive catalog of binary systems with two luminous stars, Gaia has also discovered several systems that appear to be star--black hole (BH) binaries. One of the leading candidate formation channels for these systems is dynamical exchange, in which one component of a star--star binary is ejected from the system and replaced by a BH. Exchange processes are very sensitive to the velocity distribution of the incoming objects, and become very efficient in the limit that perturbers are slow, so the exchanged binary population is a sensitive probe of slow-moving objects. A population of slow-moving, nonluminous objects is naturally produced in dissipative dark matter (DDM) scenarios, where a subcomponent of dark matter can cool to form a dark disk and dark compact objects (DCOs), including but not limited to BHs, with a small velocity dispersion. In this work, we evaluate the rate at which DCOs formed by DDM exchange into star--star binaries to form star--DCO binaries. We find that in a wide range of parameter space, even under conservative assumptions, the rate of exchange interactions is sufficient to produce the objects that Gaia has observed to date. In some portions of parameter space, the predicted exchange rate is well in excess of the rate estimated from observations. We point out the potential for competitive constraints on the DDM parameter space with current and future data, making the Gaia mission an important testbed for dark sector cooling."
+ },
+ {
   "title": "Tunneling and tidal stripping in multifield ultralight dark matter halos",
   "arxiv": "2605.12589",
   "inspire": 3155183,

@@ -8,30 +8,28 @@ figure_alt: "Four contour panels of the predicted number of star–dark-object b
 figure_caption: "How many star–dark-object binaries the Milky Way should contain, across the parameters of a benchmark dissipative dark matter model and assuming molecular cooling. Black curves mark the mass of the dark objects. From Bhalla et al., arXiv:2611.03793."
 ---
 
-Gaia has spent a decade measuring where the stars are and how they move. Among its binaries are a handful in which an ordinary star orbits something heavy and dark, presumed a black hole: Gaia BH1, BH2, and BH3. In a new paper with Badal Bhalla, David Dunsky, Akshay Ghalsasi, Jackie Lodman, and Kuver Sinha, we make a narrower claim than the obvious one: not that these are dark matter, but that systems like them probe one specific question, whether any part of dark matter can cool.
+Everything we know about dark matter, we know from gravity. That is usually said as a complaint. I think of it as a filter on questions: the useful ones are those where gravity alone answers differently depending on what dark matter is. Here is one: can any of it cool? In a new paper with Badal Bhalla, David Dunsky, Akshay Ghalsasi, Jackie Lodman, and Kuver Sinha, we ask that question in a specific place: the binary stars of the Milky Way.
 
-## Partner swapping
+Ordinary matter can cool. Gas radiates, sinks, fragments, and ends up as stars. Cold dark matter cannot, which is why there are no dark stars. But "cannot" is a property of the simplest model, not a law. A small piece of the dark sector could have its own charged particles and photon, form its own atoms, and radiate. That piece would do what gas does: settle into a thin disk alongside ours and fragment into compact objects. Whether those are dark stars or black holes does not matter here: they are point masses, born out of cold gas, so they are slow.
 
-There are two questions here. Where do star–black hole binaries come from, and what would make a dark object good at getting into one? On the first: stars do not form in orbit around black holes, but the pair can be assembled after the fact. Take two stars already orbiting each other, and let a lone black hole wander past. If it comes close enough, the three tumble around one another, and sometimes a star is flung out and the black hole stays. This is exchange, a leading explanation for Gaia's systems.
+That last word does all the work.
 
-On the second: we showed earlier that primordial black holes, if they were the dark matter, would be exchanged into binaries at roughly the rate Gaia implies, and those move at halo speeds, hundreds of kilometers per second. But the exchange rate grows sharply as the intruder slows down, roughly as the inverse square of its speed. For most ways of detecting dark objects, slow is unhelpful. For binaries, slow is exactly what one wants.
+## Why slow matters
 
-## Dark matter that cools
+The compact dark objects I usually think about are primordial black holes, and what makes them hard to find in stellar systems is that they are fast. They move with the halo, a few hundred kilometers per second, a blur on the scale of a binary orbit.
 
-Ordinary dark matter cannot radiate, so it never cools, never settles, and never forms anything smaller than a galaxy. Stars exist because ordinary gas can.
+Now consider exchange. Two stars orbit each other; a third body wanders in close; after some tumbling, one star is thrown out and the intruder stays, bound to the other. In earlier work we found that primordial black holes would do this at roughly the rate implied by Gaia's star–black hole systems. It works at all because exchange likes slow intruders: the cross section grows roughly as the inverse square of the relative speed. For a halo of fast black holes it is marginal. For a disk of slow dark objects it is not.
 
-In *dissipative* dark matter models, a small subcomponent has a dark version of electromagnetism: dark protons, dark electrons, a dark photon. It forms dark atoms and molecules, cools, and sinks into a thin disk alongside the visible one. If the disk fragments, it makes compact dark objects, dark stars or black holes; either way, point masses. They inherit the motion of the cold gas that made them: slow, and in the disk, among the stellar binaries.
+So the chain is short. A dark sector that cools makes compact objects. The same cooling makes them slow and puts them in the disk, among the binaries. Slow objects among binaries get exchanged into them. And the end state, a star orbiting something heavy and dark, is what Gaia has been finding: Gaia BH1, BH2, and BH3. That is the whole paper in four sentences.
 
-That is the whole idea, and it needs exactly one ingredient. Cooling makes compact objects, the same cooling makes them slow, and slow objects get exchanged into binaries.
+## What we actually did
 
-## What we find
+We take a benchmark model, atomic dark matter, and follow a Milky Way-like halo through its history: when the dark gas cools, how much disk it builds, how heavy the fragments are. We compute exchange cross sections for slow encounters, check them against three-body simulations, and integrate over the Galaxy's binaries. The figure of merit is the number of star–dark-object binaries in the Milky Way today.
 
-We take a benchmark atomic dark matter model and follow a Milky Way-like halo through its history: when the dark gas cools, how massive a disk it builds, and how heavy the compact objects should be. We compute the exchange cross section for slow intruders, check it against three-body simulations, and integrate over the Galaxy's binaries. The number of exchanged binaries is the figure of merit.
+Over a wide range of parameters, with conservative choices, that number is ten thousand or so, comparable to what Gaia BH1 suggests, and in places well above it. Exchange also prefers heavy dark objects, conveniently: a heavier partner swings its star around faster, and measuring how fast stars move is what Gaia does.
 
-Across a wide range of parameters, with conservative assumptions, it comes out at ten thousand or so, comparable to what Gaia BH1 suggests, and in places well above it. Exchange also favors heavy dark objects. Good, because a heavier partner swings its star around faster, and measuring how fast stars move is what Gaia is good at.
+Two things this does not show. It does not show that BH1, BH2, and BH3 are dark matter; I would love that to be the answer, but three objects cannot establish it, and whether ordinary stellar channels can produce them is still argued about. And it does not yet exclude anything, since turning a count into a constraint requires knowing which binaries Gaia can see, which we have not done. Caveats on our side: the dark disk's thickness and mass fraction rest on simulations at two parameter points, and we took it to be as thick as the visible disk, which if anything undercounts the exchanges.
 
-I would love for Gaia's black holes to be dark matter. Three systems cannot tell us that, and whether ordinary stellar channels can make them is still debated. Two caveats on our side: the dark disk's thickness and mass fraction rest on simulations at two parameter points, and we took it to be as thick as the visible disk, which if anything undercounts the exchanges.
+## Why I like it anyway
 
-## Why I like it
-
-Everything we know about dark matter, we learned from gravity. If it never interacts with us by any other means, we still want to know whether it can cool; cooling is what turns a fog into structure. Usually one answers it with expensive galaxy simulations. Here it reduces to three-body mechanics, which is cheap and well understood, and to a counting problem: how many stars have invisible companions? We used atomic dark matter because we trust the calculation there, but the ingredient is cooling, not atoms; any cold dark subcomponent should do. Gaia's next data release should expand the catalog; given a model of what Gaia can see, the census alone could rule out parts of this parameter space. A dark companion lighter than the Sun would be a clean find, since stellar evolution makes no black holes that small.
+Cooling in a dark sector is normally studied with expensive galaxy simulations. Here it reduces to three-body mechanics, which is cheap and well understood, and to a count: how many stars have invisible companions? The ingredient is cooling, not atoms; the atomic model is where we trust the numbers. Gaia's next data release should lengthen the list, and a companion lighter than the Sun would be a clean sign, since stellar evolution makes no black holes that small. Few-body dynamics has not been much of a dark matter tool. I think it is about to be.

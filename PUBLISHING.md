@@ -41,7 +41,7 @@ out and mention the doubt to Ben privately rather than in the draft.
 - No hype ("groundbreaking", "revolutionary", "for the first time ever" unless the paper
   says so). Match the paper's own level of confidence.
 - Ben's voice: plain, precise, a little dry; first person singular for framing, "we" for
-  the work of a paper's author team.
+  the work of a paper's author team. `VOICE.md` has the details.
 - Math sparingly. Inline `$...$`; display math with `$$` on their own lines.
 
 ## Paper explainers

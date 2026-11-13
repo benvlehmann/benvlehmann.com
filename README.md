@@ -12,7 +12,7 @@ Personal academic site, built with [Astro](https://astro.build) and deployed to 
 | Outreach | `src/data/outreach.yaml` |
 | Students and collaborators | `src/data/people.yaml` |
 | Past trips (migrated from Squarespace) | `src/data/travel-archive.yaml` |
-| Unlisted posts (`/public/<slug>/`) | `src/content/posts/*.md` |
+| Older posts (`/public/<slug>/`, listed on `/notes/`) | `src/content/posts/*.md` |
 | Notes and paper explainers (`/notes/<slug>/`) | `src/content/notes/*.md` |
 | Which papers get explainers | `src/data/explainers.yaml` |
 | PDFs (CV, post attachments) at `/s/<file>.pdf` | `public/s/` |

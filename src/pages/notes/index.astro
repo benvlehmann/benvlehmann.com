@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { notes } from '../../lib/notes';
+import { noteIndex } from '../../lib/notes';
 import { formatDate } from '../../lib/posts';
 import { url } from '../../lib/data';
 ---
@@ -9,10 +9,10 @@ import { url } from '../../lib/data';
     <div class="wrap page">
       <h1 class="page-title">Notes</h1>
       <ol class="rows">
-        {notes.map((n) => (
+        {noteIndex.map((n) => (
           <li>
             <span class="when">{formatDate(n.date)}</span>
-            <span class="what"><a href={url(`notes/${n.slug}/`)}>{n.title}</a></span>
+            <span class="what"><a href={url(n.href)}>{n.title}</a></span>
           </li>
         ))}
       </ol>

@@ -3,7 +3,8 @@
 - Edit content in `src/data/*.yaml` and `src/content/posts/`, not in page templates.
   Facts that change (title, institution, years) belong in `src/data/site.yaml` only.
 - Avoid time-relative wording in prose ("recently", "now", "currently", "this year").
-- Posts under `/public/` are intentionally unlisted: never add them to the nav or home page.
+- Posts under `/public/` keep their original URLs. They are listed on `/notes/` alongside notes,
+  but never in the nav or on the home page.
 - Notes (`src/content/notes/`, shown at `/notes/`) are public write-ups; a note with an
   `arxiv` field is that paper's plain-language explainer. Anything drafted from Ben's
   private sources must follow `PUBLISHING.md`.

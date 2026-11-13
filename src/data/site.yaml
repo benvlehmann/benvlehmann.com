@@ -40,7 +40,8 @@ seo:
 profiles:
   - { label: Google Scholar, url: "https://scholar.google.com/citations?user=QLO1ZPMAAAAJ", footer: true }
   - { label: ORCID, url: "https://orcid.org/0000-0001-7735-4673", footer: true }
-  - { label: arXiv, url: "https://arxiv.org/a/lehmann_b_1.html", footer: true }
+  - { label: ADS, url: "https://tinyurl.com/bvl-ads-list", footer: true }
+  - { label: arXiv, url: "https://arxiv.org/a/lehmann_b_1.html" }
   - { label: INSPIRE, url: "https://inspirehep.net/authors/1737895", footer: true }
   - { label: MIT Physics, url: "https://physics.mit.edu/faculty/benjamin-lehmann/" }
   - { label: MIT Kavli Institute, url: "https://www.space.mit.edu/people/benjamin-lehmann/" }

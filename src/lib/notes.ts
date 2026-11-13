@@ -35,3 +35,11 @@ export const notes: Note[] = Object.entries(modules)
 
 /** The explainer note for an arXiv id, if one has been published. */
 export const explainerFor = (arxiv?: string) => (arxiv ? notes.find((n) => n.arxiv === arxiv) : undefined);
+
+// Everything listed on /notes/: notes plus the older posts, which keep their
+// original /public/<slug>/ URLs. Newest first.
+import { posts } from './posts';
+export const noteIndex: { title: string; date: string; href: string }[] = [
+  ...notes.map((n) => ({ title: n.title, date: n.date, href: `notes/${n.slug}/` })),
+  ...posts.map((p) => ({ title: p.title, date: p.date, href: `public/${p.slug}/` })),
+].sort((a, b) => b.date.localeCompare(a.date));

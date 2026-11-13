@@ -1,5 +1,5 @@
 // Posts in src/content/posts/*.md live at /public/<slug>/, matching the old
-// Squarespace URLs. They are deliberately not linked from the site nav.
+// Squarespace URLs. They are listed on /notes/ but not in the nav or on the home page.
 const modules = import.meta.glob('../content/posts/*.md', { eager: true }) as Record<string, any>;
 
 export const posts = Object.entries(modules)

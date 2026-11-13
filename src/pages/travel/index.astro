@@ -14,20 +14,17 @@ for (const t of past) {
 <Base title="Talks & travel" current="travel" description="Talks, seminars, conferences and visits by Ben Lehmann.">
   <section>
     <div class="wrap page intro">
-      <p class="eyebrow">Talks &amp; travel</p>
-      <h1 class="page-title">Where I’ll be, and where I’ve been</h1>
-      <div class="box solo">
-        <p class="label accent">Upcoming</p>
-        {upcoming.length ? (
+      <h1 class="page-title">Talks &amp; travel</h1>
+      {upcoming.length > 0 && (
+        <div class="box solo">
+          <p class="label accent">Upcoming</p>
           <ul>
             {upcoming.map((t) => (
               <li><span class="when">{formatRange(t.start, t.end)}</span>{t.title}{t.place && <span class="faint"> · {t.place}</span>}</li>
             ))}
           </ul>
-        ) : (
-          <p>Nothing on the calendar right now. Want me to visit? <a href={site.links.email_page}>Get in touch.</a></p>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   </section>
   <section class="band">

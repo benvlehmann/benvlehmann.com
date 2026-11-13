@@ -67,7 +67,6 @@ const h = site.hero;
     <div class="wrap split">
       <div class="side">
         <h2>Recent papers</h2>
-        <p>Pulled from INSPIRE automatically, so this list never goes stale.</p>
         <a class="more" href={site.links.inspire}>All papers on INSPIRE →</a>
       </div>
       <ol class="rows main">
@@ -88,19 +87,16 @@ const h = site.hero;
     <div class="wrap split">
       <div class="side">
         <h2>Talks &amp; travel</h2>
-        <p>Where I’ll be, and where I’ve been.</p>
-        <div class="box">
-          <p class="label accent">Upcoming</p>
-          {upcoming.length ? (
+        {upcoming.length > 0 && (
+          <div class="box">
+            <p class="label accent">Upcoming</p>
             <ul>
               {upcoming.slice(0, 5).map((t) => (
                 <li><span class="when">{formatRange(t.start, t.end)}</span>{t.title}{t.place && <span class="faint"> · {t.place}</span>}</li>
               ))}
             </ul>
-          ) : (
-            <p>Nothing on the calendar right now. Want me to visit? <a href={site.links.email_page}>Get in touch.</a></p>
-          )}
-        </div>
+          </div>
+        )}
       </div>
       <div class="main">
         <p class="label">Recent</p>

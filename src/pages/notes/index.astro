@@ -4,28 +4,18 @@ import { notes } from '../../lib/notes';
 import { formatDate } from '../../lib/posts';
 import { url } from '../../lib/data';
 ---
-<Base title="Notes" description="Plain-language explainers for Ben Lehmann's papers, and occasional notes.">
+<Base title="Notes" description="Notes by Ben Lehmann.">
   <section>
     <div class="wrap page">
-      <p class="eyebrow">Notes</p>
       <h1 class="page-title">Notes</h1>
-      <p class="lede page-lede lead-in">Plain-language explainers for my papers, and the occasional note on something I found interesting along the way.</p>
-      {notes.length ? (
-        <ol class="rows">
-          {notes.map((n) => (
-            <li>
-              <span class="when">{formatDate(n.date)}</span>
-              <span class="what">
-                <a href={url(`notes/${n.slug}/`)}>{n.title}</a>
-                {n.summary && <span class="summary">{n.summary}</span>}
-                {n.arxiv && <span class="sub">Explainer · arXiv:{n.arxiv}</span>}
-              </span>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <p class="muted">Nothing here yet.</p>
-      )}
+      <ol class="rows">
+        {notes.map((n) => (
+          <li>
+            <span class="when">{formatDate(n.date)}</span>
+            <span class="what"><a href={url(`notes/${n.slug}/`)}>{n.title}</a></span>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 </Base>

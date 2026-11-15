@@ -1,9 +1,10 @@
 // After the build, give every page that links to arXiv papers in the preview
 // index a small JSON block with just those papers, plus the ~1.5 KB script that
 // shows a preview card on hover/focus. Pages without such links are untouched.
-import { readdir, readFile, writeFile, rm } from 'node:fs/promises';
+import { readFile, writeFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { htmlFiles } from './html-files.mjs';
 
 const ARXIV = /href="https?:\/\/arxiv\.org\/abs\/([^"?#]+?)(?:v\d+)?"/g;
 
@@ -32,14 +33,6 @@ document.addEventListener('focusin',e=>{const a=link(e);if(a&&key(a)){clearTimeo
 document.addEventListener('focusout',e=>{if(link(e))hide()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 addEventListener('scroll',()=>{if(cur)close()},{passive:true});addEventListener('resize',()=>{if(cur)close()});})();`;
-
-async function* htmlFiles(dir) {
-  for (const entry of await readdir(dir, { withFileTypes: true })) {
-    const p = join(dir, entry.name);
-    if (entry.isDirectory()) yield* htmlFiles(p);
-    else if (entry.name.endsWith('.html')) yield p;
-  }
-}
 
 export default function paperPreviews() {
   return {

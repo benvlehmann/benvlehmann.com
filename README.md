@@ -16,6 +16,7 @@ Personal academic site, built with [Astro](https://astro.build) and deployed to 
 | Notes and paper explainers (`/notes/<slug>/`) | `src/content/notes/*.md` |
 | Which papers get explainers | `src/data/explainers.yaml` |
 | PDFs (CV, post attachments) at `/s/<file>.pdf` | `public/s/` |
+| The *Ethica* edition: web edition at `/ethica/`, PDFs and EPUBs at `/s/ethica*` | `public/ethica/`, `public/s/ethica*` (build output of the spinoza repository; see below) |
 | Images | `public/img/` |
 
 Facts that change (title, institution, start year) live once in `site.yaml`; other files
@@ -36,6 +37,11 @@ reference them as `{role}`, `{institution}`, etc.
 - The site rebuilds on every push to `main` and nightly, so both stay current.
 - **CV**: `public/s/lehmann_cv.pdf` is the `make web` target of the CV build
   (`~/Dropbox/Science/CV/_cv/build/web/lehmann_cv.pdf`).
+- **The *Ethica***: `public/ethica/` (the web edition) and `public/s/ethica.pdf`, `ethica-print.pdf`,
+  `ethica.epub`, `ethica-english.epub` and `ethica-latin.epub` are the output of `make publish` in the
+  (private) spinoza repository, which builds a release tag and opens a pull request here; merging it
+  publishes. They are never edited here. The post-build integrations leave `/ethica/` as it was built
+  (`src/integrations/html-files.mjs`).
 
 ## Drafted content
 

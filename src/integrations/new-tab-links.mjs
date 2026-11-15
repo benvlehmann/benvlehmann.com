@@ -1,9 +1,9 @@
 // After the build, rewrite every generated page so that external links and links
 // to static files (PDFs and anything under /s/) open in a new tab. Doing it here
 // covers links from templates, YAML data, and Markdown posts alike.
-import { readdir, readFile, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { htmlFiles } from './html-files.mjs';
 
 const STATIC_FILE = /\.(pdf|zip|png|jpe?g|gif|svg|txt|tex|bib|csv|json)(?:[?#]|$)/i;
 
@@ -22,14 +22,6 @@ export function rewriteHtml(html, siteHosts) {
     const rel = /\srel\s*=/i.test(attrs) ? '' : ' rel="noopener"';
     return `<a${attrs} target="_blank"${rel}>`;
   });
-}
-
-async function* htmlFiles(dir) {
-  for (const entry of await readdir(dir, { withFileTypes: true })) {
-    const p = join(dir, entry.name);
-    if (entry.isDirectory()) yield* htmlFiles(p);
-    else if (entry.name.endsWith('.html')) yield p;
-  }
 }
 
 export default function newTabLinks() {

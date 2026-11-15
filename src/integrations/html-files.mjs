@@ -1,7 +1,8 @@
 // The built pages that the post-build integrations rewrite: every .html file under
-// dist/, except in directories that are copied in from elsewhere and must be served
-// exactly as built. public/ethica/ is the web edition of the Ethica, the output of
-// `make publish` in the spinoza repository.
+// dist/, except in directories that are copied in from elsewhere and are left as they
+// were built. public/ethica/ is the web edition of the Ethica, the output of
+// `make publish` in the spinoza repository; ethica-frame.mjs only puts the site's header
+// and footer around its pages.
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 

@@ -1,15 +1,15 @@
 ---
 import '../styles/global.css';
+import SiteHead from '../components/SiteHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import { site, url, fill } from '../lib/data';
-import verified from '../data/verified.json';
-import { noteIndex } from '../lib/notes';
 
 interface Props { title?: string; description?: string; current?: string }
 const { title, description, current = '' } = Astro.props;
 const onHome = current === 'home';
 const pageTitle = title ? `${title} — ${site.name}` : site.seo?.home_title ?? site.name;
 const desc = (description ?? fill(site.seo?.home_description ?? `{name} studies dark matter as an {role} at the {institution}.`)).replace(/\s+/g, ' ').trim();
-const home = url('');
 const abs = (p: string) => new URL(url(p), Astro.site).href;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = abs(site.seo?.og_image ?? site.hero.image);
@@ -40,32 +40,15 @@ const jsonLd = onHome ? JSON.stringify([
   { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(''), author: { '@id': `${abs('')}#person` } },
 ]).replace(/</g, '\\u003c') : null;
 const isNotFound = /\/404\/?$/.test(Astro.url.pathname);
-const nav = [
-  { label: 'Research', href: onHome ? '#research' : url('#research') },
-  { label: 'Papers', href: onHome ? '#papers' : url('#papers') },
-  { label: 'Talks & travel', href: url('travel/'), key: 'travel' },
-  { label: 'Outreach', href: onHome ? '#outreach' : url('#outreach') },
-  { label: 'People', href: url('people/'), key: 'people' },
-];
-// Cloudflare Web Analytics: only when a token is set and the build targets the real domain.
-const cfToken = site.analytics?.cloudflare_token;
-const onRealHost = Astro.site && (site.analytics?.hosts ?? []).includes(Astro.site.host);
-const cfBeacon = cfToken && onRealHost ? JSON.stringify({ token: cfToken }) : null;
-const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <script is:inline>try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <SiteHead />
   <title>{pageTitle}</title>
   <meta name="description" content={desc}>
-  <link rel="icon" href={url('favicon.png')}>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   {isNotFound ? <meta name="robots" content="noindex"> : <link rel="canonical" href={canonical}>}
   <meta name="author" content="Benjamin V. Lehmann">
   <meta property="og:type" content={onHome ? 'profile' : 'website'}>
@@ -84,69 +67,12 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
   <meta name="twitter:description" content={desc}>
   <meta name="twitter:image" content={ogImage}>
   {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
-  {cfBeacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={cfBeacon}></script>}
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="wordmark" href={home}>{site.name}</a>
-      <nav class="site-nav" aria-label="Main">
-        {nav.map((n) => <a href={n.href} aria-current={n.key === current ? 'page' : undefined}>{n.label}</a>)}
-        <a class="cv" href={url(site.links.cv)}>CV ↓</a>
-        <button class="theme-toggle" id="theme-toggle" type="button" hidden>Light theme</button>
-      </nav>
-    </div>
-  </header>
+  <SiteHeader current={current} />
   <main id="main">
     <slot />
   </main>
-  <footer class="site-footer" id="contact">
-    <div class="wrap">
-      <div>
-        <p class="label">Find me</p>
-        <p>{site.office.lines.map((l: string, i: number) => <>{l}{i < site.office.lines.length - 1 && <br />}</>)}</p>
-      </div>
-      <div>
-        <p class="label">Elsewhere</p>
-        <p class="stack two-col" style={`grid-template-rows: repeat(${Math.ceil((2 + (noteIndex.length > 0 ? 1 : 0) + (site.profiles ?? []).filter((p: any) => p.footer).length) / 2)}, auto)`}>
-          <a href={site.links.email_page}>Email (via MIT directory)</a>
-          <a href={url(site.links.cv)}>CV (PDF)</a>
-          {noteIndex.length > 0 && <a href={url('notes/')}>Notes</a>}
-          {(site.profiles ?? []).filter((p: any) => p.footer).map((p: any) => <a href={p.url} rel="me">{p.label}</a>)}
-        </p>
-      </div>
-      {verified.last_verified && (
-        <div>
-          <p class="label">Site health</p>
-          <p><span class="dot" aria-hidden="true"></span>Content last verified {fmt(verified.last_verified)}</p>
-        </div>
-      )}
-    </div>
-    <p class="wrap colophon">Benjamin V. Lehmann · {site.role}, {site.institution}</p>
-  </footer>
-  <script is:inline>
-    // Light/dark toggle. The button names the theme it switches to; the choice is remembered.
-    (function () {
-      var b = document.getElementById('theme-toggle');
-      if (!b) return;
-      var root = document.documentElement, mq = matchMedia('(prefers-color-scheme: light)');
-      var current = function () { return root.dataset.theme || (mq.matches ? 'light' : 'dark'); };
-      var sync = function () {
-        var next = current() === 'dark' ? 'light' : 'dark';
-        b.textContent = next === 'light' ? 'Light theme' : 'Dark theme';
-        b.setAttribute('aria-label', 'Switch to ' + next + ' theme');
-      };
-      b.addEventListener('click', function () {
-        var next = current() === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        try { localStorage.setItem('theme', next); } catch (e) {}
-        sync();
-      });
-      mq.addEventListener('change', sync);
-      sync();
-      b.hidden = false;
-    })();
-  </script>
+  <SiteFooter />
 </body>
 </html>

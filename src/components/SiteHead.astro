@@ -1,0 +1,20 @@
+---
+// The parts of <head> that every page of the site shares, including the pages of the
+// Ethica edition under /ethica/ (see src/integrations/ethica-frame.mjs): theme, icon,
+// fonts, the chrome stylesheet and analytics. Page-specific tags (title, description,
+// canonical, Open Graph) stay in src/layouts/Base.astro.
+import { site, url } from '../lib/data';
+
+// Cloudflare Web Analytics: only when a token is set and the build targets the real domain.
+const cfToken = site.analytics?.cloudflare_token;
+const onRealHost = Astro.site && (site.analytics?.hosts ?? []).includes(Astro.site.host);
+const cfBeacon = cfToken && onRealHost ? JSON.stringify({ token: cfToken }) : null;
+---
+<meta name="color-scheme" content="dark light">
+<script is:inline>try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="icon" href={url('favicon.png')}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href={url('chrome.css')}>
+{cfBeacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={cfBeacon}></script>}

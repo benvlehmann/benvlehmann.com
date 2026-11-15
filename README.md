@@ -17,6 +17,8 @@ Personal academic site, built with [Astro](https://astro.build) and deployed to 
 | Which papers get explainers | `src/data/explainers.yaml` |
 | PDFs (CV, post attachments) at `/s/<file>.pdf` | `public/s/` |
 | The *Ethica* edition: web edition at `/ethica/`, PDFs and EPUBs at `/s/ethica*` | `public/ethica/`, `public/s/ethica*` (build output of the spinoza repository; see below) |
+| Colours, type, header and footer styles (shared with the *Ethica* edition) | `public/chrome.css` |
+| Header, footer and the `<head>` tags every page shares | `src/components/Site*.astro` |
 | Images | `public/img/` |
 
 Facts that change (title, institution, start year) live once in `site.yaml`; other files
@@ -40,8 +42,11 @@ reference them as `{role}`, `{institution}`, etc.
 - **The *Ethica***: `public/ethica/` (the web edition) and `public/s/ethica.pdf`, `ethica-print.pdf`,
   `ethica.epub`, `ethica-english.epub` and `ethica-latin.epub` are the output of `make publish` in the
   (private) spinoza repository, which builds a release tag and opens a pull request here; merging it
-  publishes. They are never edited here. The post-build integrations leave `/ethica/` as it was built
-  (`src/integrations/html-files.mjs`).
+  publishes. They are never edited here. After the build, `src/integrations/ethica-frame.mjs` puts the
+  site's header and footer around each page of the edition (made from the same components as every page,
+  via `src/pages/ethica-frame.astro`), with `public/chrome.css`, whose colour tokens the edition's own
+  stylesheet is written in; so the edition follows the site's theme and its switch. Nothing else in it
+  is changed (`src/integrations/html-files.mjs`).
 
 ## Drafted content
 

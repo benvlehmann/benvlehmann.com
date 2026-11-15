@@ -1,0 +1,28 @@
+---
+// The site's header (wordmark, navigation, theme switch), on every page, including the
+// Ethica edition's (src/integrations/ethica-frame.mjs). Styles: public/chrome.css.
+import { site, url } from '../lib/data';
+
+interface Props { current?: string }
+const { current = '' } = Astro.props;
+const onHome = current === 'home';
+const home = url('');
+const nav = [
+  { label: 'Research', href: onHome ? '#research' : url('#research') },
+  { label: 'Papers', href: onHome ? '#papers' : url('#papers') },
+  { label: 'Talks & travel', href: url('travel/'), key: 'travel' },
+  { label: 'Outreach', href: onHome ? '#outreach' : url('#outreach') },
+  { label: 'People', href: url('people/'), key: 'people' },
+];
+---
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href={home}>{site.name}</a>
+    <nav class="site-nav" aria-label="Main">
+      {nav.map((n) => <a href={n.href} aria-current={n.key === current ? 'page' : undefined}>{n.label}</a>)}
+      <a class="cv" href={url(site.links.cv)}>CV ↓</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" hidden>Light theme</button>
+    </nav>
+  </div>
+</header>

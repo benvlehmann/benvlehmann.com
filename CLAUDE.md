@@ -12,6 +12,9 @@
   Ben. Do not update it for later career moves.
 - `public/ethica/` and `public/s/ethica*` are build output of the private spinoza repository, replaced
   as a whole by `make publish` there. Never edit them here, not even typos: fixes belong in spinoza.
+- The design tokens (`--bg`, `--text`, `--accent`, …) and the header and footer styles live in
+  `public/chrome.css`, which the Ethica edition also uses: its stylesheet is written in those token
+  names. Changing a value is fine; renaming or removing a token changes the edition too.
 - Keep old URLs working: `/s/*.pdf`, `/public/<slug>/`, and the redirects in
   `src/pages/[legacy].astro` and `src/pages/travel/[slug].astro`.
 - Mechanical fixes (typos, dead links, papers cache refresh) can go straight to `main`.

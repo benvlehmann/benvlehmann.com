@@ -1,0 +1,14 @@
+---
+// Not a page: the site's shared <head> tags, header and footer, built from the same
+// components as every page, with a marker where a page's content goes. After the build,
+// src/integrations/ethica-frame.mjs puts these around each page of the Ethica edition
+// (public/ethica/) and deletes this page.
+import SiteHead from '../components/SiteHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { MARK } from '../integrations/ethica-frame.mjs';
+---
+<html lang="en">
+<head><SiteHead /></head>
+<body><SiteHeader /><Fragment set:html={MARK} /><SiteFooter /></body>
+</html>

@@ -19,6 +19,6 @@ export default defineConfig({
   build: { format: 'directory' },
   // ethicaFrame must come after newTabLinks (see src/integrations/ethica-frame.mjs).
   integrations: [newTabLinks(), paperPreviews(), ethicaFrame()],
-  // $...$ math in notes and posts, rendered to MathML at build time (no client-side math library).
+  // $...$ math in notes, rendered to MathML at build time (no client-side math library).
   markdown: { remarkPlugins: [remarkMath], rehypePlugins: [[rehypeKatex, { output: 'mathml' }]] },
 });

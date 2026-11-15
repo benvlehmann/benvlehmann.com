@@ -4,7 +4,7 @@
 // (src/integrations/ethica-frame.mjs). Styles: public/chrome.css.
 import { site, url } from '../lib/data';
 import verified from '../data/verified.json';
-import { noteIndex } from '../lib/notes';
+import { notes } from '../lib/notes';
 
 const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
@@ -16,10 +16,10 @@ const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US'
     </div>
     <div>
       <p class="label">Elsewhere</p>
-      <p class="stack two-col" style={`grid-template-rows: repeat(${Math.ceil((2 + (noteIndex.length > 0 ? 1 : 0) + (site.profiles ?? []).filter((p: any) => p.footer).length) / 2)}, auto)`}>
+      <p class="stack two-col" style={`grid-template-rows: repeat(${Math.ceil((2 + (notes.length > 0 ? 1 : 0) + (site.profiles ?? []).filter((p: any) => p.footer).length) / 2)}, auto)`}>
         <a href={site.links.email_page}>Email (via MIT directory)</a>
         <a href={url(site.links.cv)}>CV (PDF)</a>
-        {noteIndex.length > 0 && <a href={url('notes/')}>Notes</a>}
+        {notes.length > 0 && <a href={url('public/')}>Notes</a>}
         {(site.profiles ?? []).filter((p: any) => p.footer).map((p: any) => <a href={p.url} rel="me">{p.label}</a>)}
       </p>
     </div>

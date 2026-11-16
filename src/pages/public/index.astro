@@ -1,17 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { posts, formatDate } from '../../lib/posts';
+import { notes, formatDate, titleHtml } from '../../lib/notes';
 import { url } from '../../lib/data';
 ---
-<Base title="Posts">
+<Base title="Notes" description="Notes by Ben Lehmann.">
   <section>
-    <div class="wrap post page">
-      <p class="eyebrow">Posts</p>
+    <div class="wrap page">
+      <h1 class="page-title">Notes</h1>
       <ol class="rows">
-        {posts.map((p) => (
+        {notes.map((n) => (
           <li>
-            <span class="when">{formatDate(p.date)}</span>
-            <span class="what"><a href={url(`public/${p.slug}/`)}>{p.title}</a></span>
+            <span class="when">{formatDate(n.date)}</span>
+            <span class="what"><a href={url(`public/${n.slug}/`)} set:html={titleHtml(n.title)} /></span>
           </li>
         ))}
       </ol>

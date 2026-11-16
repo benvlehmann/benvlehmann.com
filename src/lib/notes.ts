@@ -1,4 +1,5 @@
-// Notes: short public write-ups. A note with an `arxiv` field is a plain-language
+// Notes: short public write-ups, served at /public/<slug>/ (the old Squarespace
+// post URLs, kept for stability) and listed at /public/. A note with an `arxiv` field is a plain-language
 // explainer for that paper and is linked from the paper wherever it's listed.
 // Notes with `draft: true` are never built.
 const modules = import.meta.glob('../content/notes/*.md', { eager: true }) as Record<string, any>;
@@ -36,10 +37,13 @@ export const notes: Note[] = Object.entries(modules)
 /** The explainer note for an arXiv id, if one has been published. */
 export const explainerFor = (arxiv?: string) => (arxiv ? notes.find((n) => n.arxiv === arxiv) : undefined);
 
-// Everything listed on /notes/: notes plus the older posts, which keep their
-// original /public/<slug>/ URLs. Newest first.
-import { posts } from './posts';
-export const noteIndex: { title: string; date: string; href: string }[] = [
-  ...notes.map((n) => ({ title: n.title, date: n.date, href: `notes/${n.slug}/` })),
-  ...posts.map((p) => ({ title: p.title, date: p.date, href: `public/${p.slug}/` })),
-].sort((a, b) => b.date.localeCompare(a.date));
+export const formatDate = (d: string) =>
+  new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+
+// Titles may use *asterisks* for italics (e.g. a book title). titleHtml renders
+// them as <em> for headings and lists; titleText strips them for <title> and
+// link previews, which can't show formatting.
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+export const titleHtml = (t: string) => escapeHtml(t).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+export const titleText = (t: string) => t.replace(/\*([^*]+)\*/g, '$1');

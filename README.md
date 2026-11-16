@@ -12,8 +12,7 @@ Personal academic site, built with [Astro](https://astro.build) and deployed to 
 | Outreach | `src/data/outreach.yaml` |
 | Students and collaborators | `src/data/people.yaml` |
 | Past trips (migrated from Squarespace) | `src/data/travel-archive.yaml` |
-| Older posts (`/public/<slug>/`, listed on `/notes/`) | `src/content/posts/*.md` |
-| Notes and paper explainers (`/notes/<slug>/`) | `src/content/notes/*.md` |
+| Notes, paper explainers and the old Squarespace posts (`/public/<slug>/`, listed at `/public/`) | `src/content/notes/*.md` |
 | Which papers get explainers | `src/data/explainers.yaml` |
 | PDFs (CV, post attachments) at `/s/<file>.pdf` | `public/s/` |
 | The *Ethica* edition: web edition at `/ethica/`, PDFs and EPUBs at `/s/ethica*` | `public/ethica/`, `public/s/ethica*` (build output of the spinoza repository; see below) |

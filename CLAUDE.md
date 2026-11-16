@@ -1,11 +1,11 @@
 # Notes for agents working on this repo
 
-- Edit content in `src/data/*.yaml` and `src/content/posts/`, not in page templates.
+- Edit content in `src/data/*.yaml` and `src/content/notes/`, not in page templates.
   Facts that change (title, institution, years) belong in `src/data/site.yaml` only.
 - Avoid time-relative wording in prose ("recently", "now", "currently", "this year").
-- Posts under `/public/` keep their original URLs. They are listed on `/notes/` alongside notes,
-  but never in the nav or on the home page.
-- Notes (`src/content/notes/`, shown at `/notes/`) are public write-ups; a note with an
+- Notes (`src/content/notes/`, served at `/public/<slug>/` and listed at `/public/`) are public
+  write-ups, linked from the footer but never from the nav or home page. The `/public/` path keeps
+  the old Squarespace post URLs working. A note with an
   `arxiv` field is that paper's plain-language explainer. Anything drafted from Ben's
   private sources must follow `PUBLISHING.md`.
 - People page: a former student's `next` is their step immediately after working with
@@ -15,7 +15,7 @@
 - The design tokens (`--bg`, `--text`, `--accent`, …) and the header and footer styles live in
   `public/chrome.css`, which the Ethica edition also uses: its stylesheet is written in those token
   names. Changing a value is fine; renaming or removing a token changes the edition too.
-- Keep old URLs working: `/s/*.pdf`, `/public/<slug>/`, and the redirects in
+- Keep old URLs working: `/s/*.pdf`, `/public/<slug>/`, `/notes/` (redirects to `/public/`), and the redirects in
   `src/pages/[legacy].astro` and `src/pages/travel/[slug].astro`.
 - Mechanical fixes (typos, dead links, papers cache refresh) can go straight to `main`.
   Anything that states a fact about Ben's life or career goes in a pull request for him to approve.

@@ -323,3 +323,43 @@
   start: '2022-08-21'
   end: '2022-08-28'
   place: Rio de Janeiro, Brazil
+- title: Weizmann Institute of Science
+  slug: weizmann
+  start: '2022-05-16'
+  end: '2022-05-16'
+  place: Rehovot, Israel
+- title: Technion
+  slug: technion-2022
+  start: '2022-05-09'
+  end: '2022-05-09'
+  place: Haifa, Israel
+- title: CU Boulder Theory Colloquium
+  slug: cu-boulder
+  start: '2022-02-11'
+  end: '2022-02-12'
+  place: Boulder, CO
+- title: 4D Seminar
+  slug: berkeley-2021
+  start: '2021-09-13'
+  end: '2021-09-13'
+  place: UC Berkeley
+- title: SUSY 2019
+  slug: susy-2019
+  start: '2019-05-20'
+  end: '2019-05-24'
+  place: Corpus Christi, TX
+- title: Phenomenology 2019 Symposium
+  slug: phenomenology-2019-symposium
+  start: '2019-05-06'
+  end: '2019-05-08'
+  place: University of Pittsburgh, Pittsburgh, PA
+- title: SUSY 2018
+  slug: susy-2018
+  start: '2018-07-23'
+  end: '2018-07-27'
+  place: Barcelona, Spain
+- title: Phenomenology 2018 Symposium
+  slug: phenomenology-2018-symposium
+  start: '2018-05-07'
+  end: '2018-05-09'
+  place: University of Pittsburgh, Pittsburgh, PA

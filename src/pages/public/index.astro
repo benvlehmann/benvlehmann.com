@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { notes, formatDate } from '../../lib/notes';
+import { notes, formatDate, titleHtml } from '../../lib/notes';
 import { url } from '../../lib/data';
 ---
 <Base title="Notes" description="Notes by Ben Lehmann.">
@@ -11,7 +11,7 @@ import { url } from '../../lib/data';
         {notes.map((n) => (
           <li>
             <span class="when">{formatDate(n.date)}</span>
-            <span class="what"><a href={url(`public/${n.slug}/`)}>{n.title}</a></span>
+            <span class="what"><a href={url(`public/${n.slug}/`)} set:html={titleHtml(n.title)} /></span>
           </li>
         ))}
       </ol>

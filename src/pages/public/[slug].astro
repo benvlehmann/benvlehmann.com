@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { notes, formatDate } from '../../lib/notes';
+import { notes, formatDate, titleHtml, titleText } from '../../lib/notes';
 import { allPapers } from '../../lib/inspire';
 import { renderTex } from '../../lib/previews';
 import { url } from '../../lib/data';
@@ -12,11 +12,11 @@ const { note } = Astro.props;
 const { Content } = note;
 const paper = note.arxiv ? (await allPapers()).papers.find((p) => p.arxiv === note.arxiv) : undefined;
 ---
-<Base title={note.title} description={note.summary}>
+<Base title={titleText(note.title)} description={note.summary}>
   <article>
     <div class="wrap post page">
       <p class="date">{formatDate(note.date)}{note.arxiv && ' · Explainer'}</p>
-      <h1>{note.title}</h1>
+      <h1 set:html={titleHtml(note.title)} />
       {paper && (
         <aside class="box paper-ref">
           <p class="label accent">The paper</p>

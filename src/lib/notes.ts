@@ -39,3 +39,11 @@ export const explainerFor = (arxiv?: string) => (arxiv ? notes.find((n) => n.arx
 
 export const formatDate = (d: string) =>
   new Date(`${d}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+
+// Titles may use *asterisks* for italics (e.g. a book title). titleHtml renders
+// them as <em> for headings and lists; titleText strips them for <title> and
+// link previews, which can't show formatting.
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+export const titleHtml = (t: string) => escapeHtml(t).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+export const titleText = (t: string) => t.replace(/\*([^*]+)\*/g, '$1');

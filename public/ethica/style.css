@@ -1,0 +1,148 @@
+
+@font-face { font-family: 'Ethica Garamond'; src: url('fonts/EthicaGaramond-Regular.otf') format('opentype'); font-style: normal; }
+@font-face { font-family: 'Ethica Garamond'; src: url('fonts/EthicaGaramond-Italic.otf') format('opentype'); font-style: italic; }
+@font-face { font-family: 'Ethica Hebrew'; src: url('fonts/LibertinusSerif-Regular.otf') format('opentype'); }
+[lang=la] { font-feature-settings: "locl" 0; }
+
+/* Colours, and the fonts of the controls, are the design tokens of benvlehmann.com, where
+   the edition is published: there the site adds its own header, footer and stylesheet
+   (chrome.css, after this file), which supply the current values, and its theme switch
+   sets data-theme on <html>. The copies here are the defaults for a copy opened on its
+   own. Dark unless the system (or the switch) asks for light, as on the site. */
+:root {
+  color-scheme: dark;
+  --bg: #0A0C11; --bg-deep: #07080C; --surface: #12151C; --line: #232836; --line-strong: #5E6678;
+  --text: #ECE9E2; --text-2: #CFCCC5; --muted: #A3A9B5; --faint: #8C93A0;
+  --accent: #E2B862; --accent-line: rgba(226, 184, 98, .5);
+  --shadow-popover: 0 12px 32px rgba(0, 0, 0, .45);
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+      color-scheme: light;
+      --bg: #F6F5F1; --bg-deep: #ECEAE4; --surface: #FFFFFF; --line: #DDDBD3; --line-strong: #848B98;
+      --text: #15171D; --text-2: #363941; --muted: #565C67; --faint: #616874;
+      --accent: #845F10; --accent-line: rgba(132, 95, 16, .45);
+      --shadow-popover: 0 12px 32px rgba(21, 23, 29, .14);
+  }
+}
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #F6F5F1; --bg-deep: #ECEAE4; --surface: #FFFFFF; --line: #DDDBD3; --line-strong: #848B98;
+    --text: #15171D; --text-2: #363941; --muted: #565C67; --faint: #616874;
+    --accent: #845F10; --accent-line: rgba(132, 95, 16, .45);
+    --shadow-popover: 0 12px 32px rgba(21, 23, 29, .14);
+}
+/* The edition's own roles, in terms of the tokens. */
+:root {
+  --book: 'Ethica Garamond', Garamond, 'Times New Roman', serif;
+  --latin: var(--text-2); --note: var(--text-2); --rule: var(--line);
+  --target: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--book); color: var(--text); background: var(--bg); line-height: 1.5;
+       font-size: 1.08rem; -webkit-font-smoothing: antialiased; }
+/* The same width and side margins as the site's header, so that the two line up. */
+.book { max-width: 1180px; margin: 0 auto; padding: 0 32px 4rem; }
+@media (max-width: 600px) { .book { padding: 0 16px 3rem; } }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-color: var(--accent-line); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+nav.top { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--rule); padding: .55rem 0;
+          display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; align-items: center; z-index: 2;
+          font-family: var(--sans); font-size: 15px; letter-spacing: .02em; }
+nav.top > a:not(.btn) { color: var(--muted); }
+nav.top > a:not(.btn):hover { color: var(--accent); text-decoration: none; }
+nav.top .sw { display: inline-flex; gap: .4rem; }
+nav.top .sw button { font: inherit; letter-spacing: inherit; color: var(--muted); background: none; cursor: pointer;
+                     border: 1px solid var(--line-strong); border-radius: 999px; padding: .05rem .75rem; }
+nav.top .sw button:hover { color: var(--accent); }
+nav.top .sw button.on { color: var(--accent); border-color: var(--accent); }
+.partopener { text-align: center; margin: 3rem 0 2rem; } .partopener p { font-variant: small-caps; font-size: 1.3rem; }
+.partopener h1 { font-weight: normal; font-variant: small-caps; }
+.partopener em { font-variant: normal; }
+section h3 { font-weight: normal; font-style: italic; font-size: 1.15em; margin-top: 1.6rem; }
+.chunk { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
+.chunk > .la, .chunk > .en { min-width: 0; }
+.chunk.first { margin-top: .9rem; } .chunk.para { margin-top: .4rem; }
+.chunk .la { color: var(--latin); }
+.chunk.heading { margin-top: 1.6rem; text-align: center; font-variant: small-caps; }
+.chunk.heading h2, .chunk.heading h3 { font-weight: normal; margin: .2rem 0; }
+.statement .la, .statement .en { font-style: italic; }
+.label { font-variant: small-caps; font-style: normal; }
+.gpage { font-family: var(--mono); font-size: .68em; color: var(--faint); }
+.chunk.sup, .chunk.salut { text-align: center; } .chunk.salut { text-align: left; margin-top: .5rem; }
+.chunk.closing .la, .chunk.closing .en { text-align: right; }
+.lhead { text-align: center; font-style: italic; font-size: .95em; }
+.sc { font-variant: small-caps; }
+:target, .chunk[id] { scroll-margin-top: 3.2rem; }
+:target { background: var(--target); }
+sup { line-height: 0; }
+[lang=he] { font-family: 'Ethica Hebrew', serif; font-style: normal; }
+.notes { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 2.5rem;
+         font-size: .85rem; color: var(--note); font-style: normal; }
+.notes ol { list-style: none; margin: .3rem 0 0; padding: .3rem 0 0 0; border-top: 1px dotted var(--rule); }
+.notes li { margin: .15rem 0; } .notes a.back { font-weight: bold; margin-right: .3rem; }
+.notes .nla a.back { font-style: italic; }
+sup a.nref { font-size: .75em; } a.nref.nla { font-style: italic; }
+body.only-la .notes .nen, body.only-en .notes .nla { display: none; }
+body.only-la .notes, body.only-en .notes { grid-template-columns: 1fr; }
+p.citedby { font-size: .85rem; color: var(--muted); margin: .3rem 0 0 1em; text-indent: -1em; }
+p.citedby .cb { font-style: italic; }
+section.essay, section.matter { max-width: 42rem; margin: 2.5rem auto; }
+section.essay { border-left: 3px solid var(--accent); padding-left: 1.2rem; }
+section.essay h2, section.matter h2 { font-weight: normal; font-variant: small-caps; }
+blockquote { margin: .8rem 1.5rem; font-size: .97em; }
+dl.glossary dt { font-style: italic; margin-top: .6rem; } dl.glossary dd { margin-left: 1.5rem; }
+.gnote { font-size: .85rem; color: var(--text-2); }
+.toc li { margin: .2rem 0; } .toc ul ul { font-size: .95em; }
+body.only-la .chunk > .en, body.only-en .chunk > .la { display: none; }
+body.only-la .chunk, body.only-en .chunk { grid-template-columns: 1fr; max-width: 44rem; margin-left: auto; margin-right: auto; }
+@media (max-width: 760px) {
+  .chunk { grid-template-columns: 1fr; } .chunk .la { margin-bottom: .3rem; font-size: .95em; }
+  .notes { grid-template-columns: 1fr; } .notes div.nla, .notes div.nen { display: none; }
+  .chunk.cited .la { display: none; }
+}
+/* Like the site's preview card for papers. */
+.tip { position: absolute; display: none; max-width: 30rem; background: var(--surface); color: var(--text);
+       border: 1px solid var(--line-strong); border-radius: 6px; box-shadow: var(--shadow-popover);
+       padding: .6rem .8rem; font-size: .9rem; line-height: 1.4; z-index: 5; pointer-events: none; font-style: normal; }
+nav.top a.btn, nav.pager a.btn { color: var(--text); border: 1px solid var(--line-strong); border-radius: 999px;
+                                 padding: .05rem .85rem; }
+nav.top a.btn:hover, nav.pager a.btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+@media (max-width: 600px) { nav.top .lbl { display: none; } }
+/* At the bottom, the previous page at the left and the next at the right (also when it is alone). */
+nav.pager a.next { margin-left: auto; }
+nav.pager { display: flex; flex-wrap: wrap; gap: .6rem; border-top: 1px solid var(--rule); margin-top: 3rem; padding: 1rem 0;
+            font-family: var(--sans); font-size: 15px; letter-spacing: .02em; }
+.toc details.elements { margin: .3rem 0 .6rem; }
+.toc details.elements summary { cursor: pointer; color: var(--muted); font-size: .95em; }
+.toc details.elements ul { list-style: none; padding-left: 1rem; font-size: .95em; }
+.toc details.elements li { margin: .15rem 0; }
+.toc .sub, .toc .after, .toc .count, .toc .kind { color: var(--muted); font-size: .88em; }
+.toc .count { font-family: var(--mono); font-size: .72em; color: var(--faint); }
+.toc .sub a { color: var(--accent); }
+.toc .lh { font-style: italic; }
+ol.synopsis { list-style: none; padding-left: 0; }
+ol.synopsis li { padding-left: 2.4em; text-indent: -2.4em; margin: .3em 0; }
+ul.bib, ul.glindex { list-style: none; padding-left: 0; }
+ul.bib li, ul.glindex li { padding-left: 1.5em; text-indent: -1.5em; margin: .35em 0; }
+dl.chron { display: grid; grid-template-columns: 7.5em 1fr; column-gap: 1em; row-gap: .45em; }
+dl.chron dt { font-variant: small-caps; } dl.chron dd { margin: 0; }
+p.chronnote { font-size: .92em; color: var(--text-2); }
+ul.glindex { columns: 2; column-gap: 2.5rem; } ul.glindex li { margin: .15em 0; break-inside: avoid; }
+ul.ixindex { list-style: none; padding-left: 0; columns: 2; column-gap: 2.5rem; }
+table.aid { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .93em; }
+table.aid th { font-style: italic; font-weight: normal; text-align: left; border-bottom: 1px solid var(--rule); }
+table.aid td, table.aid th { padding: .3em .6em .3em 0; vertical-align: top; }
+table.aid tbody tr:last-child td { border-bottom: 1px solid var(--rule); }
+ul.ixindex > li { margin: .6em 0 .2em; } ul.ixindex .ixhead { font-variant: small-caps; }
+ul.ixindex ul { list-style: none; padding-left: 0; } ul.ixindex ul li { padding-left: 2em; text-indent: -1em; margin: .1em 0; break-inside: avoid; }
+@media (max-width: 40rem) { ul.ixindex, ul.glindex { columns: 1; } }
+p.reported { font-size: .92em; color: var(--text-2); }
+ol.synopsis a.sn { display: inline-block; width: 2.4em; text-indent: 0; }
+p.version { text-align: center; font-family: var(--mono); font-size: 12px; color: var(--faint); margin-top: 3rem; }
+#q { width: 100%; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line-strong);
+      border-radius: 6px; padding: .4rem .6rem; }
+#results li { margin: .6rem 0; } #results .ctx { font-size: .9rem; color: var(--text-2); }

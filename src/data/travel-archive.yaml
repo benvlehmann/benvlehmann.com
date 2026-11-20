@@ -1,6 +1,12 @@
 # Trips migrated from the Squarespace calendar (Aug 2022 – Apr 2026).
 # New trips come from the travel calendar feed (see site.yaml); this file is the archive.
 # Slugs match the old /travel/<slug> URLs so they can redirect.
+- title: Dartmouth College
+  slug: dartmouth-college
+  start: '2026-11-11'
+  end: '2026-11-11'
+  place: Hanover, NH
+  uid: 5D825B2E-2263-4A7F-B6B2-1EDE59DD07B0
 - title: Tufts University
   slug: tufts-university
   start: '2026-11-03'

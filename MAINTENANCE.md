@@ -61,24 +61,36 @@ Record `people`.
 
 ## 3. CV
 
-Only Ben rebuilds the CV (never run `make` here), so this section reacts only to
-changes he has made since the site's copy. It keeps no state: the previous version is
-the PDF already in the repo.
+Only Ben publishes the CV (never run `make` or `make release` here), so this section
+reacts only to releases he has made since the site's copy. It keeps no state: the
+previous version is the PDF already in the repo.
 
 - **Repo copy:** `public/s/lehmann_cv.pdf`
-- **Ben's build:** `~/Dropbox/Science/CV/build/cv-public/lehmann_cv.pdf` on his computer,
-  which is `/Science/CV/build/cv-public/lehmann_cv.pdf` in Dropbox (file id
-  `id:_-pSVMw-2hsAAAAAAB9bwg`, which survives moves). Without his computer, get it
-  through the Dropbox connector: `download_link`, then download the single-use URL once.
-  Read only; never change anything in Dropbox.
+- **Ben's build:** the `lehmann_cv_public.pdf` asset of the latest release of the
+  private GitHub repo `benvlehmann/CV` (the `cv-public` target: the full CV without
+  "Works in preparation"). The session needs that repo attached; it does not need a
+  clone. Use the release marked Latest (backfilled releases are not, and are ignored):
+
+      gh api repos/benvlehmann/CV/releases/latest \
+        --jq '.tag_name, (.assets[] | select(.name=="lehmann_cv_public.pdf") | .id, .digest)'
+      mkdir -p /tmp/cv
+      gh api -H "Accept: application/octet-stream" \
+        repos/benvlehmann/CV/releases/assets/<id> > /tmp/cv/ben_cv.pdf
+
+  Check that `file` reports a PDF and that `sha256sum` matches the asset's `digest`
+  (given as `sha256:<hex>`).
+  Read only: never create, edit or delete releases, tags or branches in that repo.
+  Re-running `make release` on the same date replaces that release, so compare
+  content, not tags or dates.
 
 1. **Same file?** Compare md5 hashes of the two PDFs. If they match, skip the rest of
    this section.
 2. **Same content?** Extract text from both (`pdftotext`), remove the
    `(Updated <date>)` line near the top, and compare. If the texts match, Ben rebuilt
    without changing anything: skip the rest of this section and do not copy the PDF.
-3. **Content changed.** Copy Ben's build over the repo copy (PR), and diff the two
-   texts (with the date line removed). Only the changed lines are in scope:
+3. **Content changed.** Copy Ben's build over the repo copy (PR, naming the release
+   tag), and diff the two texts (with the date line removed). Only the changed lines
+   are in scope:
    - Changes in "Students and mentoring": propose matching updates to
      `src/data/people.yaml` (PR).
    - Changes to name, title, institution or fellowship lines: propose matching updates

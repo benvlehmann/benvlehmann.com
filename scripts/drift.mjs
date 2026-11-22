@@ -3,7 +3,8 @@
 // verified.json. Setting last_verified stays a judgment call for the agent.
 //   npm run drift -- record <section> <clean|changes|needs-ben|blocked> ["note"]
 //   npm run drift -- status     print the per-section table (paste into the PR body)
-//   npm run drift -- check      exit 0 only if every section is recorded as clean
+//   npm run drift -- check      exit 0 only if every section is recorded as clean or changes
+//                               (changes are resolved in the run's PR; needs-ben and blocked are not)
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 
 export const SECTIONS = ['papers', 'people', 'cv', 'travel', 'links', 'wording'];
@@ -26,9 +27,9 @@ if (cmd === 'record') {
   const rows = SECTIONS.map((s) => `| ${s} | ${results[s]?.outcome ?? 'NOT RECORDED'} | ${results[s]?.note ?? ''} |`);
   console.log(['| Section | Outcome | Note |', '| --- | --- | --- |', ...rows].join('\n'));
   if (cmd === 'check') {
-    const bad = SECTIONS.filter((s) => results[s]?.outcome !== 'clean');
+    const bad = SECTIONS.filter((s) => !['clean', 'changes'].includes(results[s]?.outcome));
     if (bad.length) {
-      console.error(`\nNot all clear (${bad.join(', ')}): do not set last_verified.`);
+      console.error(`\nUnresolved (${bad.join(', ')}): do not set last_verified.`);
       process.exit(1);
     }
   }

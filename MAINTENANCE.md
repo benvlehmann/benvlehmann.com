@@ -137,10 +137,15 @@ edit the archive by hand for this.
 
 ## 6. Finish
 
-- Run `npm run drift -- check`. It exits non-zero unless all six sections are recorded
-  `clean`; in that case do not set `last_verified`. When it passes, setting
-  `last_verified` in `src/data/verified.json` to today's date is still your call: hold
-  it back if anything gives you a reason (for example a question for Ben that you
-  recorded as `clean`), and say why in the PR.
-- The `last_verified` update may be part of the same pull request as the run's other changes; it does not need a PR of its own. Merge order doesn't matter as long as the stamp is only set once the run's fixes are in that PR.
+- Run `npm run drift -- check`. It passes when every section is recorded `clean` or
+  `changes`, and fails if any is `needs-ben` or `blocked` (or not recorded).
+- When it passes, set `last_verified` in `src/data/verified.json` to today's date
+  (Eastern time) in the run's pull request, alongside any fixes. The stamp claims the
+  site matched its sources on that date; it goes live only when the fixes do. Still
+  your call: hold it back if anything gives you a reason (for example a question for
+  Ben that you recorded as `clean`), and say why in the PR.
+- When it fails, do not set `last_verified`. Open a pull request only if the run
+  changed files; questions for Ben and blocked checks go in the summary either way.
+- Every run that changes a file opens exactly one pull request. A run with only the
+  stamp to commit is titled "Drift check: all clear YYYY-MM-DD".
 - Summarize what changed, what is waiting in PRs, and anything that needs Ben.

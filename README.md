@@ -36,8 +36,9 @@ reference them as `{role}`, `{institution}`, etc.
   (the `TRAVEL_ICS_URL` repository secret — use the calendar's secret iCal address), merged
   with the archive. Trips move from Upcoming to Recent on their own.
 - The site rebuilds on every push to `main` and nightly, so both stay current.
-- **CV**: `public/s/lehmann_cv.pdf` is the `make web` target of the CV build
-  (`~/Dropbox/Science/CV/_cv/build/web/lehmann_cv.pdf`).
+- **CV**: `public/s/lehmann_cv.pdf` is the `lehmann_cv_public.pdf` asset of the latest
+  release of the private `benvlehmann/CV` repository (its `cv-public` target, published by
+  `make release` there). The weekly maintenance check copies it in when its text changes.
 - **The *Ethica***: `public/ethica/` (the web edition) and `public/s/ethica.pdf`, `ethica-print.pdf`,
   `ethica.epub`, `ethica-english.epub` and `ethica-latin.epub` are the output of `make publish` in the
   (private) spinoza repository, which builds a release tag and opens a pull request here; merging it

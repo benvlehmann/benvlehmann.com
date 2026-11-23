@@ -3,6 +3,7 @@
 - Edit content in `src/data/*.yaml` and `src/content/notes/`, not in page templates.
   Facts that change (title, institution, years) belong in `src/data/site.yaml` only.
 - Avoid time-relative wording in prose ("recently", "now", "currently", "this year").
+  Date-stamped notes in `src/content/notes/` are exempt: their wording is read relative to their date.
 - Notes (`src/content/notes/`, served at `/public/<slug>/` and listed at `/public/`) are public
   write-ups, linked from the footer but never from the nav or home page. The `/public/` path keeps
   the old Squarespace post URLs working. A note with an

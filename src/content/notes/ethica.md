@@ -3,7 +3,7 @@ title: "A reader-friendly version of Spinoza's *Ethics*"
 date: 2026-11-16
 summary: "A new LLM-driven edition of the *Ethics* with substantial annotation"
 ---
-I recently purchased a copy of Spinoza's *Ethics*. But as I started reading, I was frustrated by two points. First, while I'm no stranger to the kind of argumentation presented in the *Ethics*, there is a huge amount of historical context and secondary scholarship that I'm missing. Second, the printing I had acquired was riddled with typographical errors, even on the first page!
+I purchased a copy of Spinoza's *Ethics*. But as I started reading, I was frustrated by two points. First, while I'm no stranger to the kind of argumentation presented in the *Ethics*, there is a huge amount of historical context and secondary scholarship that I'm missing. Second, the printing I had acquired was riddled with typographical errors, even on the first page!
 
 I decided to do something similar to what I did with [Ma'avar Yabok](../translation-of-maavar-yabok/), and use an LLM to create a freshly-translated, fully-annotated edition appropriate to my background. The process took a few days, and I am sharing the product here in the event that it is useful for any other interested reader. This time, I can offer a few distinct formats:
 - PDF with translation on facing pages, suitable for screens  

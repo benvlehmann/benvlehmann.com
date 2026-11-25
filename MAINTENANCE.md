@@ -132,7 +132,9 @@ edit the archive by hand for this.
   hand; skip them.
 - Search prose in `src/data/` and `src/content/` for time-relative wording
   ("recently", "now", "currently", "this year") and report or fix it. Cached paper
-  abstracts in `papers-cache.json` are not prose and are exempt.
+  abstracts in `papers-cache.json` are not prose and are exempt. Notes in
+  `src/content/notes/` carry a `date` and are read relative to it, so they are
+  exempt too (Ben, PR #34).
 - Record `links` and `wording`.
 
 ## 6. Finish
